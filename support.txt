@@ -4,3 +4,7 @@ points
 
 ui_media location
 /home/pi/.node-red/lib/ui-media/lib/chair sensor images
+
+serial porta
+ili so brojki 1.dat, 2.data i da se odreduva so between
+ili so bukvi pa da se odreduvaa so contain
