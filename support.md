@@ -1,8 +1,8 @@
-kolku vreme e sedeno
-od kolku do kolku saato dnevno
+kolku vreme e sedeno, od kolku do kolku saato dnevno
 points
 
 ui_media location
+
 /home/pi/.node-red/lib/ui-media/lib/chair sensor images
 
 serial porta
