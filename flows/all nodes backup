@@ -1,0 +1,1301 @@
+[
+    {
+        "id": "72b9433a.17df6c",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1c737f13.cea2b1",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bd5fefe8.df5a2",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ad3d7b82.7ef828",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c103c657.b10728",
+        "type": "websocket-listener",
+        "path": "/website/",
+        "wholemsg": "false"
+    },
+    {
+        "id": "89368e3e.e8a0b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#9089c2",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#9089c2",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#bfbbdc",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#9089c2",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "bb56339e.2abaa",
+        "type": "ui_tab",
+        "name": "Chair",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5431b3b4.fa739c",
+        "type": "ui_tab",
+        "name": "testing",
+        "icon": "dashboard"
+    },
+    {
+        "id": "a4a5657b.ad6998",
+        "type": "ui_group",
+        "name": "dashboard",
+        "tab": "bb56339e.2abaa",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "67c51fae.b9a55",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "5431b3b4.fa739c",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "7534c655.1c8b38",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "444dec1e.47f464",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3d73ef67.c8221",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a4a5657b.ad6998",
+        "order": 4,
+        "width": "6",
+        "height": "3"
+    },
+    {
+        "id": "fb311559.b452e8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a4a5657b.ad6998",
+        "order": 6,
+        "width": "5",
+        "height": "1"
+    },
+    {
+        "id": "6ce6b900.2c94a8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a4a5657b.ad6998",
+        "order": 9,
+        "width": "5",
+        "height": "1"
+    },
+    {
+        "id": "9b3347c5.2f0568",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a4a5657b.ad6998",
+        "order": 7,
+        "width": "6",
+        "height": 1
+    },
+    {
+        "id": "c513b035.74125",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a4a5657b.ad6998",
+        "order": 10,
+        "width": "6",
+        "height": 1
+    },
+    {
+        "id": "99e9bd3d.c0982",
+        "type": "ui_group",
+        "name": "Description",
+        "tab": "d9c42b8a.2546d8",
+        "order": 3,
+        "disp": true,
+        "width": "20",
+        "collapse": false
+    },
+    {
+        "id": "d9c42b8a.2546d8",
+        "type": "ui_tab",
+        "name": "submit form",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bc402e29.82aae",
+        "type": "serial-port",
+        "serialport": "/dev/ttyACM0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "9e81995b.4bd7b8",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "blue",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "format": "\n<md-button class=\"vibrate filled touched bigfont rounded\" style=\"background-color:#2980b9\"   ng-click=\"send({payload: 'Hello World'})\"> \n    Blue<br/>button\n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b14266f8.331058",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "red",
+        "order": 2,
+        "width": "2",
+        "height": "2",
+        "format": "\n<md-button class=\"vibrate filled touched bigfont rounded\" style=\"background-color:#16ed07\" ng-click=\"send({payload: 'Hello World'})\"> \n    \n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 930,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8136b95e.696bb8",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "green",
+        "order": 3,
+        "width": "2",
+        "height": "2",
+        "format": "\n<md-button class=\"filled touched bigfont rounded vibrate\" style=\"background-color:#27ae60\" ng-click=\"send({payload: 'Hello World'})\"> \n    Green<br/>button\n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "546944c8.e69dac",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "format": "\n<md-button class=\"vibrate filled touched smallfont rounded\" style=\"background-color:#16a085\"   ng-click=\"send({payload: 'Hello World'})\"> \n    Greenish<br/>button\n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 680,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ccfda633.776488",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "format": "\n<md-button class=\"vibrate filled touched smallfont rounded\" style=\"background-color:#e67e22\" ng-click=\"send({payload: 'Hello World'})\"> \n    Orange<br/>button\n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 680,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca6d08a6.28df38",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "on",
+        "order": 7,
+        "width": "1",
+        "height": "1",
+        "format": "\n<md-button class=\"vibrate filled touched smallfont rounded\" style=\"background-color:#34495e\" ng-click=\"send({payload: 'Hello World'})\"> \n    On\n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6871a0de.59a8c",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "off",
+        "order": 8,
+        "width": "1",
+        "height": "1",
+        "format": "\n<md-button class=\"vibrate filled touched smallfont rounded\" style=\"background-color:#8e44ad\" ng-click=\"send({payload: 'Hello World'})\"> \n    Off\n</md-button> \n\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 670,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58a25578.6ccb9c",
+        "type": "ui_template",
+        "z": "1c737f13.cea2b1",
+        "group": "a4a5657b.ad6998",
+        "name": "Background image template",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    body {\n        background-image: url(\"/chair_rendered.png\");\n        background-repeat: no-repeat;\n        background-position: center;\n        background-size: 100%;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 220,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18f77d76.be10b3",
+        "type": "ui_template",
+        "z": "bd5fefe8.df5a2",
+        "group": "67c51fae.b9a55",
+        "name": "css etc",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "format": "<style>\n  .filled { \n      height: 100% !important;\n\n      padding: 0 !important;\n      margin: 0 !important;\n  }\n  .nr-dashboard-template {\n      padding: 0;\n      margin: 0;\n  }\n  \n  .rounded {\n  border-radius: 12px 12px 12px 12px;\n}\n \n   .bigfont {\n  font-size: 18px;\n}\n\n   .smallfont {\n  font-size: 12px;\n}\n  \n</style>\n\n<script>\n$('.vibrate').on('click', function() {\n  navigator.vibrate(100);\n});\n\nfunction restore_bg(x) {\n            $(this).css(\"background-color\", x);\n    };\n\n$('.touched').on('mousedown', function() {\n    \n    var x= $(this).css(\"background-color\");\n    $(this).css(\"background-color\", \"yellow\");\n    \n    setTimeout(restore_bg.bind(this,x),100);\n    navigator.vibrate(80);\n    });\n    \n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 540,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b3b9ce8.c051a3",
+        "type": "ui_template",
+        "z": "1c737f13.cea2b1",
+        "group": "a4a5657b.ad6998",
+        "name": "transperent group",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "\n<style>\n    #Chair_dashboard_cards{\n        background-color:#12345600;\n    }\n    #Chair_dashboard{\n        background-color:#12345600;\n        border:none;\n    }\n</style>\n<script>\nfunction updateContainerStyle (el) {\n\tel = el.parentElement\n\tif (el && el.classList.contains('nr-dashboard-template')) {\n\t    // uncomment next line to make the parent container transparent\n\t\tel.style.backgroundColor = \"#12345600\"\n\t}\n}\n\nupdateContainerStyle(document.getElementById(\"div-in-template\"))\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 190,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ad685d9.e77e0a",
+        "type": "comment",
+        "z": "1c737f13.cea2b1",
+        "name": "spacing",
+        "info": "in the menu > dashboard > site > change spacing",
+        "x": 150,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "44670c1.acd60f4",
+        "type": "ui_media",
+        "z": "1c737f13.cea2b1",
+        "group": "a4a5657b.ad6998",
+        "name": "image",
+        "width": "1",
+        "height": "1",
+        "order": 11,
+        "category": "chair sensor images",
+        "file": "Welcome Scan.jpg",
+        "layout": "side",
+        "showcontrols": false,
+        "loop": true,
+        "onstart": false,
+        "scope": "local",
+        "tooltip": "",
+        "x": 1050,
+        "y": 100,
+        "wires": [
+            [
+                "b4e8edc8.972fa"
+            ]
+        ]
+    },
+    {
+        "id": "b349f695.85d288",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 1",
+        "pin": "40",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "d386a79e.216fb8"
+            ]
+        ]
+    },
+    {
+        "id": "d386a79e.216fb8",
+        "type": "change",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "num",
+                "to": "chair sensor images/green.png",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "chair sensor images/red.png",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "44670c1.acd60f4"
+            ]
+        ]
+    },
+    {
+        "id": "4a1b6473.f65b7c",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 2",
+        "pin": "38",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31427bf2.b3a9c4",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 3",
+        "pin": "36",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "337ae891.141a78",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 4",
+        "pin": "32",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd71efbe.b589a",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 5",
+        "pin": "37",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "231bfd9a.fdff02",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 6",
+        "pin": "35",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7c0e4b3.ad5268",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 7",
+        "pin": "33",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1809d98.70ade",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 8",
+        "pin": "31",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b9c6f93.717f9",
+        "type": "rpi-gpio in",
+        "z": "1c737f13.cea2b1",
+        "name": "sensor 9",
+        "pin": "29",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 160,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "baad656a.093a48",
+        "type": "switch",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "afe9ca6a.477478",
+        "type": "comment",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "info": "stignah do deka treba slikata da se meni ako pino se smeni ",
+        "x": 700,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e00d82c.948718",
+        "type": "ui_switch",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "a4a5657b.ad6998",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [
+                "d386a79e.216fb8"
+            ]
+        ]
+    },
+    {
+        "id": "b4e8edc8.972fa",
+        "type": "debug",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "bd4a72d6.54145",
+        "type": "comment",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "info": "it must be all noumber or all string cannot be different\nChange payload with {chair sensor images/green.png}",
+        "x": 740,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ec88754c.760cc8",
+        "type": "ui_template",
+        "z": "1c737f13.cea2b1",
+        "group": "a4a5657b.ad6998",
+        "name": "",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "format": "\n<style>\n    #Chair_dashboard_cards{\n        background-color:#12345600;\n    }\n    #Chair_dashboard{\n        background-color:#12345600;\n        border:none;\n    }\n</style>\n<script>\nfunction updateContainerStyle (el) {\n\tel = el.parentElement\n\tif (el && el.classList.contains('nr-dashboard-template')) {\n\t    // uncomment next line to make the parent container transparent\n\t\tel.style.backgroundColor = \"#12345600\"\n\t}\n}\n\nupdateContainerStyle(document.getElementById(\"div-in-template\"))\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "x": 450,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4ed1ea4.6a189",
+        "type": "serial in",
+        "z": "72b9433a.17df6c",
+        "name": "arduino",
+        "serial": "bc402e29.82aae",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "74128af0.d5dc14"
+            ]
+        ]
+    },
+    {
+        "id": "c3deabf3.e636e8",
+        "type": "debug",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "74128af0.d5dc14",
+        "type": "switch",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "gte",
+                "v": "4",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 600,
+        "y": 460,
+        "wires": [
+            [
+                "42dc66f.685f498"
+            ],
+            [
+                "8d4f31e3.d4f5c"
+            ]
+        ]
+    },
+    {
+        "id": "42dc66f.685f498",
+        "type": "change",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "111",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 420,
+        "wires": [
+            [
+                "c3deabf3.e636e8"
+            ]
+        ]
+    },
+    {
+        "id": "8d4f31e3.d4f5c",
+        "type": "change",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "000",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 500,
+        "wires": [
+            [
+                "c3deabf3.e636e8"
+            ]
+        ]
+    },
+    {
+        "id": "1b30283e.56d078",
+        "type": "ui_colour_picker",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "label": "",
+        "group": "a4a5657b.ad6998",
+        "format": "hex",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 10,
+        "width": "1",
+        "height": "1",
+        "passthru": true,
+        "topic": "",
+        "x": 900,
+        "y": 580,
+        "wires": [
+            [
+                "66d1c70f.7c98a8"
+            ]
+        ]
+    },
+    {
+        "id": "d26a8dc9.904c2",
+        "type": "inject",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "DD2229",
+        "payloadType": "str",
+        "x": 590,
+        "y": 600,
+        "wires": [
+            [
+                "1b30283e.56d078"
+            ]
+        ]
+    },
+    {
+        "id": "66d1c70f.7c98a8",
+        "type": "debug",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "eed58ef.552197",
+        "type": "ui_button",
+        "z": "72b9433a.17df6c",
+        "name": "",
+        "group": "a4a5657b.ad6998",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 740,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf0aac14.ce246",
+        "type": "inject",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2.32",
+        "payloadType": "str",
+        "x": 290,
+        "y": 580,
+        "wires": [
+            [
+                "f6af559e.6d3c58"
+            ]
+        ]
+    },
+    {
+        "id": "abf2bd27.a6d59",
+        "type": "debug",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f6af559e.6d3c58",
+        "type": "switch",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "1",
+                "vt": "num",
+                "v2": "3",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 460,
+        "y": 580,
+        "wires": [
+            [
+                "abf2bd27.a6d59"
+            ]
+        ]
+    },
+    {
+        "id": "204f2b47.3da1b4",
+        "type": "inject",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "a.232",
+        "payloadType": "str",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "36a535e8.d2d9da"
+            ]
+        ]
+    },
+    {
+        "id": "36a535e8.d2d9da",
+        "type": "switch",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "a",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "b",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "531dd9f4.724a98"
+            ],
+            [
+                "531dd9f4.724a98"
+            ]
+        ]
+    },
+    {
+        "id": "17177f27.bd8ac1",
+        "type": "inject",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "b.234",
+        "payloadType": "str",
+        "x": 270,
+        "y": 440,
+        "wires": [
+            [
+                "36a535e8.d2d9da"
+            ]
+        ]
+    },
+    {
+        "id": "531dd9f4.724a98",
+        "type": "change",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "a.",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "b.",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 400,
+        "wires": [
+            [
+                "c3b702d0.759b2"
+            ]
+        ]
+    },
+    {
+        "id": "c3b702d0.759b2",
+        "type": "debug",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "61261215.b3fa5c",
+        "type": "comment",
+        "z": "ad3d7b82.7ef828",
+        "name": "",
+        "info": "with letters",
+        "x": 590,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d7a9c44b.dcfa98",
+        "type": "ui_led",
+        "z": "1c737f13.cea2b1",
+        "order": 13,
+        "group": "a4a5657b.ad6998",
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": true,
+        "showGlow": true,
+        "name": "",
+        "x": 740,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "54b9dd8d.680b54",
+        "type": "inject",
+        "z": "1c737f13.cea2b1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [
+                "d7a9c44b.dcfa98"
+            ]
+        ]
+    },
+    {
+        "id": "b3100a67.dd7758",
+        "type": "ui_template",
+        "z": "1c737f13.cea2b1",
+        "group": "a4a5657b.ad6998",
+        "name": "",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "format": "<span class=\"dot\"></span>\n<style>\n.dot {\n  height: 25px;\n  width: 25px;\n  background-color: #30d61e;\n  border-radius: 50%;\n  display: inline-block;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 1000,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eec73850.3b15d8",
+        "type": "ui_template",
+        "z": "1c737f13.cea2b1",
+        "group": "a4a5657b.ad6998",
+        "name": "",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "format": "<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\n.dot {\n  height: 25px;\n  width: 25px;\n  background-color: #30d61e;\n  border-radius: 50%;\n  display: inline-block;\n}\n</style>\n</head>\n<body>\n\n<div style=\"text-align:center\">\n  <h1>Round Dots / Circles</h1>\n  <span class=\"dot\"></span>\n  <span class=\"dot\"></span>\n  <span class=\"dot\"></span>\n  <span class=\"dot\"></span>\n</div>\n\n</body>\n</html> ",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 970,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    }
+]
