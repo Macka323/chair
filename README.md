@@ -8,7 +8,7 @@ ui_media location
 serial porta
 ili so brojki 1.dat, 2.data i da se odreduva so between
 
-ili so bukvi pa da se odreduvaa so contain [click here](https://github.com/Macka323/chair/blob/main/serial%20data%20with%20letters)
+ili so bukvi pa da se odreduvaa so contain [click here](https://github.com/Macka323/chair/blob/main/flows/serial%20data%20with%20letters)
 NUMBERS| |SERIAL| |PINS ON ARDINO
 -------|-|------|-|--------------
 1	|	>	|	a.	|	>	|	A0
