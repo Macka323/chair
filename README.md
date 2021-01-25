@@ -12,9 +12,9 @@ ili so bukvi pa da se odreduvaa so contain [click here](https://github.com/Macka
 NUMBERS| |SERIAL| |PINS ON ARDINO
 -------|-|------|-|--------------
 1	|	>	|	a.	|	>	|	A0
-2	|	>	|	b.	|	>	|	A2
-3	|	>	|	C.	|	>	|	A3
-4	|	>	|	d.	|	>	|	A4
+2	|	>	|	b.	|	>	|	A1
+3	|	>	|	C.	|	>	|	A2
+4	|	>	|	d.	|	>	|	A3
 5	|	>	|	e.	|	>	|	A6
 6	|	>	|	f.	|	>	|	A7
 7	|	>	|	g.	|	>	|	A8
