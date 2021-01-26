@@ -7,7 +7,7 @@ graphs
 
 night mode
 
-range 100-200 = 0-1 for triggering 
+range 100-200 = 0-1 for triggering the fucking but
 
 
 ui_media location
