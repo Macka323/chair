@@ -5,6 +5,8 @@ audio alert
 
 graphs
 
+night mode
+
 ui_media location
 
 /home/pi/.node-red/lib/ui-media/lib/chair sensor images
