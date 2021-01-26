@@ -7,6 +7,9 @@ graphs
 
 night mode
 
+range 100-200 = 0-1 for triggering 
+
+
 ui_media location
 
 /home/pi/.node-red/lib/ui-media/lib/chair sensor images
