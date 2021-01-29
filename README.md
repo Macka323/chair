@@ -5,7 +5,7 @@ najveke da moze da se sedi 30 min, i da ne se sedi 5 min
 
 audio alert
 
-battery inducator
+battery inducator (power bank led connected to gpio) ( dashboard ima 4 led koi pokazuvaa baterijata )
 
 graphs
 
