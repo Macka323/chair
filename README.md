@@ -1,17 +1,17 @@
-kolku vreme e sedeno, od kolku do kolku saato dnevno
+- [x] kolku vreme e sedeno, od kolku do kolku saato dnevno
 points
 
-najveke da moze da se sedi 30 min, i da ne se sedi 5 min 
+- [ ] najveke da moze da se sedi 30 min, i da ne se sedi 5 min 
 
-audio alert
+- [ ] audio alert
 
-battery inducator (power bank led connected to gpio) ( dashboard ima 4 led koi pokazuvaa baterijata )
+- [ ]battery inducator (power bank led connected to gpio) ( dashboard ima 4 led koi pokazuvaa baterijata )
 
-graphs
+- [x] graphs
 
-night mode
+- [x]night mode
 
-range 100-200 = 0-1 for triggering the fucking but
+- [x]range 100-200 = 0-1 for triggering the fucking but
 
 
 ui_media location
