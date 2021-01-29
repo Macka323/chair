@@ -1,6 +1,8 @@
 kolku vreme e sedeno, od kolku do kolku saato dnevno
 points
 
+najveke da moze da se sedi 30 min, i da ne se sedi 5 min 
+
 audio alert
 
 graphs
