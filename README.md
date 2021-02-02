@@ -1,7 +1,7 @@
 - [x] kolku vreme e sedeno, od kolku do kolku saato dnevno
 points
 
-- [ ] najveke da moze da se sedi 30 min, i da ne se sedi 5 min 
+- [ ] najveke da moze da se sedi 30 min, i da ne se sedi 5 min {da moze da se meni kolku sakas i da ima default button}
 
 - [ ] audio alert
 
