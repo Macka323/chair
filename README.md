@@ -13,6 +13,8 @@ points
 
 - [x]range 100-200 = 0-1 for triggering the fucking but
 
+- [ ] "gaming" mode za poveke vreme da moze da se sedi ama da ima po dolga puaza izmegju sesii
+
 
 ui_media location
 
