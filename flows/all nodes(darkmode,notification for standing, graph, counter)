@@ -294,6 +294,7 @@
         "id": "793c0106.f5d84",
         "type": "serial in",
         "z": "772b4e64.18e6e",
+        "d": true,
         "name": "",
         "serial": "bc402e29.82aae",
         "x": 90,
@@ -2555,7 +2556,8 @@
         "z": "772b4e64.18e6e",
         "name": "",
         "links": [
-            "2a6a1d2d.cf9e12"
+            "2a6a1d2d.cf9e12",
+            "14604c5.63664b4"
         ],
         "x": 175,
         "y": 560,
@@ -3479,75 +3481,177 @@
         ]
     },
     {
-        "id": "3e9bcc4b.e2dd84",
-        "type": "timerswitch",
+        "id": "14604c5.63664b4",
+        "type": "link out",
         "z": "cc53778b.362758",
         "name": "",
-        "ontopic": "",
-        "offtopic": "",
-        "onpayload": "",
-        "offpayload": "",
-        "disabled": false,
-        "schedules": [
+        "links": [
+            "20089778.b355c8"
+        ],
+        "x": 475,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1ec8e052.c9ce7",
+        "type": "inject",
+        "z": "cc53778b.362758",
+        "name": "",
+        "props": [
             {
-                "on_h": "00",
-                "on_m": "05",
-                "on_s": "00",
-                "off_h": "00",
-                "off_m": "30",
-                "off_s": "00",
-                "valid": true
+                "p": "payload"
             }
         ],
-        "x": 670,
-        "y": 80,
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "g.0",
+        "payloadType": "str",
+        "x": 350,
+        "y": 180,
         "wires": [
             [
-                "bebbf91e.a4f0a8"
+                "14604c5.63664b4"
             ]
         ]
     },
     {
-        "id": "538660ef.d10f5",
-        "type": "ui_toast",
+        "id": "da0dff8b.2c1bb",
+        "type": "inject",
         "z": "cc53778b.362758",
-        "position": "top right",
-        "displayTime": "300",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "topic": "",
         "name": "",
-        "x": 1040,
-        "y": 80,
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "g.300",
+        "payloadType": "str",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "14604c5.63664b4"
+            ]
+        ]
+    },
+    {
+        "id": "86f5649b.6d46d8",
+        "type": "ui_gauge",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "group": "8a312ad2.ae3c18",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "10",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 550,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "bebbf91e.a4f0a8",
+        "id": "8b4eeb10.a2bd08",
+        "type": "ui_gauge",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "group": "8a312ad2.ae3c18",
+        "order": 17,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "1",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 550,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "56301ee.230bae",
+        "type": "link in",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "links": [
+            "4e2394a8.2ab78c"
+        ],
+        "x": 355,
+        "y": 580,
+        "wires": [
+            [
+                "8b4eeb10.a2bd08"
+            ]
+        ]
+    },
+    {
+        "id": "23899e5b.87ad02",
+        "type": "link in",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "links": [
+            "85ac8bfe.63ef28"
+        ],
+        "x": 355,
+        "y": 620,
+        "wires": [
+            [
+                "86f5649b.6d46d8"
+            ]
+        ]
+    },
+    {
+        "id": "ecf8fba1.726968",
+        "type": "ui_ui_control",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "events": "connect",
+        "x": 140,
+        "y": 500,
+        "wires": [
+            [
+                "7a420e54.dd574"
+            ]
+        ]
+    },
+    {
+        "id": "7a420e54.dd574",
         "type": "change",
-        "z": "cc53778b.362758",
+        "z": "dc7f38ca.1f1628",
         "name": "",
         "rules": [
             {
-                "t": "change",
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "from": "on",
-                "fromt": "str",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "change",
-                "p": "payload",
-                "pt": "msg",
-                "from": "off",
-                "fromt": "str",
-                "to": "please stand or walk around for 5 minutes",
-                "tot": "str"
+                "to": "0",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -3555,16 +3659,67 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 80,
+        "x": 320,
+        "y": 500,
         "wires": [
             [
-                "538660ef.d10f5"
+                "ebce11c4.d2975"
             ]
         ]
     },
     {
-        "id": "9ac39cf0.6223b",
+        "id": "ebce11c4.d2975",
+        "type": "delay",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 470,
+        "y": 540,
+        "wires": [
+            [
+                "86f5649b.6d46d8"
+            ]
+        ]
+    },
+    {
+        "id": "50feb283.fbe0ac",
+        "type": "countdown",
+        "z": "cc53778b.362758",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "false",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "true",
+        "payloadTimerStopType": "bool",
+        "timer": "15",
+        "resetWhileRunning": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": false,
+        "minuteCounter": false,
+        "x": 970,
+        "y": 300,
+        "wires": [
+            [
+                "a926d757.1a0d38",
+                "280ca3fe.03052c",
+                "ff7549f5.4a7a18"
+            ],
+            [
+                "5ce0413c.1355b"
+            ]
+        ]
+    },
+    {
+        "id": "c5526722.7cd1f8",
         "type": "range",
         "z": "cc53778b.362758",
         "minin": "50",
@@ -3575,16 +3730,17 @@
         "round": true,
         "property": "payload",
         "name": "",
-        "x": 470,
-        "y": 80,
+        "x": 490,
+        "y": 300,
         "wires": [
             [
-                "3e9bcc4b.e2dd84"
+                "c4e6c040.1f7df",
+                "e514ab9f.3569c8"
             ]
         ]
     },
     {
-        "id": "81979b4c.5e41a8",
+        "id": "46ccffa7.79f4c",
         "type": "inject",
         "z": "cc53778b.362758",
         "name": "",
@@ -3600,16 +3756,16 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 100,
-        "y": 80,
+        "x": 120,
+        "y": 300,
         "wires": [
             [
-                "f7256dd8.ebaa7"
+                "f50d22ed.32ea4"
             ]
         ]
     },
     {
-        "id": "f7256dd8.ebaa7",
+        "id": "f50d22ed.32ea4",
         "type": "change",
         "z": "cc53778b.362758",
         "name": "",
@@ -3627,12 +3783,339 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
-        "y": 80,
+        "x": 300,
+        "y": 300,
         "wires": [
             [
-                "9ac39cf0.6223b"
+                "c5526722.7cd1f8"
             ]
         ]
+    },
+    {
+        "id": "ec727d8f.0a09",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 300,
+        "wires": [
+            [
+                "50feb283.fbe0ac"
+            ]
+        ]
+    },
+    {
+        "id": "a926d757.1a0d38",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "countdown_30_b",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ce0413c.1355b",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "countdown_30_v",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4e6c040.1f7df",
+        "type": "gate",
+        "z": "cc53778b.362758",
+        "name": "",
+        "controlTopic": "control",
+        "defaultState": "open",
+        "openCmd": "open",
+        "closeCmd": "close",
+        "toggleCmd": "toggle",
+        "defaultCmd": "default",
+        "statusCmd": "status",
+        "persist": false,
+        "x": 630,
+        "y": 300,
+        "wires": [
+            [
+                "ec727d8f.0a09"
+            ]
+        ]
+    },
+    {
+        "id": "ff7549f5.4a7a18",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "close",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "open",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "control",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 440,
+        "wires": [
+            [
+                "c4e6c040.1f7df"
+            ]
+        ]
+    },
+    {
+        "id": "280ca3fe.03052c",
+        "type": "countdown",
+        "z": "cc53778b.362758",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "close",
+        "payloadTimerStartType": "str",
+        "payloadTimerStop": "open",
+        "payloadTimerStopType": "str",
+        "timer": "5",
+        "resetWhileRunning": false,
+        "setTimeToNewWhileRunning": false,
+        "startCountdownOnControlMessage": false,
+        "minuteCounter": false,
+        "x": 970,
+        "y": 520,
+        "wires": [
+            [
+                "baff13cf.b8fdc",
+                "2b8b66f1.da755a",
+                "7357e352.ad7acc"
+            ],
+            [
+                "20ce7b16.840704"
+            ]
+        ]
+    },
+    {
+        "id": "baff13cf.b8fdc",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "countdown_5_b",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "20ce7b16.840704",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "countdown_5_v",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b8b66f1.da755a",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "control",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "c4e6c040.1f7df"
+            ]
+        ]
+    },
+    {
+        "id": "e514ab9f.3569c8",
+        "type": "switch",
+        "z": "cc53778b.362758",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 480,
+        "wires": [
+            [
+                "57aa6b12.08bb34"
+            ]
+        ]
+    },
+    {
+        "id": "57aa6b12.08bb34",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 480,
+        "wires": [
+            [
+                "280ca3fe.03052c"
+            ]
+        ]
+    },
+    {
+        "id": "7357e352.ad7acc",
+        "type": "debug",
+        "z": "cc53778b.362758",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 640,
+        "wires": []
     }
 ]
