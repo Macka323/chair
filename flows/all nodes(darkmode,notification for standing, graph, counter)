@@ -14,16 +14,16 @@
         "info": ""
     },
     {
-        "id": "cc53778b.362758",
+        "id": "af13bad2.757ad8",
         "type": "tab",
-        "label": "indication",
+        "label": "Settings",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "af13bad2.757ad8",
+        "id": "cc53778b.362758",
         "type": "tab",
-        "label": "Settings",
+        "label": "indication",
         "disabled": false,
         "info": ""
     },
@@ -229,7 +229,7 @@
     {
         "id": "8d305fa8.31707",
         "type": "ui_group",
-        "name": "visual-settings",
+        "name": "Visual-settings",
         "tab": "666ce8f4.6780c8",
         "order": 1,
         "disp": true,
@@ -250,9 +250,9 @@
         "type": "ui_group",
         "name": "status",
         "tab": "bb56339e.2abaa",
-        "order": 2,
+        "order": 3,
         "disp": true,
-        "width": 6,
+        "width": "3",
         "collapse": false
     },
     {
@@ -389,6 +389,35 @@
         "willTopic": "",
         "willQos": "0",
         "willPayload": ""
+    },
+    {
+        "id": "7db0b691.b8aa88",
+        "type": "ui_group",
+        "name": "spacer",
+        "tab": "bb56339e.2abaa",
+        "order": 2,
+        "disp": false,
+        "width": "3",
+        "collapse": false
+    },
+    {
+        "id": "9158f948.b25dc8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "7db0b691.b8aa88",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a61f5046.b796f",
+        "type": "ui_group",
+        "name": "General settings",
+        "tab": "666ce8f4.6780c8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
     },
     {
         "id": "793c0106.f5d84",
@@ -2931,7 +2960,7 @@
         "type": "ui_template",
         "z": "af13bad2.757ad8",
         "group": "a4a5657b.ad6998",
-        "name": "transperent group",
+        "name": "transperent group dashboard",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -2939,8 +2968,8 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
-        "templateScope": "local",
-        "x": 490,
+        "templateScope": "global",
+        "x": 520,
         "y": 300,
         "wires": [
             []
@@ -2993,7 +3022,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "x": 520,
-        "y": 400,
+        "y": 480,
         "wires": [
             []
         ]
@@ -3453,11 +3482,11 @@
         "xformat": "auto",
         "interpolate": "linear",
         "nodata": "",
-        "dot": true,
+        "dot": false,
         "ymin": "",
         "ymax": "",
         "removeOlder": "2",
-        "removeOlderPoints": "120",
+        "removeOlderPoints": "",
         "removeOlderUnit": "60",
         "cutout": 0,
         "useOneColor": false,
@@ -3653,7 +3682,7 @@
         "payloadTimerStartType": "bool",
         "payloadTimerStop": "true",
         "payloadTimerStopType": "bool",
-        "timer": "5",
+        "timer": "1800",
         "resetWhileRunning": false,
         "setTimeToNewWhileRunning": true,
         "startCountdownOnControlMessage": false,
@@ -3884,7 +3913,7 @@
         "payloadTimerStartType": "str",
         "payloadTimerStop": "open",
         "payloadTimerStopType": "str",
-        "timer": "5",
+        "timer": "300",
         "resetWhileRunning": false,
         "setTimeToNewWhileRunning": false,
         "startCountdownOnControlMessage": false,
@@ -3949,7 +3978,7 @@
         "to": "",
         "reg": false,
         "x": 450,
-        "y": 660,
+        "y": 560,
         "wires": [
             [
                 "c4e6c040.1f7df"
@@ -4051,7 +4080,7 @@
         "type": "ui_led",
         "z": "772b4e64.18e6e",
         "order": 25,
-        "group": "a4a5657b.ad6998",
+        "group": "49deb1f5.12e01",
         "width": 0,
         "height": 0,
         "label": "Indicator",
@@ -4128,67 +4157,6 @@
         "wires": []
     },
     {
-        "id": "49fd170f.07e188",
-        "type": "inject",
-        "z": "644b2219.2275ac",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "120",
-        "payloadType": "num",
-        "x": 390,
-        "y": 340,
-        "wires": [
-            [
-                "e822b41b.999828"
-            ]
-        ]
-    },
-    {
-        "id": "e822b41b.999828",
-        "type": "function",
-        "z": "644b2219.2275ac",
-        "name": "[s] to [hh:mm:ss]",
-        "func": "// Message from preceeding node is in seconds - should be less than 24 hours (86400 seconds).\nvar time = (new Date(msg.payload * 1000)).toUTCString().match(/(\\d\\d:\\d\\d:\\d\\d)/)[0];\n// Pass on the string to the next node, what ever that may be. (groov Data Store for example).\nmsg.payload = time;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 560,
-        "y": 340,
-        "wires": [
-            [
-                "ea54785e.aeb5c8"
-            ]
-        ]
-    },
-    {
-        "id": "ea54785e.aeb5c8",
-        "type": "debug",
-        "z": "644b2219.2275ac",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "x": 750,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "3dd38ac5.919ba6",
         "type": "function",
         "z": "772b4e64.18e6e",
@@ -4212,8 +4180,7 @@
         "z": "cc53778b.362758",
         "name": "timer 5 min time",
         "links": [
-            "73e0e69f.144f68",
-            "fa14cea1.3a61d"
+            "73e0e69f.144f68"
         ],
         "x": 1195,
         "y": 640,
@@ -4239,15 +4206,15 @@
         "id": "895ce5fb.28ce78",
         "type": "ui_text",
         "z": "772b4e64.18e6e",
-        "group": "a4a5657b.ad6998",
+        "group": "49deb1f5.12e01",
         "order": 25,
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "text",
+        "label": "Rest time",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 550,
+        "x": 560,
         "y": 960,
         "wires": []
     },
@@ -4262,7 +4229,7 @@
         "initialize": "",
         "finalize": "",
         "x": 340,
-        "y": 1180,
+        "y": 1020,
         "wires": [
             [
                 "7241ddc8.4ff374"
@@ -4275,10 +4242,10 @@
         "z": "772b4e64.18e6e",
         "name": "",
         "links": [
-            "289a791b.863206"
+            "7dfa898d.e9e458"
         ],
         "x": 175,
-        "y": 1180,
+        "y": 1020,
         "wires": [
             [
                 "10ff4972.6bf057"
@@ -4289,24 +4256,26 @@
         "id": "7241ddc8.4ff374",
         "type": "ui_text",
         "z": "772b4e64.18e6e",
-        "group": "a4a5657b.ad6998",
+        "group": "49deb1f5.12e01",
         "order": 25,
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "text",
+        "label": "Working / sitting time",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 550,
-        "y": 1180,
+        "x": 600,
+        "y": 1020,
         "wires": []
     },
     {
         "id": "7dfa898d.e9e458",
         "type": "link out",
         "z": "cc53778b.362758",
-        "name": "",
-        "links": [],
+        "name": "timer 30 min time",
+        "links": [
+            "fa14cea1.3a61d"
+        ],
         "x": 1145,
         "y": 380,
         "wires": []
@@ -4327,6 +4296,277 @@
             [
                 "280ca3fe.03052c"
             ]
+        ]
+    },
+    {
+        "id": "830fa7fc.f43558",
+        "type": "ui_slider",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "Time for sitting",
+        "tooltip": "",
+        "group": "a61f5046.b796f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "min": 0,
+        "max": "90",
+        "step": "2",
+        "x": 240,
+        "y": 760,
+        "wires": [
+            [
+                "4f97a66b.8c6e98",
+                "de3a9912.998a78"
+            ]
+        ]
+    },
+    {
+        "id": "4f97a66b.8c6e98",
+        "type": "range",
+        "z": "af13bad2.757ad8",
+        "minin": "0",
+        "maxin": "90",
+        "minout": "0",
+        "maxout": "5400",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "",
+        "x": 460,
+        "y": 760,
+        "wires": [
+            [
+                "5b3f90ca.1dff7"
+            ]
+        ]
+    },
+    {
+        "id": "de3a9912.998a78",
+        "type": "range",
+        "z": "af13bad2.757ad8",
+        "minin": "0",
+        "maxin": "90",
+        "minout": "0",
+        "maxout": "900",
+        "action": "scale",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 460,
+        "y": 820,
+        "wires": [
+            [
+                "2cc38880.b603c8"
+            ]
+        ]
+    },
+    {
+        "id": "5b3f90ca.1dff7",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "control",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 760,
+        "wires": [
+            [
+                "f900f509.e7d088"
+            ]
+        ]
+    },
+    {
+        "id": "2cc38880.b603c8",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "control",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 820,
+        "wires": [
+            [
+                "dcbb2813.13c448"
+            ]
+        ]
+    },
+    {
+        "id": "f900f509.e7d088",
+        "type": "link out",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "links": [
+            "f24f38bd.3b58d8"
+        ],
+        "x": 775,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "dcbb2813.13c448",
+        "type": "link out",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "links": [
+            "8688dada.8ecc38"
+        ],
+        "x": 775,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "f24f38bd.3b58d8",
+        "type": "link in",
+        "z": "cc53778b.362758",
+        "name": "change value vo timer 30",
+        "links": [
+            "f900f509.e7d088"
+        ],
+        "x": 815,
+        "y": 220,
+        "wires": [
+            [
+                "50feb283.fbe0ac"
+            ]
+        ]
+    },
+    {
+        "id": "8688dada.8ecc38",
+        "type": "link in",
+        "z": "cc53778b.362758",
+        "name": "change value vo timer 5",
+        "links": [
+            "dcbb2813.13c448"
+        ],
+        "x": 795,
+        "y": 600,
+        "wires": [
+            [
+                "280ca3fe.03052c"
+            ]
+        ]
+    },
+    {
+        "id": "17e913d1.43c79c",
+        "type": "ui_button",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "group": "a61f5046.b796f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Default time for sitting",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "30",
+        "payloadType": "num",
+        "topic": "",
+        "x": 200,
+        "y": 700,
+        "wires": [
+            [
+                "4f97a66b.8c6e98",
+                "de3a9912.998a78"
+            ]
+        ]
+    },
+    {
+        "id": "d71fd2c0.52775",
+        "type": "ui_button",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "group": "a61f5046.b796f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Extended time for sitting",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "60",
+        "payloadType": "num",
+        "topic": "",
+        "x": 210,
+        "y": 660,
+        "wires": [
+            [
+                "4f97a66b.8c6e98",
+                "de3a9912.998a78"
+            ]
+        ]
+    },
+    {
+        "id": "a54856c0.0df898",
+        "type": "ui_template",
+        "z": "af13bad2.757ad8",
+        "d": true,
+        "group": "a4a5657b.ad6998",
+        "name": "transperent group status",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "\n<style>\n    #Chair_status_cards{\n        background-color:#12345600;\n    }\n    #Chair_status{\n        background-color:#12345600;\n        border:none;\n    }\n</style>\n<script>\nfunction updateContainerStyle (el) {\n\tel = el.parentElement\n\tif (el && el.classList.contains('nr-dashboard-template')) {\n\t    // uncomment next line to make the parent container transparent\n\t\tel.style.backgroundColor = \"#12345600\"\n\t}\n}\n\nupdateContainerStyle(document.getElementById(\"div-in-template\"))\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 510,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "292f39f9.1baf86",
+        "type": "ui_template",
+        "z": "af13bad2.757ad8",
+        "group": "a4a5657b.ad6998",
+        "name": "transperent group spacer",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "\n<style>\n    #Chair_spacer_cards{\n        background-color:#12345600;\n    }\n    #Chair_spacer{\n        background-color:#12345600;\n        border:none;\n    }\n</style>\n<script>\nfunction updateContainerStyle (el) {\n\tel = el.parentElement\n\tif (el && el.classList.contains('nr-dashboard-template')) {\n\t    // uncomment next line to make the parent container transparent\n\t\tel.style.backgroundColor = \"#12345600\"\n\t}\n}\n\nupdateContainerStyle(document.getElementById(\"div-in-template\"))\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 510,
+        "y": 340,
+        "wires": [
+            []
         ]
     }
 ]
