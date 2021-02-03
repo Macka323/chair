@@ -5,6 +5,8 @@ points
 
 - [ ] audio alert
 
+- [ ] logo na node-red (tab section) i nekade vo koso
+
 - [ ]battery inducator (power bank led connected to gpio) ( dashboard ima 4 led koi pokazuvaa baterijata )
 
 - [x] graphs
