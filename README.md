@@ -7,15 +7,15 @@ points
 
 - [ ] logo na node-red (tab section) i nekade vo koso
 
-- [ ]battery inducator (power bank led connected to gpio) ( dashboard ima 4 led koi pokazuvaa baterijata )
+- [x] battery inducator (power bank led connected to gpio) ( dashboard ima 4 led koi pokazuvaa baterijata )
 
 - [x] graphs
 
-- [x]night mode
+- [ ] night mode
 
-- [x]range 100-200 = 0-1 for triggering the fucking but
+- [x] range 100-200 = 0-1 for triggering the fucking but
 
-- [ ] "gaming" mode za poveke vreme da moze da se sedi ama da ima po dolga puaza izmegju sesii
+- [x] "gaming" mode za poveke vreme da moze da se sedi ama da ima po dolga puaza izmegju sesii
 
 - [ ] Arduino mega za da MERI baterii I posle siilici
 
