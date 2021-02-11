@@ -19,6 +19,12 @@ points
 
 - [ ] Arduino mega za da MERI baterii I posle siilici
 
+-----------[ui]-----------
+
+- [ ] shutdown/reboot button
+
+
+
 ui_media location
 
 /home/pi/.node-red/lib/ui-media/lib/chair sensor images
