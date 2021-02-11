@@ -21,7 +21,7 @@ points
 
 -----------[ui]-----------
 
-- [ ] shutdown/reboot button
+- [x] shutdown/reboot button
 
 
 
