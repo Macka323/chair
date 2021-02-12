@@ -19,6 +19,7 @@ points
 
 - [ ] Arduino mega za da MERI baterii I posle siilici
 
+- [ ] temperature sensor
 -----------[ui]-----------
 
 - [x] shutdown/reboot button
