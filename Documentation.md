@@ -55,7 +55,7 @@ You have buttons for stopping or restarting the system and buttons for powering 
 #### If you have ethernet access 
 
 ##### Windows
-1. Go to command prompt and type `ssh <your username>@<you ip addres on the network>` and press enter and login with you password
+1. Go to command prompt and type `ssh "your username"@"you ip addres on the network"` and press enter and login with you password
 2. Type `sudo raspi-config` 
 3. Go to System Options and then Warless LAN 
 4. Type in your Wi-Fi credentials
@@ -71,8 +71,8 @@ update_config=1
 country=<Insert 2 letter ISO 3166-1 country code here>
 
 network={
- ssid="<Name of your wireless LAN>"
- psk="<Password for your wireless LAN>"
+ ssid="Name of your wireless LAN"
+ psk="Password for your wireless LAN"
 }
 
 
