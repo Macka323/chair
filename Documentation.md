@@ -48,7 +48,7 @@ You have buttons for stopping or restarting the system and buttons for powering 
 
 ### Via ethernet
 
-  
+1. If you are using ethrnet it shoud work, if it doesnt contact us
 
 ### Via Wi-Fi
 
