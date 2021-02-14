@@ -17,7 +17,7 @@ points
 
 - [x] "gaming" mode za poveke vreme da moze da se sedi ama da ima po dolga puaza izmegju sesii
 
-- [ ] Arduino mega za da MERI baterii I posle siilici
+- Arduino mega za da MERI baterii I posle siilici
 
 - [ ] ~~temperature sensor~~
 
