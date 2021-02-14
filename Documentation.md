@@ -21,7 +21,6 @@ In the status page you can see the overall stats of the chair
 
 - how well have you being sitting and score for sitting better
 
-
 ## Settings
 
 ### Setting (visual settings)
@@ -41,6 +40,10 @@ There is also a button for default time for sitting which is set 30 min for sitt
 
 You have buttons for stopping or restarting the system and buttons for powering off or restarting the electronics.
 
+## GitHub
+
+Link to the GitHub repository of this project
+
 
 # Support
 
@@ -48,7 +51,7 @@ You have buttons for stopping or restarting the system and buttons for powering 
 
 ### Via ethernet
 
-1. If you are using ethrnet it shoud work, if it doesnt contact us
+1. If you are using Ethernet it should work, if it doesn't contact us
 
 ### Via Wi-Fi
 
