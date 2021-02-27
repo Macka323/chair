@@ -2,7 +2,7 @@
     {
         "id": "772b4e64.18e6e",
         "type": "tab",
-        "label": "Chair dashboard",
+        "label": "dashboard",
         "disabled": false,
         "info": ""
     },
@@ -16,7 +16,7 @@
     {
         "id": "af13bad2.757ad8",
         "type": "tab",
-        "label": "Settings",
+        "label": "settings",
         "disabled": false,
         "info": ""
     },
@@ -3580,7 +3580,7 @@
         "payloadType": "num",
         "topic": "",
         "topicType": "str",
-        "x": 620,
+        "x": 640,
         "y": 800,
         "wires": [
             [
@@ -3637,9 +3637,9 @@
         "y": 760,
         "wires": [
             [
-                "4f97a66b.8c6e98",
                 "de3a9912.998a78",
-                "da200976.fb7d98"
+                "da200976.fb7d98",
+                "4f97a66b.8c6e98"
             ]
         ]
     },
@@ -4138,102 +4138,6 @@
         ]
     },
     {
-        "id": "10609ae1.01dfd5",
-        "type": "ui_switch",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "label": "Developer options",
-        "tooltip": "",
-        "group": "a61f5046.b796f",
-        "order": 26,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": true,
-        "x": 170,
-        "y": 1280,
-        "wires": [
-            [
-                "782f6c7d.223ce4"
-            ]
-        ]
-    },
-    {
-        "id": "782f6c7d.223ce4",
-        "type": "change",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "enabled",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 1280,
-        "wires": [
-            [
-                "d9f8a1b5.57ca8",
-                "e345cecb.8dc49"
-            ]
-        ]
-    },
-    {
-        "id": "d9f8a1b5.57ca8",
-        "type": "ui_text_input",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "label": "Force sensor value",
-        "tooltip": "",
-        "group": "49deb1f5.12e01",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": "0",
-        "topic": "",
-        "x": 770,
-        "y": 1280,
-        "wires": [
-            [
-                "11272f39.b866e1"
-            ]
-        ]
-    },
-    {
-        "id": "11272f39.b866e1",
-        "type": "link out",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "links": [
-            "20089778.b355c8"
-        ],
-        "x": 945,
-        "y": 1280,
-        "wires": []
-    },
-    {
         "id": "8f40604a.bdf5a",
         "type": "link in",
         "z": "af13bad2.757ad8",
@@ -4296,62 +4200,6 @@
                 "830fa7fc.f43558",
                 "d71fd2c0.52775",
                 "17e913d1.43c79c"
-            ]
-        ]
-    },
-    {
-        "id": "4fab16c5.8210c8",
-        "type": "ui_button",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "group": "a61f5046.b796f",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Testing time for sitting",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "20",
-        "payloadType": "num",
-        "topic": "",
-        "topicType": "str",
-        "x": 620,
-        "y": 860,
-        "wires": [
-            [
-                "5b3f90ca.1dff7",
-                "2cc38880.b603c8"
-            ]
-        ]
-    },
-    {
-        "id": "e345cecb.8dc49",
-        "type": "link out",
-        "z": "af13bad2.757ad8",
-        "name": "developer option",
-        "links": [
-            "f9114cf0.a3aa2"
-        ],
-        "x": 555,
-        "y": 1320,
-        "wires": []
-    },
-    {
-        "id": "f9114cf0.a3aa2",
-        "type": "link in",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "links": [
-            "e345cecb.8dc49"
-        ],
-        "x": 435,
-        "y": 860,
-        "wires": [
-            [
-                "4fab16c5.8210c8"
             ]
         ]
     },
@@ -4511,7 +4359,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 990,
+        "x": 950,
         "y": 360,
         "wires": []
     },
@@ -4532,7 +4380,7 @@
         "topic": "",
         "payload": "10",
         "payloadType": "num",
-        "x": 250,
+        "x": 150,
         "y": 440,
         "wires": [
             [
@@ -4559,7 +4407,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
+        "x": 350,
         "y": 440,
         "wires": [
             []
@@ -4704,7 +4552,7 @@
         "topic": "",
         "payload": "5",
         "payloadType": "num",
-        "x": 250,
+        "x": 150,
         "y": 560,
         "wires": [
             [
@@ -4731,7 +4579,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
+        "x": 340,
         "y": 560,
         "wires": [
             []
@@ -4754,7 +4602,7 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 250,
+        "x": 150,
         "y": 620,
         "wires": [
             [
@@ -4781,7 +4629,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
+        "x": 340,
         "y": 620,
         "wires": [
             []
@@ -4804,7 +4652,7 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 250,
+        "x": 150,
         "y": 500,
         "wires": [
             [
@@ -4831,7 +4679,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
+        "x": 350,
         "y": 500,
         "wires": [
             []
@@ -4888,8 +4736,8 @@
         "topic": "",
         "payload": "time_for_sitting",
         "payloadType": "global",
-        "x": 650,
-        "y": 700,
+        "x": 630,
+        "y": 720,
         "wires": [
             [
                 "830fa7fc.f43558"
@@ -4944,7 +4792,8 @@
         "y": 300,
         "wires": [
             [
-                "51c537b5.af4ef8"
+                "51c537b5.af4ef8",
+                "3afcb30e.2b97dc"
             ],
             [
                 "b9a0849.bd1d078"
@@ -5018,14 +4867,14 @@
         "id": "51c537b5.af4ef8",
         "type": "function",
         "z": "cc53778b.362758",
-        "name": "",
+        "name": "led indicator",
         "func": "var count=msg.timeout; \n\nif (global.get(\"sensor_7\")>50 && count ==0){\n    node.send({payload:2});\n} else{\n   node.send({payload:count});\n}\n\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1080,
-        "y": 300,
+        "x": 1150,
+        "y": 280,
         "wires": [
             [
                 "ef2d960b.d78688",
@@ -5046,7 +4895,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1350,
+        "x": 1470,
         "y": 280,
         "wires": []
     },
@@ -5108,76 +4957,9 @@
         "links": [
             "35be3bd2.e0a234"
         ],
-        "x": 1295,
-        "y": 320,
+        "x": 1355,
+        "y": 240,
         "wires": []
-    },
-    {
-        "id": "2998f0c0.c470e",
-        "type": "persist in",
-        "z": "93d0b05b.5a7bb",
-        "name": "conf",
-        "storageNode": "fef9a7be.35f718",
-        "x": 630,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "bb02ae86.81ed8",
-        "type": "persist out",
-        "z": "93d0b05b.5a7bb",
-        "name": "conf",
-        "storageNode": "fef9a7be.35f718",
-        "x": 230,
-        "y": 460,
-        "wires": [
-            [
-                "abb2c88c.66f958"
-            ]
-        ]
-    },
-    {
-        "id": "f87cf013.0fe85",
-        "type": "inject",
-        "z": "93d0b05b.5a7bb",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 230,
-        "y": 400,
-        "wires": [
-            [
-                "18c37bad.4dac44"
-            ]
-        ]
-    },
-    {
-        "id": "18c37bad.4dac44",
-        "type": "function",
-        "z": "93d0b05b.5a7bb",
-        "name": "",
-        "func": "node.send([{\n    timer30settings:global.get(\"timer30settings\"),\n    timer5settings:global.get(\"timer5settings\"),\n    time_for_sitting:global.get(\"time_for_sitting\"),\n}]);\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 420,
-        "y": 400,
-        "wires": [
-            [
-                "2998f0c0.c470e"
-            ]
-        ]
     },
     {
         "id": "da200976.fb7d98",
@@ -5198,24 +4980,98 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1150,
-        "y": 680,
+        "x": 1310,
+        "y": 720,
         "wires": [
             []
         ]
     },
     {
-        "id": "abb2c88c.66f958",
-        "type": "function",
-        "z": "93d0b05b.5a7bb",
+        "id": "6fe87501.ad0e8c",
+        "type": "start-up-trigger",
+        "z": "af13bad2.757ad8",
+        "x": 660,
+        "y": 660,
+        "wires": [
+            [
+                "cec64188.1400e"
+            ]
+        ]
+    },
+    {
+        "id": "cec64188.1400e",
+        "type": "change",
+        "z": "af13bad2.757ad8",
         "name": "",
-        "func": "global.set(\"timer_for_sitting\",msg.timer_for_sitting);\n",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time_for_sitting",
+                "pt": "global",
+                "to": "30",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 910,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3afcb30e.2b97dc",
+        "type": "function",
+        "z": "cc53778b.362758",
+        "name": "",
+        "func": "var timeout=msg.timeout; \nvar sensor_7 = global.get(\"sensor_7\");\nvar sn_sens = global.get(\"sn_sens\");\n\nif(timeout==1 && sensor_7 >sn_sens){\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 420,
-        "y": 460,
+        "x": 1140,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1821d9d.e4a1e",
+        "type": "start-up-trigger",
+        "z": "cc53778b.362758",
+        "x": 1160,
+        "y": 180,
+        "wires": [
+            [
+                "22004d28.fdf2f2"
+            ]
+        ]
+    },
+    {
+        "id": "22004d28.fdf2f2",
+        "type": "change",
+        "z": "cc53778b.362758",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sn_sens",
+                "pt": "global",
+                "to": "50",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1390,
+        "y": 180,
         "wires": [
             []
         ]
