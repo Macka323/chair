@@ -35,6 +35,13 @@
         "info": ""
     },
     {
+        "id": "93d0b05b.5a7bb",
+        "type": "tab",
+        "label": "configuration",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "bc402e29.82aae",
         "type": "serial-port",
         "serialport": "/dev/ttyACM0",
@@ -381,6 +388,12 @@
         "order": 2,
         "width": 1,
         "height": 1
+    },
+    {
+        "id": "fef9a7be.35f718",
+        "type": "persist-store",
+        "filename": "conf.json",
+        "interval": "3"
     },
     {
         "id": "793c0106.f5d84",
@@ -3021,12 +3034,9 @@
         "id": "35be3bd2.e0a234",
         "type": "link in",
         "z": "772b4e64.18e6e",
-        "name": "",
+        "name": "led indicator",
         "links": [
-            "974d8a9b.1f77d8",
-            "819d8395.2a38b",
-            "888bea59.d1ee48",
-            "53252ca3.0ceed4"
+            "21ad533d.4ddcfc"
         ],
         "x": 165,
         "y": 720,
@@ -3071,25 +3081,6 @@
         ]
     },
     {
-        "id": "73e0e69f.144f68",
-        "type": "link in",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "links": [
-            "289a791b.863206",
-            "e8c2ce59.8851e",
-            "f164524.e6fedb",
-            "914d7bdd.db93c8"
-        ],
-        "x": 175,
-        "y": 960,
-        "wires": [
-            [
-                "3dd38ac5.919ba6"
-            ]
-        ]
-    },
-    {
         "id": "10ff4972.6bf057",
         "type": "function",
         "z": "772b4e64.18e6e",
@@ -3104,25 +3095,6 @@
         "wires": [
             [
                 "d7ffc29.680874"
-            ]
-        ]
-    },
-    {
-        "id": "fa14cea1.3a61d",
-        "type": "link in",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "links": [
-            "7dfa898d.e9e458",
-            "8a4757c6.a615d8",
-            "bb123e79.64935",
-            "f04db864.5ace58"
-        ],
-        "x": 175,
-        "y": 1020,
-        "wires": [
-            [
-                "10ff4972.6bf057"
             ]
         ]
     },
@@ -3666,7 +3638,8 @@
         "wires": [
             [
                 "4f97a66b.8c6e98",
-                "de3a9912.998a78"
+                "de3a9912.998a78",
+                "da200976.fb7d98"
             ]
         ]
     },
@@ -3960,13 +3933,18 @@
         "colorForValue": [
             {
                 "color": "#008000",
-                "value": "open",
-                "valueType": "str"
+                "value": "0",
+                "valueType": "num"
             },
             {
                 "color": "#ff0000",
-                "value": "close",
-                "valueType": "str"
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ffff00",
+                "value": "2",
+                "valueType": "num"
             }
         ],
         "allowColorForValueInMessage": false,
@@ -4496,171 +4474,6 @@
         ]
     },
     {
-        "id": "1a90a718.5c0409",
-        "type": "BooleanLogicUltimate",
-        "z": "e6bd1a7b.e18128",
-        "name": "",
-        "filtertrue": "both",
-        "persist": true,
-        "sInitializeWith": "WaitForPayload",
-        "triggertopic": "trigger",
-        "outputtriggeredby": "all",
-        "inputCount": 2,
-        "topic": "result",
-        "x": 480,
-        "y": 980,
-        "wires": [
-            [
-                "5f9fbfcc.d2c34"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "81ef6fec.5d413",
-        "type": "inject",
-        "z": "e6bd1a7b.e18128",
-        "name": "Night",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "Dark",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 270,
-        "y": 1000,
-        "wires": [
-            [
-                "1a90a718.5c0409"
-            ]
-        ]
-    },
-    {
-        "id": "e0d5d620.966478",
-        "type": "inject",
-        "z": "e6bd1a7b.e18128",
-        "name": "Daylight",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "Dark",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 260,
-        "y": 960,
-        "wires": [
-            [
-                "1a90a718.5c0409"
-            ]
-        ]
-    },
-    {
-        "id": "1c2f8e73.2c22ba",
-        "type": "inject",
-        "z": "e6bd1a7b.e18128",
-        "name": "Motion detect true",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "Motion",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 230,
-        "y": 1060,
-        "wires": [
-            [
-                "1a90a718.5c0409"
-            ]
-        ]
-    },
-    {
-        "id": "5f9fbfcc.d2c34",
-        "type": "debug",
-        "z": "e6bd1a7b.e18128",
-        "name": "Garden Light",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "201baa3d.7c63ae",
-        "type": "inject",
-        "z": "e6bd1a7b.e18128",
-        "name": "Motion detect false",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "Motion",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 230,
-        "y": 1100,
-        "wires": [
-            [
-                "1a90a718.5c0409"
-            ]
-        ]
-    },
-    {
-        "id": "b65f4ff4.bfe2c8",
-        "type": "comment",
-        "z": "e6bd1a7b.e18128",
-        "name": "Motion sensor turns on lights, when it's dark. The light turns off itself at day",
-        "info": "",
-        "x": 390,
-        "y": 920,
-        "wires": []
-    },
-    {
         "id": "43c04df2.bb05b4",
         "type": "inject",
         "z": "cc53778b.362758",
@@ -4690,7 +4503,7 @@
         "type": "debug",
         "z": "cc53778b.362758",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4698,8 +4511,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
-        "y": 400,
+        "x": 990,
+        "y": 360,
         "wires": []
     },
     {
@@ -4717,7 +4530,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "30",
+        "payload": "10",
         "payloadType": "num",
         "x": 250,
         "y": 440,
@@ -4737,7 +4550,7 @@
                 "t": "set",
                 "p": "timer30",
                 "pt": "global",
-                "to": "30",
+                "to": "10",
                 "tot": "num"
             }
         ],
@@ -4762,7 +4575,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 900,
+        "x": 780,
         "y": 80,
         "wires": [
             []
@@ -4772,10 +4585,10 @@
         "id": "2880e6ad.ae817a",
         "type": "comment",
         "z": "cc53778b.362758",
-        "name": "still ne raboti",
+        "name": "raboti",
         "info": "",
-        "x": 680,
-        "y": 100,
+        "x": 610,
+        "y": 260,
         "wires": []
     },
     {
@@ -4788,8 +4601,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 500,
-        "y": 1240,
+        "x": 420,
+        "y": 860,
         "wires": [
             [
                 "3b5c2f5.6427bd"
@@ -4808,8 +4621,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 1240,
+        "x": 630,
+        "y": 860,
         "wires": []
     },
     {
@@ -4833,8 +4646,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 260,
-        "y": 1240,
+        "x": 180,
+        "y": 860,
         "wires": [
             [
                 "7ceae748.ed8978"
@@ -4851,7 +4664,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 900,
+        "x": 780,
         "y": 120,
         "wires": [
             [],
@@ -4868,7 +4681,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 900,
+        "x": 780,
         "y": 40,
         "wires": [
             []
@@ -5034,7 +4847,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 900,
+        "x": 780,
         "y": 160,
         "wires": [
             [],
@@ -5065,9 +4878,7 @@
         "name": "",
         "props": [
             {
-                "p": "payload1",
-                "v": "",
-                "vt": "str"
+                "p": "payload"
             }
         ],
         "repeat": "1",
@@ -5075,49 +4886,14 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 610,
+        "payload": "time_for_sitting",
+        "payloadType": "global",
+        "x": 650,
         "y": 700,
         "wires": [
             [
                 "830fa7fc.f43558"
             ]
-        ]
-    },
-    {
-        "id": "787cd18e.3d016",
-        "type": "start-up-trigger",
-        "z": "cc53778b.362758",
-        "x": 220,
-        "y": 700,
-        "wires": [
-            [
-                "9a4ea340.7372d"
-            ]
-        ]
-    },
-    {
-        "id": "9a4ea340.7372d",
-        "type": "change",
-        "z": "cc53778b.362758",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 700,
-        "wires": [
-            []
         ]
     },
     {
@@ -5130,7 +4906,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1060,
+        "x": 940,
         "y": 200,
         "wires": [
             [],
@@ -5147,7 +4923,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 900,
+        "x": 780,
         "y": 240,
         "wires": [
             [],
@@ -5158,16 +4934,18 @@
         "id": "2493dfbe.bceec",
         "type": "function",
         "z": "cc53778b.362758",
-        "name": "",
-        "func": "var sensor_7 = global.get(\"sensor_7\");\nvar timer30=global.get(\"timer30\");\nvar timer5=global.get(\"timer5\");\nvar timeout=global.get(\"timeout\");\n\n\nif (sensor_7>50 && timer30>0){\n    timer30=timer30-1;\n    if (timer30==0){\n        timeout=1;\n        timer5=global.get(\"timer5settings\");\n    }\n}\n\nif (timeout==1){\n    timer5=timer5-1;\n    if (timer5==0){\n        timeout=0;\n        timer30=global.get(\"timer30settings\");\n    }\n}\n\nglobal.set(\"timer30\",timer30);\nglobal.set(\"timer5\",timer5);\nglobal.set(\"timeout\",timeout);\n\nnode.send([null,{timer30:timer30,timer5:timer5}]);",
+        "name": "Countdown",
+        "func": "var sensor_7 = global.get(\"sensor_7\");\nvar timer30=global.get(\"timer30\");\nvar timer5=global.get(\"timer5\");\nvar timeout=global.get(\"timeout\");\n\n\nif (sensor_7>50 && timer30>0){\n    timer30=timer30-1;\n    if (timer30==0){\n        timeout=1;\n        timer5=global.get(\"timer5settings\");\n    }\n}\n\nif (timeout==1){\n    timer5=timer5-1;\n    if (timer5==0){\n        timeout=0;\n        timer30=global.get(\"timer30settings\");\n    }\n}\n\nglobal.set(\"timer30\",timer30);\nglobal.set(\"timer5\",timer5);\nglobal.set(\"timeout\",timeout);\n\nnode.send([{timeout:timeout},{timer30:timer30,timer5:timer5}]);",
         "outputs": 2,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\nglobal.set(\"timer30\",global.get(\"timer30settings\"));\nglobal.set(\"timer5\",global.get(\"timer5settings\"));\nglobal.set(\"timeout\",0);",
         "finalize": "",
-        "x": 760,
+        "x": 770,
         "y": 300,
         "wires": [
-            [],
+            [
+                "51c537b5.af4ef8"
+            ],
             [
                 "b9a0849.bd1d078"
             ]
@@ -5235,5 +5013,211 @@
         "x": 495,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "51c537b5.af4ef8",
+        "type": "function",
+        "z": "cc53778b.362758",
+        "name": "",
+        "func": "var count=msg.timeout; \n\nif (global.get(\"sensor_7\")>50 && count ==0){\n    node.send({payload:2});\n} else{\n   node.send({payload:count});\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1080,
+        "y": 300,
+        "wires": [
+            [
+                "ef2d960b.d78688",
+                "21ad533d.4ddcfc"
+            ]
+        ]
+    },
+    {
+        "id": "ef2d960b.d78688",
+        "type": "debug",
+        "z": "cc53778b.362758",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1350,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "cf29152d.d0efb8",
+        "type": "inject",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "timer30",
+        "payloadType": "global",
+        "x": 120,
+        "y": 1020,
+        "wires": [
+            [
+                "10ff4972.6bf057"
+            ]
+        ]
+    },
+    {
+        "id": "de1409db.0be158",
+        "type": "inject",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "timer5",
+        "payloadType": "global",
+        "x": 120,
+        "y": 960,
+        "wires": [
+            [
+                "3dd38ac5.919ba6"
+            ]
+        ]
+    },
+    {
+        "id": "21ad533d.4ddcfc",
+        "type": "link out",
+        "z": "cc53778b.362758",
+        "name": "led indicator input",
+        "links": [
+            "35be3bd2.e0a234"
+        ],
+        "x": 1295,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "2998f0c0.c470e",
+        "type": "persist in",
+        "z": "93d0b05b.5a7bb",
+        "name": "conf",
+        "storageNode": "fef9a7be.35f718",
+        "x": 630,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "bb02ae86.81ed8",
+        "type": "persist out",
+        "z": "93d0b05b.5a7bb",
+        "name": "conf",
+        "storageNode": "fef9a7be.35f718",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "abb2c88c.66f958"
+            ]
+        ]
+    },
+    {
+        "id": "f87cf013.0fe85",
+        "type": "inject",
+        "z": "93d0b05b.5a7bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "18c37bad.4dac44"
+            ]
+        ]
+    },
+    {
+        "id": "18c37bad.4dac44",
+        "type": "function",
+        "z": "93d0b05b.5a7bb",
+        "name": "",
+        "func": "node.send([{\n    timer30settings:global.get(\"timer30settings\"),\n    timer5settings:global.get(\"timer5settings\"),\n    time_for_sitting:global.get(\"time_for_sitting\"),\n}]);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "2998f0c0.c470e"
+            ]
+        ]
+    },
+    {
+        "id": "da200976.fb7d98",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "time_for_sitting",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1150,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abb2c88c.66f958",
+        "type": "function",
+        "z": "93d0b05b.5a7bb",
+        "name": "",
+        "func": "global.set(\"timer_for_sitting\",msg.timer_for_sitting);\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 420,
+        "y": 460,
+        "wires": [
+            []
+        ]
     }
 ]
