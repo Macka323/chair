@@ -5,3 +5,7 @@ node-red-contrib-simple-gate
 node-red-contrib-timerswitch
 node-red-dashboard
 node-red-node-serialport
+node-red-contrib-persist
+node-red-contrib-startup-trigger
+node-red-contrib-ui-led
+node-red-node-pi-gpio
