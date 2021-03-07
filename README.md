@@ -47,4 +47,4 @@ NUMBERS| |SERIAL| |PINS ON ARDINO
 8	|	>	|	h.	|	>	|	A9
 9	|	>	|	i.	|	>	|	A10
 
-
+![](https://circuits4you.com/wp-content/uploads/2018/12/ESP32-Pinout.jpg)
