@@ -35,16 +35,17 @@ serial porta
 ili so brojki 1.dat, 2.data i da se odreduva so between
 
 ili so bukvi pa da se odreduvaa so contain [click here](https://github.com/Macka323/chair/blob/main/flows/serial%20data%20with%20letters)
-NUMBERS| |SERIAL| |PINS ON ARDINO
+USAGE| |SERIAL| |PINS ON ESP32
 -------|-|------|-|--------------
-1	|	>	|	a.	|	>	|	A0
-2	|	>	|	b.	|	>	|	A1
-3	|	>	|	c.	|	>	|	A2
-4	|	>	|	d.	|	>	|	A3
-5	|	>	|	e.	|	>	|	A6
-6	|	>	|	f.	|	>	|	A7
-7	|	>	|	g.	|	>	|	A8
-8	|	>	|	h.	|	>	|	A9
-9	|	>	|	i.	|	>	|	A10
+Sensor 1	|	>	|	a.	|	>	| 36 
+Sensor 2	|	>	|	b.	|	>	| 39 
+Sensor 3	|	>	|	c.	|	>	| 34 
+Sensor 4	|	>	|	d.	|	>	| 35 
+Sensor 5	|	>	|	e.	|	>	| 32 
+Sensor 6	|	>	|	f.	|	>	| 33 
+Sensor 7	|	>	|	g.	|	>	| 25 
+Sensor 8	|	>	|	h.	|	>	| 26 
+Sensor 9	|	>	|	i.	|	>	| 27 
+Batery	|	>	|	j.	|	>	| 14 
 
 ![](https://circuits4you.com/wp-content/uploads/2018/12/ESP32-Pinout.jpg)
