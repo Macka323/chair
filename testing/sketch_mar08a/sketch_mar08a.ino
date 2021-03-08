@@ -6,21 +6,30 @@ void setup() {
 void loop() {
   serialdata = Serial.read();
 
-  if (Serial.available() > 0) {
-    if (serialdata >= 0 && serialdata <= 255) {
+ 
+    if (serialdata >= 1 && serialdata <= 256) {
       x[0] = serialdata;
+      x[0]=x[0]-1;
     }
-    if (serialdata > 255 && serialdata <= 510) {
+    if (serialdata >= 257 && serialdata <= 513) {
       x[1] = serialdata;
-      x[1]=x[1]-255;
+      x[1]=x[1]-256;
     }
-    if (serialdata > 510 && serialdata <= 765) {
+    if (serialdata >= 514 && serialdata <= 770) {
       x[2] = serialdata;
-      x[2]=x[2]-510;
+      x[2]=x[2]-513;
     }
-    if (serialdata > 765 && serialdata <= 1020) {
+    if (serialdata > 771 && serialdata <= 1027) {
       x[3] = serialdata;
-      x[3]=x[3]-765;
+      x[3]=x[3]-770;
     }
-  }
+    Serial.print(x[0]);
+    Serial.println("x");
+    Serial.print(x[1]);
+    Serial.println("r");
+    Serial.print(x[2]);
+    Serial.println("g");
+    Serial.print(x[3]);
+    Serial.println("b");
+  
 }
