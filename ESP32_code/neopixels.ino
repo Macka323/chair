@@ -1,4 +1,4 @@
-#include <Adafruit_NeoPixel.h>
+/*#include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
  #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
 #endif
@@ -11,7 +11,6 @@ void setup() {
 #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
   clock_prescale_set(clock_div_1);
 #endif
-
   pixels.begin(); 
 }
 
@@ -28,4 +27,4 @@ void loop() {
 
     delay(DELAYVAL);
   }
-}
+}*/

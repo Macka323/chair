@@ -1,8 +1,8 @@
-//for support https://www.youtube.com/watch?v=q416XXJDE_M
+/*//for support https://www.youtube.com/watch?v=q416XXJDE_M
 int x[4];
 int serialdata = 0;
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(38400);
   Serial.setTimeout(10);
 }
 void loop() {
@@ -35,4 +35,4 @@ void loop() {
     Serial.print(x[3]);
     Serial.println("b");
   delay(1000);
-}
+}*/
