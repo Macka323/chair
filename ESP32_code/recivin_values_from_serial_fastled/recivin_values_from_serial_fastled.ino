@@ -18,13 +18,13 @@ void setup() {
 void loop() {
 
   serialdata = Serial.parseInt();
-  if (serialdata==0){
-    serialdata=store;
-  }else{
-  store=serialdata;
+  if (serialdata == 0) {
+    serialdata = store;
+  } else {
+    store = serialdata;
   }
   Serial.println(serialdata);
-  
+
   if (serialdata >= 1 && serialdata <= 256) {
     x[0] = serialdata;
     x[0] -= 1;
@@ -43,7 +43,7 @@ void loop() {
   }
 
   if (serialdata == 1025) {
-    NewKITT(0xff, 0, 0, 2, 500, 50);
+    NewKITT(x[1], x[2], x[3], 2, 100, 50);
   } else {
     leds[x[0]] = CRGB( x[1], x[2], x[3]);
     FastLED.show();
@@ -89,10 +89,6 @@ void NewKITT(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int R
   LeftToRight(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
   OutsideToCenter(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
   CenterToOutside(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
-  LeftToRight(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
-  RightToLeft(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
-  OutsideToCenter(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
-  CenterToOutside(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
 }
 
 void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -113,8 +109,20 @@ void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 
     showStrip();
     delay(SpeedDelay);
+    serialdata = Serial.parseInt();
+    if (serialdata == 0) {
+      serialdata = store;
+    } else {
+      store = serialdata;
+    }
+    if (serialdata >= 1 && serialdata <= 256) {
+      setAll(0, 0, 0);
+      break;
+    }
   }
   delay(ReturnDelay);
+  serialdata=0;
+
 }
 
 void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -135,8 +143,18 @@ void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 
     showStrip();
     delay(SpeedDelay);
+    serialdata = Serial.parseInt();
+    if (serialdata == 0) {
+      serialdata = store;
+    } else {
+      store = serialdata;
+    }
+    if (serialdata >= 1 && serialdata <= 256) {
+      break;
+    }
   }
   delay(ReturnDelay);
+  serialdata=0;
 }
 
 void LeftToRight(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -149,8 +167,18 @@ void LeftToRight(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, i
     setPixel(i + EyeSize + 1, red / 10, green / 10, blue / 10);
     showStrip();
     delay(SpeedDelay);
+    serialdata = Serial.parseInt();
+    if (serialdata == 0) {
+      serialdata = store;
+    } else {
+      store = serialdata;
+    }
+    if (serialdata >= 1 && serialdata <= 256) {
+      break;
+    }
   }
   delay(ReturnDelay);
+  serialdata=0;
 }
 
 void RightToLeft(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -163,6 +191,16 @@ void RightToLeft(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, i
     setPixel(i + EyeSize + 1, red / 10, green / 10, blue / 10);
     showStrip();
     delay(SpeedDelay);
+    serialdata = Serial.parseInt();
+    if (serialdata == 0) {
+      serialdata = store;
+    } else {
+      store = serialdata;
+    }
+    if (serialdata >= 1 && serialdata <= 256) {
+      break;
+    }
   }
   delay(ReturnDelay);
+  serialdata=0;
 }

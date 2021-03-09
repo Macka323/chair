@@ -10,7 +10,7 @@ to set the B value send value from 769-1024;
 
 There is also an animation back and fourth when the chair is idle.
 to activate this mode you need the send 1025 via the serial;
-
-to change the color of this mode imply send the RGB values before starting this mode 
-
+to change the color of this mode imply send the RGB values before starting this mode;
 to deactivate this mode simply put any other number from 1-256;
+
+NOTE (you need to send 1025 again after the animation is finished)
