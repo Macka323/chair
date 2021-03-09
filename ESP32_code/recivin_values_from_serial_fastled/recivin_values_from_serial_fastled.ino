@@ -4,8 +4,9 @@
 #define CLOCK_PIN 13
 CRGB leds[NUM_LEDS];
 int x[4];
-int serialdata = 0;
+int serialdata;
 int a = 0;
+int store;
 
 void setup() {
   Serial.begin(38400);
@@ -17,6 +18,13 @@ void setup() {
 void loop() {
 
   serialdata = Serial.parseInt();
+  if (serialdata==0){
+    serialdata=store;
+  }else{
+  store=serialdata;
+  }
+  Serial.println(serialdata);
+  
   if (serialdata >= 1 && serialdata <= 256) {
     x[0] = serialdata;
     x[0] -= 1;
