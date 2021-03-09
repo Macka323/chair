@@ -1,7 +1,6 @@
 #include <FastLED.h>
 #define NUM_LEDS 16
-#define DATA_PIN 3
-#define CLOCK_PIN 13
+#define DATA_PIN 4
 CRGB leds[NUM_LEDS];
 int x[4];
 int serialdata;
@@ -44,8 +43,12 @@ void loop() {
 
   if (serialdata == 1025) {
     NewKITT(x[1], x[2], x[3], 2, 100, 50);
-  } else {
-    leds[x[0]] = CRGB( x[1], x[2], x[3]);
+  } else if (serialdata == 1027){
+    CenterToOutside(x[1], x[2], x[3], 16, 100, 50);
+}
+else {
+
+  leds[x[0]] = CRGB( x[1], x[2], x[3]);
     FastLED.show();
     delay(50);
   }
@@ -89,6 +92,7 @@ void NewKITT(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int R
   LeftToRight(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
   OutsideToCenter(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
   CenterToOutside(red, green, blue, EyeSize, SpeedDelay, ReturnDelay);
+  Serial.println("1026");
 }
 
 void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -121,7 +125,7 @@ void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     }
   }
   delay(ReturnDelay);
-  serialdata=0;
+  serialdata = 0;
 
 }
 
@@ -154,7 +158,7 @@ void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     }
   }
   delay(ReturnDelay);
-  serialdata=0;
+  serialdata = 0;
 }
 
 void LeftToRight(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -178,7 +182,7 @@ void LeftToRight(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, i
     }
   }
   delay(ReturnDelay);
-  serialdata=0;
+  serialdata = 0;
 }
 
 void RightToLeft(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -202,5 +206,5 @@ void RightToLeft(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, i
     }
   }
   delay(ReturnDelay);
-  serialdata=0;
+  serialdata = 0;
 }

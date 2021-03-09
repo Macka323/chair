@@ -1,5 +1,26 @@
 # Support
 
+## Setup
+
+### Enabling http static
+
+First you will need to enable http static this can be done by changing the 102 line in `/home/pi/.node-red/settings.js`  with `httpStatic: '"the location where you put the files"',`  the default location is in `'/home/pi'`
+
+### Activating root user
+
+If you want to login as root using SSH or WinSCP you need to edit the config of SSHD, do this:
+
+- Login, and edit this file: `sudo nano /etc/ssh/sshd_config`
+- Find this line: `PermitRootLogin without-password`
+- Edit: `PermitRootLogin yes`
+- Close and save file
+- `reboot` or restart sshd service using: `/etc/init.d/ssh restart`
+- Set a root password if there isn't one already: `sudo passwd root`
+
+Now you can login as `root`, but I recommend you using strong password or ssh-keys
+
+
+
 ## Connecting to network
 
 ### Via ethernet
