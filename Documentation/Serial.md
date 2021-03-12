@@ -13,6 +13,11 @@ to activate this mode you need the send 1025 via the serial;
 to change the color of this mode imply send the RGB values before starting this mode;
 to deactivate this mode simply put any other number from 1-256;
 
-NOTE (you need to send 1025 again after the animation is finished)
+**NOTE** (you need to send 1025 again after the animation is finished)
 
-This can be automated by reading from the serial 1026 and then sending 1025 to start the animation again
+This can be automated by reading from the serial 2026 and then sending 1025 to start the animation again
+
+| Input  | Output |
+| ------ | ------ |
+| 1-1999 | 2000<= |
+
