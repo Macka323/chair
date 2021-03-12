@@ -38,7 +38,7 @@ void loop() {
       int ReturnDelay = 50;
       OutsideToCenter(x[1], x[2], x[3], EyeSize, SpeedDelay, ReturnDelay);
       CenterToOutside(x[1], x[2], x[3], EyeSize, SpeedDelay, ReturnDelay);
-      Serial.println("2026");
+      Serial.println("2025");
     }
     if (serialdata == 1026) {
       setAll(0, 0, 0);
@@ -53,6 +53,7 @@ void loop() {
         showStrip();
         delay(SpeedDelay);
       }
+      Serial.println("2026");
     }
   }
 }
