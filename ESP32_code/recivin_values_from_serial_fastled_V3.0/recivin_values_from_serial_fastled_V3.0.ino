@@ -55,6 +55,9 @@ void loop() {
       }
       Serial.println("2026");
     }
+    if (serialdata == 1027){
+      setAll(0, 0, 0);
+    }
   }
 }
 
