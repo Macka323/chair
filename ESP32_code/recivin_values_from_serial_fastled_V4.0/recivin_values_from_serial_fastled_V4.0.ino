@@ -23,8 +23,10 @@ void setup() {
 }
 
 void loop() {
+  Serial.println("start");
   serialin();
   serialout();
+  Serial.println("end");
 }
 
 void serialin(){
@@ -74,7 +76,9 @@ if (Serial.available() > 0) {
       setAll(0, 0, 0);
     }
   }
-  serialout();
+  while (Serial.available()>0){
+    Serial.read();
+  }
 }
 
 void serialout(){
