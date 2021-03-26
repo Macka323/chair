@@ -1,5 +1,5 @@
 #include <FastLED.h>
-#define NUM_LEDS 30
+#define NUM_LEDS 63
 #define PIN 4
 CRGB leds[NUM_LEDS];
 int serialdata;
