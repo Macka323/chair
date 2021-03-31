@@ -16,7 +16,7 @@ Sensor 8	|	>	|	h.	|	>	| 26
 Sensor 9	|	>	|	i.	|	>	| 27 
 Battery	|	>	|	j.	|	>	| 14 
 
-![](https://circuits4you.com/wp-content/uploads/2018/12/ESP32-Pinout.jpg)
+![](https://github.com/Macka323/chair/blob/3c6e366ef7a8af97cf643a411a2dc518c741f27e/images/ESP32%20Dev%20Kit%20Pinout.png?raw=true)
 
 | 1    |      | 2    | R    | 3    | G    | 4    | B    |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
