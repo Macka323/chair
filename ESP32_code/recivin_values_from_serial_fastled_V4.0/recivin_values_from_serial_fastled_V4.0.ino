@@ -23,10 +23,10 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("start");
+  
   serialin();
   serialout();
-  Serial.println("end");
+  
 }
 
 void serialin(){
@@ -116,6 +116,7 @@ void serialout(){
 
 void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
   for (int i = ((NUM_LEDS - EyeSize) / 2); i >= 0; i--) {
+    Serial.println("start1");    
     setAll(0, 0, 0);
 
     setPixel(i, red / 10, green / 10, blue / 10);
@@ -132,12 +133,14 @@ void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 
     showStrip();
     delay(SpeedDelay);
+    Serial.println("end1");
   }
   delay(ReturnDelay);
 }
 
 void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
   for (int i = 0; i <= ((NUM_LEDS - EyeSize) / 2); i++) {
+    
     setAll(0, 0, 0);
 
     setPixel(i, red / 10, green / 10, blue / 10);
@@ -154,6 +157,7 @@ void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 
     showStrip();
     delay(SpeedDelay);
+    
   }
   delay(ReturnDelay);
 }
@@ -186,5 +190,5 @@ void setAll(byte red, byte green, byte blue) {
   for (int i = 0; i < NUM_LEDS; i++) {
     setPixel(i, red, green, blue);
   }
-  showStrip();
+  showStrip(); 
 }
