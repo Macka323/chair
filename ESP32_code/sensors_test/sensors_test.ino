@@ -24,13 +24,13 @@ Serial.print(map(analogRead(35),0,4095,255,0));
 Serial.print(" ");
 Serial.print(map(analogRead(32),0,4095,255,0));
 Serial.print(" ");
-Serial.print(map(analogRead(33),0,4095,255,0));
-Serial.print(" ");
+Serial.println(map(analogRead(33),0,4095,255,0));
+/*Serial.print(" ");
 Serial.print(map(analogRead(25),0,4095,255,0));
 Serial.print(" ");
 Serial.print(map(analogRead(26),0,4095,255,0));
 Serial.print(" ");
-Serial.println(map(analogRead(27),0,4095,255,0));
+Serial.println(map(analogRead(27),0,4095,255,0));*/
 delay(50);
 
 }

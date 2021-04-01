@@ -69,6 +69,7 @@ if (Serial.available() > 0) {
         b -= 1;
         showStrip();
         delay(SpeedDelay);
+        serialout();
       }
       Serial.println("2026");
     }
@@ -83,31 +84,31 @@ if (Serial.available() > 0) {
 
 void serialout(){
   Serial.print("a.");
-  Serial.println(analogRead(sensor_1));
+  Serial.println(map(analogRead(sensor_1),0,4095,500,0));
   delay(5); 
   Serial.print("b.");
-  Serial.println(analogRead(sensor_2));
+  Serial.println(map(analogRead(sensor_2),0,4095,500,0));
   delay(5); 
   Serial.print("c.");
-  Serial.println(analogRead(sensor_3));
+  Serial.println(map(analogRead(sensor_3),0,4095,500,0));
   delay(5); 
   Serial.print("d.");
-  Serial.println(analogRead(sensor_4));
+  Serial.println(map(analogRead(sensor_4),0,4095,500,0));
   delay(5); 
   Serial.print("e.");
-  Serial.println(analogRead(sensor_5));
+  Serial.println(map(analogRead(sensor_5),0,4095,500,0));
   delay(5); 
   Serial.print("f.");
-  Serial.println(analogRead(sensor_6));
+  Serial.println(map(analogRead(sensor_6),0,4095,500,0));
   delay(5); 
   Serial.print("g.");
-  Serial.println(analogRead(sensor_7));
+  Serial.println(map(analogRead(sensor_7),0,4095,500,0));
   delay(5); 
   Serial.print("h.");
-  Serial.println(analogRead(sensor_8));
+  Serial.println(map(analogRead(sensor_8),0,4095,500,0));
   delay(5); 
   Serial.print("i.");
-  Serial.println(analogRead(sensor_9));
+  Serial.println(map(analogRead(sensor_9),0,4095,500,0));
   delay(5);
   Serial.print("j.");
   Serial.println(analogRead(battery));
@@ -134,6 +135,7 @@ void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     showStrip();
     delay(SpeedDelay);
     Serial.println("end1");
+    serialout();
   }
   delay(ReturnDelay);
 }
@@ -157,6 +159,7 @@ void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
 
     showStrip();
     delay(SpeedDelay);
+    serialout();
     
   }
   delay(ReturnDelay);

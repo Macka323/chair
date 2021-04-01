@@ -1,0 +1,37 @@
+void codeForSensRead(void * parameter){
+  for(;;){
+    serialout();
+  }
+}
+void serialout() {
+  Serial.print("a.");
+  Serial.println(analogRead(sensor_1));
+  delay(5);
+  Serial.print("b.");
+  Serial.println(analogRead(sensor_2));
+  delay(5);
+  Serial.print("c.");
+  Serial.println(analogRead(sensor_3));
+  delay(5);
+  Serial.print("d.");
+  Serial.println(analogRead(sensor_4));
+  delay(5);
+  Serial.print("e.");
+  Serial.println(analogRead(sensor_5));
+  delay(5);
+  Serial.print("f.");
+  Serial.println(analogRead(sensor_6));
+  delay(5);
+  Serial.print("g.");
+  Serial.println(analogRead(sensor_7));
+  delay(5);
+  Serial.print("h.");
+  Serial.println(analogRead(sensor_8));
+  delay(5);
+  Serial.print("i.");
+  Serial.println(analogRead(sensor_9));
+  delay(5);
+  Serial.print("j.");
+  Serial.println(analogRead(battery));
+  delay(5);
+}
