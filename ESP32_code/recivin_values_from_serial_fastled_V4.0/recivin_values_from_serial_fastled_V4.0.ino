@@ -76,9 +76,9 @@ if (Serial.available() > 0) {
       setAll(0, 0, 0);
     }
   }
-  while (Serial.available()>0){
-    Serial.read();
-  }
+  //while (Serial.available()>0){
+  //  Serial.read();
+  //}
 }
 
 void serialout(){
