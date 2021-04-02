@@ -18,6 +18,9 @@ void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     delay(SpeedDelay);
   }
   delay(ReturnDelay);
+  while(Serial.available()>0){
+    Serial.read();
+  }
 }
 
 void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay) {
@@ -40,4 +43,7 @@ void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     delay(SpeedDelay);
   }
   delay(ReturnDelay);
+  while(Serial.available()>0){
+    Serial.read();
+  }
 }
