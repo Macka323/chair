@@ -32,4 +32,17 @@ void setup() {
     &SensRead,                   /* Task handle to keep track of created task */
     0);                       /* Core */
 
+pinMode(36, INPUT);
+pinMode(39, INPUT);
+pinMode(34, INPUT);
+pinMode(35, INPUT);
+pinMode(32, INPUT);
+pinMode(33, INPUT);
+pinMode(25, INPUT);
+pinMode(26, INPUT);
+pinMode(27, INPUT);
+pinMode(14, INPUT);
+pinMode(2, OUTPUT);
+
+
 }
