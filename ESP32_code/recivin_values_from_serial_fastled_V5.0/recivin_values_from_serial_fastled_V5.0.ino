@@ -1,4 +1,3 @@
-TaskHandle_t SensRead;
 #include <FastLED.h>
 #define NUM_LEDS 63
 #define PIN 4
@@ -15,8 +14,8 @@ const int sensor_7 = 25;
 const int sensor_8 = 26;
 const int sensor_9 = 27;
 const int battery = 14;
-
-
+const int LED_2 = 2;
+TaskHandle_t SensRead;
 
 
 void setup() {
