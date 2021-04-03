@@ -540,7 +540,7 @@
                 "ac19e0b9.69c3d"
             ],
             [
-                "151c37a0.bff768"
+                "d774ad5d.96385"
             ]
         ],
         "outputLabels": [
@@ -7504,5 +7504,28 @@
         "x": 1780,
         "y": 1260,
         "wires": []
+    },
+    {
+        "id": "d774ad5d.96385",
+        "type": "delay",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1310,
+        "y": 1180,
+        "wires": [
+            [
+                "151c37a0.bff768"
+            ]
+        ]
     }
 ]
