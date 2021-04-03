@@ -44,6 +44,9 @@ void serialin() {
         showStrip();
         delay(SpeedDelay);
       }
+      while (Serial.available()>0){
+        Serial.read();
+      }
       Serial.println("2026");
     }
     if (serialdata == 1027) {
