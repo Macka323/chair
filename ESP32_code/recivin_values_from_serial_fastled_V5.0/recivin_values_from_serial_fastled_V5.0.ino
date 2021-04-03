@@ -13,7 +13,7 @@ const int sensor_6 = 33;
 const int sensor_7 = 25;
 const int sensor_8 = 26;
 const int sensor_9 = 27;
-const int battery = 14;
+const int battery = 13;
 const int LED_2 = 2;
 TaskHandle_t SensRead;
 
