@@ -35,16 +35,16 @@
         "info": ""
     },
     {
-        "id": "93d0b05b.5a7bb",
+        "id": "6f0a3208.8a822c",
         "type": "tab",
-        "label": "configuration",
+        "label": "LEDs",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "6f0a3208.8a822c",
+        "id": "93d0b05b.5a7bb",
         "type": "tab",
-        "label": "LEDs",
+        "label": "configuration",
         "disabled": false,
         "info": ""
     },
@@ -7377,52 +7377,6 @@
         ]
     },
     {
-        "id": "e7c59569.4b5d78",
-        "type": "inject",
-        "z": "93d0b05b.5a7bb",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 200,
-        "y": 400,
-        "wires": [
-            [
-                "d06ce824.b20be8"
-            ]
-        ]
-    },
-    {
-        "id": "d06ce824.b20be8",
-        "type": "exec",
-        "z": "93d0b05b.5a7bb",
-        "command": "cd / && cd /home/pi/chair && git pull && exit",
-        "addpay": false,
-        "append": "",
-        "useSpawn": "true",
-        "timer": "",
-        "oldrc": false,
-        "name": "",
-        "x": 550,
-        "y": 400,
-        "wires": [
-            [],
-            [],
-            [
-                "2533e49d.87a85c"
-            ]
-        ]
-    },
-    {
         "id": "aed02c0a.5139d",
         "type": "debug",
         "z": "6f0a3208.8a822c",
@@ -7437,74 +7391,6 @@
         "x": 930,
         "y": 260,
         "wires": []
-    },
-    {
-        "id": "2533e49d.87a85c",
-        "type": "debug",
-        "z": "93d0b05b.5a7bb",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 910,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "f9d26ee8.82752",
-        "type": "exec",
-        "z": "93d0b05b.5a7bb",
-        "command": "git clone https://github.com/Macka323/chair.git",
-        "addpay": false,
-        "append": "",
-        "useSpawn": "true",
-        "timer": "",
-        "oldrc": false,
-        "name": "",
-        "x": 560,
-        "y": 500,
-        "wires": [
-            [
-                "2533e49d.87a85c"
-            ],
-            [],
-            [
-                "2533e49d.87a85c"
-            ]
-        ]
-    },
-    {
-        "id": "db468bf5.b828b8",
-        "type": "inject",
-        "z": "93d0b05b.5a7bb",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 500,
-        "wires": [
-            [
-                "f9d26ee8.82752"
-            ]
-        ]
     },
     {
         "id": "ab70b180.a491b",
@@ -7565,14 +7451,12 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 550,
-        "y": 580,
+        "x": 530,
+        "y": 460,
         "wires": [
             [],
             [],
-            [
-                "2533e49d.87a85c"
-            ]
+            []
         ]
     },
     {
@@ -7596,8 +7480,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
-        "y": 580,
+        "x": 180,
+        "y": 460,
         "wires": [
             [
                 "c6624ff6.c1e55"
