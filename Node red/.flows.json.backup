@@ -540,7 +540,7 @@
                 "ac19e0b9.69c3d"
             ],
             [
-                "151c37a0.bff768"
+                "d774ad5d.96385"
             ]
         ],
         "outputLabels": [
@@ -4614,7 +4614,7 @@
         "group": "a4a5657b.ad6998",
         "voice": "",
         "always": true,
-        "x": 1510,
+        "x": 1580,
         "y": 540,
         "wires": []
     },
@@ -7045,7 +7045,7 @@
         ],
         "seg1": "15",
         "seg2": "40",
-        "x": 2150,
+        "x": 2330,
         "y": 1180,
         "wires": []
     },
@@ -7172,7 +7172,8 @@
         "y": 1180,
         "wires": [
             [
-                "2c671529.10484a"
+                "2c671529.10484a",
+                "40164fd9.73ee3"
             ]
         ]
     },
@@ -7195,7 +7196,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1950,
+        "x": 2130,
         "y": 1180,
         "wires": [
             [
@@ -7232,10 +7233,10 @@
         "z": "772b4e64.18e6e",
         "minin": "0",
         "maxin": "4095",
-        "minout": "0",
-        "maxout": "100",
+        "minout": "5",
+        "maxout": "0",
         "action": "scale",
-        "round": true,
+        "round": false,
         "property": "payload",
         "name": "",
         "x": 1750,
@@ -7486,6 +7487,62 @@
             [
                 "c6624ff6.c1e55"
             ]
+        ]
+    },
+    {
+        "id": "40164fd9.73ee3",
+        "type": "debug",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1780,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "d774ad5d.96385",
+        "type": "delay",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 1290,
+        "y": 1180,
+        "wires": [
+            [
+                "151c37a0.bff768"
+            ]
+        ]
+    },
+    {
+        "id": "bcb95506.0d7378",
+        "type": "smooth",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "property": "payload",
+        "action": "low",
+        "count": "10",
+        "round": "3",
+        "mult": "single",
+        "reduce": false,
+        "x": 1900,
+        "y": 1180,
+        "wires": [
+            []
         ]
     }
 ]
