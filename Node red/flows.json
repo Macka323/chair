@@ -7363,12 +7363,12 @@
         "type": "file in",
         "z": "cc53778b.362758",
         "name": "",
-        "filename": "what-302.mp3",
+        "filename": "/home/pi/what-302.mp3",
         "format": "",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 1340,
+        "x": 1370,
         "y": 540,
         "wires": [
             [
