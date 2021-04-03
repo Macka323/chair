@@ -7045,7 +7045,7 @@
         ],
         "seg1": "15",
         "seg2": "40",
-        "x": 2150,
+        "x": 2330,
         "y": 1180,
         "wires": []
     },
@@ -7196,7 +7196,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1950,
+        "x": 2130,
         "y": 1180,
         "wires": [
             [
@@ -7526,6 +7526,23 @@
             [
                 "151c37a0.bff768"
             ]
+        ]
+    },
+    {
+        "id": "bcb95506.0d7378",
+        "type": "smooth",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "property": "payload",
+        "action": "low",
+        "count": "10",
+        "round": "3",
+        "mult": "single",
+        "reduce": false,
+        "x": 1900,
+        "y": 1180,
+        "wires": [
+            []
         ]
     }
 ]
