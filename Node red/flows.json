@@ -6826,8 +6826,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 480,
-        "y": 240,
+        "x": 440,
+        "y": 320,
         "wires": [
             []
         ]
@@ -6849,8 +6849,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 230,
-        "y": 240,
+        "x": 190,
+        "y": 320,
         "wires": [
             [
                 "3554451a.5cca1a"
@@ -7541,6 +7541,43 @@
         "reduce": false,
         "x": 1900,
         "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6b009b8.9c8db8",
+        "type": "start-up-trigger",
+        "z": "93d0b05b.5a7bb",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "68df40d.75b02c"
+            ]
+        ]
+    },
+    {
+        "id": "68df40d.75b02c",
+        "type": "change",
+        "z": "93d0b05b.5a7bb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "LED_brightness",
+                "pt": "global",
+                "to": "30",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 240,
         "wires": [
             []
         ]
