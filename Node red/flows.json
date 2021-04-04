@@ -6885,7 +6885,7 @@
         "z": "6f0a3208.8a822c",
         "name": "",
         "serial": "e807a58d.090008",
-        "x": 1070,
+        "x": 1150,
         "y": 200,
         "wires": []
     },
@@ -7067,7 +7067,7 @@
         "wires": [
             [
                 "aed02c0a.5139d",
-                "a754740c.ff80b8"
+                "fc0dedea.fc075"
             ]
         ]
     },
@@ -7549,7 +7549,7 @@
         "name": "",
         "label": "LEDs brightness",
         "tooltip": "",
-        "group": "a61f5046.b796f",
+        "group": "8d305fa8.31707",
         "order": 7,
         "width": 0,
         "height": 0,
@@ -7594,54 +7594,21 @@
         ]
     },
     {
-        "id": "d41c17ed.273d38",
-        "type": "ui_switch",
-        "z": "6f0a3208.8a822c",
-        "name": "",
-        "label": "Turn off the LEDs",
-        "tooltip": "",
-        "group": "8d305fa8.31707",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "control",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "close",
-        "onvalueType": "str",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "open",
-        "offvalueType": "str",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "x": 610,
-        "y": 60,
-        "wires": [
-            [
-                "deb4a2c2.1f5a4",
-                "fc0dedea.fc075"
-            ]
-        ]
-    },
-    {
         "id": "fc0dedea.fc075",
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "if(msg.payload==\"close\"){\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n}\n",
+        "func": "var LED_status=global.get(\"LED_status\");\nif (LED_status==true){\n    return msg;\n} else {\n    node.send({payload:1027});\n    node.send({payload:\".\"});\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 830,
-        "y": 160,
+        "x": 760,
+        "y": 200,
         "wires": [
             [
-                "a754740c.ff80b8"
+                "a754740c.ff80b8",
+                "986283f5.6859"
             ]
         ]
     },
@@ -7681,6 +7648,148 @@
             [
                 "878f078e.08b638"
             ]
+        ]
+    },
+    {
+        "id": "d77b9841.02c458",
+        "type": "inject",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "battery",
+        "payloadType": "global",
+        "x": 670,
+        "y": 640,
+        "wires": [
+            [
+                "8ed0c9b1.515198"
+            ]
+        ]
+    },
+    {
+        "id": "8ed0c9b1.515198",
+        "type": "ui_chart",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "group": "8a312ad2.ae3c18",
+        "order": 2,
+        "width": "8",
+        "height": "4",
+        "label": "Battery",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "auto",
+        "interpolate": "cubic",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#0095ff",
+            "#e70426",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 940,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "986283f5.6859",
+        "type": "debug",
+        "z": "6f0a3208.8a822c",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "59238724.79ec68",
+        "type": "ui_switch",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "Turn off the LEDs",
+        "tooltip": "",
+        "group": "8d305fa8.31707",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "false",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "true",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 170,
+        "y": 1300,
+        "wires": [
+            [
+                "37b801e8.ce922e"
+            ]
+        ]
+    },
+    {
+        "id": "37b801e8.ce922e",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "LED_status",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 1300,
+        "wires": [
+            []
         ]
     }
 ]
