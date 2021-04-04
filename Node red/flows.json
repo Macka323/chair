@@ -7558,5 +7558,56 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "beae7398.8fe42",
+        "type": "ui_slider",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "a61f5046.b796f",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "255",
+        "step": 1,
+        "x": 160,
+        "y": 1240,
+        "wires": [
+            [
+                "95965bdd.e12548"
+            ]
+        ]
+    },
+    {
+        "id": "95965bdd.e12548",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "LED_brightness",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1240,
+        "wires": [
+            []
+        ]
     }
 ]
