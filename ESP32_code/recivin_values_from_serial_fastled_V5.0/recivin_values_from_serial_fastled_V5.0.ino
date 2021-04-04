@@ -1,6 +1,6 @@
 #include <FastLED.h>
 #define NUM_LEDS 63
-#define PIN 4
+#define PIN 14
 CRGB leds[NUM_LEDS];
 int serialdata;
 int x[4];
@@ -41,7 +41,7 @@ pinMode(33, INPUT);
 pinMode(25, INPUT);
 pinMode(26, INPUT);
 pinMode(27, INPUT);
-pinMode(14, INPUT);
+pinMode(13, INPUT);
 pinMode(2, OUTPUT);
 
 
