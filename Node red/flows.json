@@ -6894,7 +6894,7 @@
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "var brightness=global.get(\"LED_brightness\");\nvar r=0;\nvar g=0;\nvar b=0;\nvar mode;\n\nif(msg.payload==0){\n    \n    r = 257 + brightness;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1025;\n    \n}\nif(msg.payload==1){\n    r = 257 + brightness;\n    g = 513;\n    b = 769;\n    mode = 1026;\n   \n}\nif(msg.payload==2){\n    r = 257;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1026;\n   \n}\n node.send({payload:r});\n node.send({payload:g});\n node.send({payload:b});\n node.send({payload:mode});",
+        "func": "var brightness=global.get(\"LED_brightness\");\nvar r=0;\nvar g=0;\nvar b=0;\nvar mode;\n\nif(msg.payload==0){\n    \n    r = 257 + brightness;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1025;\n    \n}\nif(msg.payload==1){\n    r = 257 + brightness;\n    g = 513;\n    b = 769;\n    mode = 1026;\n   \n}\nif(msg.payload==2){\n    r = 257;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1026;\n   \n}\n node.send({payload:r});\n node.send({payload:\".\"});\n node.send({payload:g});\n node.send({payload:\".\"});\n node.send({payload:b});\n node.send({payload:\".\"});\n node.send({payload:mode});\n node.send({payload:\".\"});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
