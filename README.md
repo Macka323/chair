@@ -18,7 +18,7 @@ Battery	|	>	|	j.	|	>	| 14
 
 ![](https://github.com/Macka323/chair/blob/3c6e366ef7a8af97cf643a411a2dc518c741f27e/images/ESP32%20Dev%20Kit%20Pinout.png?raw=true)
 
-| 1    |      | 2    | R    | 3    | G    | 4    | B    |
+| 1    |      | 2    |      | 3    |      | 4    |      |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | 1    | 256  | 257  | 512  | 513  | 768  | 769  | 1024 |
 
