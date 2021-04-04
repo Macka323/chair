@@ -6894,7 +6894,7 @@
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "if(msg.payload==0){\n    node.send({payload:\"512.768.769.1025\"})\n}\nif(msg.payload==1){\n    node.send({payload:\"512.513.769.1026\"})\n}\nif(msg.payload==2){\n    node.send({payload:\"257.768.769.1026\"})\n}",
+        "func": "var brightness=global.get(\"LED_brightness\");\nvar r=0;\nvar g=0;\nvar b=0;\n\nif(msg.payload==0){\n    \n    r = 257 + brightness;\n    g = 513 + brightness;\n    b = 769;\n    node.send({payload:\"512.768.769.1025\"})\n}\nif(msg.payload==1){\n    node.send({payload:\"512.513.769.1026\"})\n}\nif(msg.payload==2){\n    node.send({payload:\"257.768.769.1026\"})\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7581,5 +7581,68 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "568c8ef6.b598a",
+        "type": "function",
+        "z": "6f0a3208.8a822c",
+        "name": "",
+        "func": "node.send({payload:\"512.768.769.1025\"});\nnode.send({payload:\"512.768.769.1025\"});\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 370,
+        "y": 480,
+        "wires": [
+            [
+                "ee4fb671.c484b8"
+            ]
+        ]
+    },
+    {
+        "id": "801a39d8.19c008",
+        "type": "inject",
+        "z": "6f0a3208.8a822c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 460,
+        "wires": [
+            [
+                "568c8ef6.b598a"
+            ]
+        ]
+    },
+    {
+        "id": "ee4fb671.c484b8",
+        "type": "debug",
+        "z": "6f0a3208.8a822c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 480,
+        "wires": []
     }
 ]
