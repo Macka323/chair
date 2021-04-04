@@ -7067,7 +7067,7 @@
         "wires": [
             [
                 "aed02c0a.5139d",
-                "91a2a58c.b44688"
+                "a754740c.ff80b8"
             ]
         ]
     },
@@ -7415,29 +7415,6 @@
         "wires": [
             [
                 "4bc9b9d1.dee338"
-            ]
-        ]
-    },
-    {
-        "id": "91a2a58c.b44688",
-        "type": "delay",
-        "z": "6f0a3208.8a822c",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "2",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "x": 710,
-        "y": 200,
-        "wires": [
-            [
-                "a754740c.ff80b8"
             ]
         ]
     },
