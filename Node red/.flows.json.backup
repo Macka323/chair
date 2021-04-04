@@ -6885,7 +6885,7 @@
         "z": "6f0a3208.8a822c",
         "name": "",
         "serial": "e807a58d.090008",
-        "x": 930,
+        "x": 1070,
         "y": 200,
         "wires": []
     },
@@ -7045,7 +7045,7 @@
         ],
         "seg1": "15",
         "seg2": "40",
-        "x": 2330,
+        "x": 2490,
         "y": 1180,
         "wires": []
     },
@@ -7061,8 +7061,8 @@
         "toggleCmd": "toggle",
         "defaultCmd": "default",
         "statusCmd": "status",
-        "persist": false,
-        "x": 530,
+        "persist": true,
+        "x": 610,
         "y": 200,
         "wires": [
             [
@@ -7163,7 +7163,7 @@
         "type": "function",
         "z": "772b4e64.18e6e",
         "name": "",
-        "func": "var test=msg.payload;\ntest=test*1\nnode.send({payload:test});",
+        "func": "var bat=msg.payload;\nbat=bat*1\nnode.send({payload:bat});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7172,8 +7172,8 @@
         "y": 1180,
         "wires": [
             [
-                "2c671529.10484a",
-                "40164fd9.73ee3"
+                "40164fd9.73ee3",
+                "2c671529.10484a"
             ]
         ]
     },
@@ -7196,7 +7196,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2130,
+        "x": 2290,
         "y": 1180,
         "wires": [
             [
@@ -7234,16 +7234,16 @@
         "minin": "0",
         "maxin": "4095",
         "minout": "0",
-        "maxout": "5",
+        "maxout": "3.3",
         "action": "scale",
         "round": false,
         "property": "payload",
         "name": "",
-        "x": 1750,
+        "x": 1770,
         "y": 1180,
         "wires": [
             [
-                "878f078e.08b638"
+                "b905f8a0.e9b6e8"
             ]
         ]
     },
@@ -7506,23 +7506,6 @@
         ]
     },
     {
-        "id": "bcb95506.0d7378",
-        "type": "smooth",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "property": "payload",
-        "action": "low",
-        "count": "10",
-        "round": "3",
-        "mult": "single",
-        "reduce": false,
-        "x": 1900,
-        "y": 1180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d6b009b8.9c8db8",
         "type": "start-up-trigger",
         "z": "93d0b05b.5a7bb",
@@ -7564,7 +7547,7 @@
         "type": "ui_slider",
         "z": "af13bad2.757ad8",
         "name": "",
-        "label": "slider",
+        "label": "LEDs brightness",
         "tooltip": "",
         "group": "a61f5046.b796f",
         "order": 7,
@@ -7577,7 +7560,7 @@
         "min": 0,
         "max": "255",
         "step": 1,
-        "x": 160,
+        "x": 180,
         "y": 1240,
         "wires": [
             [
@@ -7604,10 +7587,100 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 390,
         "y": 1240,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "d41c17ed.273d38",
+        "type": "ui_switch",
+        "z": "6f0a3208.8a822c",
+        "name": "",
+        "label": "Turn off the LEDs",
+        "tooltip": "",
+        "group": "8d305fa8.31707",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "close",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "open",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 610,
+        "y": 60,
+        "wires": [
+            [
+                "deb4a2c2.1f5a4",
+                "fc0dedea.fc075"
+            ]
+        ]
+    },
+    {
+        "id": "fc0dedea.fc075",
+        "type": "function",
+        "z": "6f0a3208.8a822c",
+        "name": "",
+        "func": "if(msg.payload==\"close\"){\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n    node.send({payload:\"1027\"})\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 830,
+        "y": 160,
+        "wires": [
+            [
+                "a754740c.ff80b8"
+            ]
+        ]
+    },
+    {
+        "id": "b905f8a0.e9b6e8",
+        "type": "function",
+        "z": "772b4e64.18e6e",
+        "name": "",
+        "func": "var x=msg.payload;\nx = x+0.12;\nnode.send({payload:x})",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1920,
+        "y": 1180,
+        "wires": [
+            [
+                "801592a2.a772c"
+            ]
+        ]
+    },
+    {
+        "id": "801592a2.a772c",
+        "type": "range",
+        "z": "772b4e64.18e6e",
+        "minin": "2.7",
+        "maxin": "3.3",
+        "minout": "0",
+        "maxout": "100",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "",
+        "x": 2070,
+        "y": 1180,
+        "wires": [
+            [
+                "878f078e.08b638"
+            ]
         ]
     }
 ]
