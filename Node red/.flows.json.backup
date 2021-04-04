@@ -3000,7 +3000,7 @@
         "offcolor": "",
         "animate": true,
         "x": 390,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "c955f148.352cb",
@@ -6826,8 +6826,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 480,
-        "y": 240,
+        "x": 440,
+        "y": 320,
         "wires": [
             []
         ]
@@ -6849,8 +6849,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 230,
-        "y": 240,
+        "x": 190,
+        "y": 320,
         "wires": [
             [
                 "3554451a.5cca1a"
@@ -6894,7 +6894,7 @@
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "if(msg.payload==0){\n    node.send({payload:\"512.768.769.1025\"})\n}\nif(msg.payload==1){\n    node.send({payload:\"512.513.769.1026\"})\n}\nif(msg.payload==2){\n    node.send({payload:\"257.768.769.1026\"})\n}",
+        "func": "var brightness=global.get(\"LED_brightness\");\nvar r=0;\nvar g=0;\nvar b=0;\nvar mode;\n\nif(msg.payload==0){\n    \n    r = 257 + brightness;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1025;\n    \n}\nif(msg.payload==1){\n    r = 257 + brightness;\n    g = 513;\n    b = 769;\n    mode = 1026;\n   \n}\nif(msg.payload==2){\n    r = 257;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1026;\n   \n}\n node.send({payload:r});\n node.send({payload:\".\"});\n node.send({payload:g});\n node.send({payload:\".\"});\n node.send({payload:b});\n node.send({payload:\".\"});\n node.send({payload:mode});\n node.send({payload:\".\"});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7067,7 +7067,7 @@
         "wires": [
             [
                 "aed02c0a.5139d",
-                "91a2a58c.b44688"
+                "a754740c.ff80b8"
             ]
         ]
     },
@@ -7233,8 +7233,8 @@
         "z": "772b4e64.18e6e",
         "minin": "0",
         "maxin": "4095",
-        "minout": "5",
-        "maxout": "0",
+        "minout": "0",
+        "maxout": "5",
         "action": "scale",
         "round": false,
         "property": "payload",
@@ -7389,8 +7389,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 260,
+        "x": 710,
+        "y": 320,
         "wires": []
     },
     {
@@ -7415,29 +7415,6 @@
         "wires": [
             [
                 "4bc9b9d1.dee338"
-            ]
-        ]
-    },
-    {
-        "id": "91a2a58c.b44688",
-        "type": "delay",
-        "z": "6f0a3208.8a822c",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "2",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "x": 710,
-        "y": 200,
-        "wires": [
-            [
-                "a754740c.ff80b8"
             ]
         ]
     },
@@ -7541,6 +7518,94 @@
         "reduce": false,
         "x": 1900,
         "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6b009b8.9c8db8",
+        "type": "start-up-trigger",
+        "z": "93d0b05b.5a7bb",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "68df40d.75b02c"
+            ]
+        ]
+    },
+    {
+        "id": "68df40d.75b02c",
+        "type": "change",
+        "z": "93d0b05b.5a7bb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "LED_brightness",
+                "pt": "global",
+                "to": "30",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "beae7398.8fe42",
+        "type": "ui_slider",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "a61f5046.b796f",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "255",
+        "step": 1,
+        "x": 160,
+        "y": 1240,
+        "wires": [
+            [
+                "95965bdd.e12548"
+            ]
+        ]
+    },
+    {
+        "id": "95965bdd.e12548",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "LED_brightness",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1240,
         "wires": [
             []
         ]
