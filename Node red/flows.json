@@ -6885,7 +6885,7 @@
         "z": "6f0a3208.8a822c",
         "name": "",
         "serial": "e807a58d.090008",
-        "x": 1150,
+        "x": 810,
         "y": 200,
         "wires": []
     },
@@ -6893,17 +6893,17 @@
         "id": "4bc9b9d1.dee338",
         "type": "function",
         "z": "6f0a3208.8a822c",
-        "name": "",
+        "name": "RGB and Mode",
         "func": "var brightness=global.get(\"LED_brightness\");\nvar r=0;\nvar g=0;\nvar b=0;\nvar mode;\n\nif(msg.payload==0){\n    \n    r = 257 + brightness;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1025;\n    \n}\nif(msg.payload==1){\n    r = 257 + brightness;\n    g = 513;\n    b = 769;\n    mode = 1026;\n   \n}\nif(msg.payload==2){\n    r = 257;\n    g = 513 + brightness;\n    b = 769;\n    mode = 1026;\n   \n}\n node.send({payload:r});\n node.send({payload:\".\"});\n node.send({payload:g});\n node.send({payload:\".\"});\n node.send({payload:b});\n node.send({payload:\".\"});\n node.send({payload:mode});\n node.send({payload:\".\"});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 360,
+        "x": 380,
         "y": 200,
         "wires": [
             [
-                "deb4a2c2.1f5a4"
+                "fc0dedea.fc075"
             ]
         ]
     },
@@ -7048,57 +7048,6 @@
         "x": 2490,
         "y": 1180,
         "wires": []
-    },
-    {
-        "id": "deb4a2c2.1f5a4",
-        "type": "gate",
-        "z": "6f0a3208.8a822c",
-        "name": "",
-        "controlTopic": "control",
-        "defaultState": "open",
-        "openCmd": "open",
-        "closeCmd": "close",
-        "toggleCmd": "toggle",
-        "defaultCmd": "default",
-        "statusCmd": "status",
-        "persist": true,
-        "x": 610,
-        "y": 200,
-        "wires": [
-            [
-                "aed02c0a.5139d",
-                "fc0dedea.fc075"
-            ]
-        ]
-    },
-    {
-        "id": "acdaba97.55d738",
-        "type": "inject",
-        "z": "6f0a3208.8a822c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "control",
-        "payload": "toggle",
-        "payloadType": "str",
-        "x": 410,
-        "y": 80,
-        "wires": [
-            [
-                "deb4a2c2.1f5a4"
-            ]
-        ]
     },
     {
         "id": "508fcfc7.ccf2",
@@ -7378,22 +7327,6 @@
         ]
     },
     {
-        "id": "aed02c0a.5139d",
-        "type": "debug",
-        "z": "6f0a3208.8a822c",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 710,
-        "y": 320,
-        "wires": []
-    },
-    {
         "id": "ab70b180.a491b",
         "type": "inject",
         "z": "6f0a3208.8a822c",
@@ -7597,13 +7530,13 @@
         "id": "fc0dedea.fc075",
         "type": "function",
         "z": "6f0a3208.8a822c",
-        "name": "",
+        "name": "LEDs on/off",
         "func": "var LED_status=global.get(\"LED_status\");\nif (LED_status==true){\n    return msg;\n} else {\n    node.send({payload:1027});\n    node.send({payload:\".\"});\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 760,
+        "x": 590,
         "y": 200,
         "wires": [
             [
@@ -7759,7 +7692,7 @@
         "officon": "",
         "offcolor": "",
         "animate": false,
-        "x": 170,
+        "x": 550,
         "y": 1300,
         "wires": [
             [
@@ -7786,10 +7719,49 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 780,
         "y": 1300,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "81db50ce.db3d7",
+        "type": "start-up-trigger",
+        "z": "af13bad2.757ad8",
+        "x": 180,
+        "y": 1300,
+        "wires": [
+            [
+                "9b20fa5.e183008"
+            ]
+        ]
+    },
+    {
+        "id": "9b20fa5.e183008",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "LED_status",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1300,
+        "wires": [
+            [
+                "59238724.79ec68"
+            ]
         ]
     }
 ]
