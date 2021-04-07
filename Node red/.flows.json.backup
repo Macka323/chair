@@ -3439,7 +3439,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    body {\n        background-image: url(\"/{{msg.payload}}\");\n        background-repeat: no-repeat;\n        background-position: 100% 100%;\n        background-size: 100%;\n    }\n</style>",
+        "format": "<style>\n    body {\n        background-image: url(\"https://github.com/Macka323/chair/blob/main/images/cyber__GANG_GANG_v10_2021-Apr-05_05-07-59PM-000_CustomizedView7362507029%2089.png?raw=true\");\n        background-repeat: no-repeat;\n        background-position: 50% 50%;\n        background-size: 40%;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -6885,7 +6885,7 @@
         "z": "6f0a3208.8a822c",
         "name": "",
         "serial": "e807a58d.090008",
-        "x": 1150,
+        "x": 810,
         "y": 200,
         "wires": []
     },
@@ -7536,7 +7536,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 770,
+        "x": 590,
         "y": 200,
         "wires": [
             [
