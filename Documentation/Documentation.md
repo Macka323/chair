@@ -13,13 +13,14 @@ In the firs window or the dashboard we can se the chair and the sensor values pr
 
 ### Dashboard (status)
 
-On the dashboard there is group called status, there you can find information about the status of the chair like how much time you have left to sit again on the chair or how much you have been sitting. And you have an indicator that show if you can sit on the chair. If the indicator is green that means they you are good to go you can sit on the chair, but if the indicator is red that means that you can't sit. 
+On the dashboard there is group called status, there you can find information about the status of the chair like how much time you have left to sit again on the chair or how much you have been sitting. And you have an indicator that show if you can sit on the chair. If the indicator is green that means they you are good to go you can sit on the chair, but if the indicator is red that means that you can't sit and if the indicator is yellow that mean that you are sitting.
 
 ## Status 
 
 In the status page you can see the overall stats of the chair
 
 - how well have you being sitting and score for sitting better
+- the battery percentage  for the last 2h.
 
 ## Settings
 
@@ -27,14 +28,15 @@ In the status page you can see the overall stats of the chair
 
 in the visual settings you can find 
 - view mode (switches the left and the right side of the sensor for inverted view)
-
 - light mode (chose between light or dark mode)
+- Turn on / off the LED (default option is off)
+- The brightness of the LEDs (left - lower brightness, right - higher brightness)
 
 
 ### Settings (general settings)
 
 Manual time for sitting ( this changes how much you can sit on the chair in minutes ) you can chose from 0-90 minutes and the rest time is automatically configured for your own health
-the ratio for rest time is 6:1 that means if you chose to sit 30 min you have to test minimum of 5 min and so on and so on.
+the ratio for rest time is 6:1 that means if you chose to sit 30 min you have to rest minimum of 5 min and so on and so on.
 
 There is also a button for default time for sitting which is set 30 min for sitting and 5 min for rest, and the extended time for sitting which means that you can sit for 60 min or 1 hour and you have to rest for 10 min.
 
