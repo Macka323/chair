@@ -3439,7 +3439,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    body {\n        background-image: url(\"https://github.com/Macka323/chair/blob/main/images/cyber__GANG_GANG_v10_2021-Apr-05_05-07-59PM-000_CustomizedView7362507029%2089.png?raw=true\");\n        background-repeat: no-repeat;\n        background-position: 50% 50%;\n        background-size: 40%;\n    }\n</style>",
+        "format": "<style>\n    body {\n        background-image: url(\"https://github.com/Macka323/chair/blob/main/images/cyber__GANG_GANG_v10_2021-Apr-05_05-07-59PM-000_CustomizedView7362507029%2089.png?raw=true\");\n        background-repeat: no-repeat;\n        background-position: 27.2% 70%;\n        background-size: 27%;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
