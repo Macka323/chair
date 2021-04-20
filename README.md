@@ -16,7 +16,7 @@ Sensor 8	|	>	|	h.	|	>	| 26
 Sensor 9	|	>	|	i.	|	>	| 27 
 Battery	|	>	|	j.	|	>	| 14 
 
-![](https://github.com/Macka323/chair/blob/main/images/4bcb4d1f-2441-4e36-b7aa-95ada96f9a9b.PNG?raw=truehttps://github.com/Macka323/chair/blob/main/images/chair_numbers.png?raw=true)
+![](https://github.com/Macka323/chair/blob/main/images/chair_numbers.png?raw=true)
 
 ![](https://github.com/Macka323/chair/blob/3c6e366ef7a8af97cf643a411a2dc518c741f27e/images/ESP32%20Dev%20Kit%20Pinout.png?raw=true)
 
