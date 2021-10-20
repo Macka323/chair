@@ -205,7 +205,7 @@
         "id": "2e1a6e50.8afa02",
         "type": "ui_link",
         "name": "Documentation",
-        "link": "https://github.com/Macka323/chair/wiki",
+        "link": "https://github.com/Macka323/chair/blob/main/Documentation.md",
         "icon": "open_in_browser",
         "target": "newtab",
         "order": 5
