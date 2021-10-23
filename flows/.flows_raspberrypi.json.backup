@@ -3555,7 +3555,7 @@
         "type": "debug",
         "z": "cc53778b.362758",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3635,7 +3635,7 @@
         "type": "function",
         "z": "cc53778b.362758",
         "name": "audio alert",
-        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar detectionBottom=global.get(\"detectionBottom\");\nvar timeout=global.get(\"timeout\"); \n\nvar sn_sens_all = global.get(\"sn_sens_all\");\n\n//ako izminal timero a oste sedis\nif(timeout==1 && detectionBottom==true){\n    node.send({payload:\"true\"})\n}\n\n//za sekoj senzor zako ne sedis ubavo\nif(detectionBottom==true && sensor_1<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_2<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_3<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_4<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_5<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_6<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_7<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_8<sn_sens_all){\n    node.send({payload:\"true\"})\n}\nif(detectionBottom==true && sensor_9<sn_sens_all){\n    node.send({payload:\"true\"})\n}",
+        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar detectionBottom=global.get(\"detectionBottom\");\nvar timeout=global.get(\"timeout\"); \nvar sn_sens_all = global.get(\"sn_sens_all\");\nvar detectionShortPeople = global.get(\"detectionShortPeople\");\n\n\n\n//ako izminal timero a oste sedis\nif(timeout==1 && detectionBottom==true){\n    node.send({payload:\"true\"}); return ;\n}\n\n//za sekoj senzor zako ne sedis ubavo\nif(detectionBottom==true && sensor_1<sn_sens_all){\n    if(detectionShortPeople==true){\n        node.send({payload:\"true\"}); return ;\n    }\n}\nif(detectionBottom==true && sensor_2<sn_sens_all){\n    if(detectionShortPeople==true){\n        node.send({payload:\"true\"}); return ;\n    }\n}\nif(detectionBottom==true && sensor_3<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_4<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_5<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_6<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_7<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_8<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_9<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3645,7 +3645,9 @@
         "y": 540,
         "wires": [
             [
-                "850a5a91.8e3158"
+                "850a5a91.8e3158",
+                "d6d4f31662f26b9a",
+                "cb390d7e3b0cd490"
             ]
         ]
     },
@@ -3710,7 +3712,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1140,
+        "x": 1280,
         "y": 540,
         "wires": [
             [
@@ -5627,7 +5629,7 @@
         "type": "function",
         "z": "93d0b05b.5a7bb",
         "name": "Detection",
-        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar sn_sens = global.get(\"sn_sens\");\nvar detectionBottom;\ndetectionBottom=sensor_7+sensor_8+sensor_9;\ndetectionBottom=detectionBottom/3;\nvar detectionShortPeople;\ndetectionShortPeople= sensor_1+sensor_2;\ndetectionShortPeople=detectionShortPeople/2;\nif (detectionBottom>sn_sens){\n    global.set(\"detectionBottom\",true);\n} else {\n    global.set(\"detectionBottom\",false);\n}\nif(detectionShortPeople<200){\n    global.set(\"detectionShortPeople\",true);\n}else{\n    global.set(\"detectionShortPeople\",false);\n}\n",
+        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar sn_sens = global.get(\"sn_sens\");\nvar detectionBottom;\ndetectionBottom=sensor_7+sensor_8+sensor_9;\ndetectionBottom=detectionBottom/3;\nvar detectionShortPeople;\ndetectionShortPeople= sensor_1+sensor_2;\ndetectionShortPeople=detectionShortPeople/2;\nif (detectionBottom>sn_sens){\n    global.set(\"detectionBottom\",true);\n} else {\n    global.set(\"detectionBottom\",false);\n}\nif(detectionShortPeople<250){\n    global.set(\"detectionShortPeople\",true);\n}else{\n    global.set(\"detectionShortPeople\",false);\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6105,7 +6107,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1340,
+        "x": 1480,
         "y": 540,
         "wires": [
             []
@@ -6282,8 +6284,8 @@
         "randomUnits": "seconds",
         "drop": true,
         "allowrate": false,
-        "x": 630,
-        "y": 160,
+        "x": 530,
+        "y": 200,
         "wires": [
             [
                 "a754740c.ff80b8",
@@ -7195,7 +7197,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('https://raw.githubusercontent.com/Macka323/chair/main/images/chair_white_transparent.png');\n        background-size:65% 95%;\n        background-position-x: 80px;\n        background-position-y: 20px;\n         background-repeat:no-repeat;\n    }\n</style>",
+        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('https://raw.githubusercontent.com/Macka323/chair/main/images/chair_white_transparent.png');\n        background-size:65% 95%;\n        background-position-x: 79px;\n        background-position-y: 20px;\n         background-repeat:no-repeat;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -7792,5 +7794,43 @@
                 "7f66877b.72f598"
             ]
         ]
+    },
+    {
+        "id": "d6d4f31662f26b9a",
+        "type": "ui_toast",
+        "z": "cc53778b.362758",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 1380,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb390d7e3b0cd490",
+        "type": "debug",
+        "z": "cc53778b.362758",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 640,
+        "wires": []
     }
 ]
