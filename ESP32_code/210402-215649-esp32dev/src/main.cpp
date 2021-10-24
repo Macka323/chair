@@ -17,7 +17,7 @@ const int battery = 13;
 const int LED_2 = 2;
 TaskHandle_t SensRead;
 
-
+// fast led cyclon e za rainbow 
 
 void showStrip();
 void setPixel(int Pixel, byte red, byte green, byte blue);
@@ -27,6 +27,9 @@ void loop();
 void serialin();
 void CenterToOutside(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay);
 void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDelay, int ReturnDelay);
+void fadeall();
+void Rainbow();
+
 
 void setup() {
   Serial.begin(38400);
@@ -218,3 +221,34 @@ void OutsideToCenter(byte red, byte green, byte blue, int EyeSize, int SpeedDela
     Serial.read();
   }
 }
+
+void Rainbow(){
+  static uint8_t hue = 0;
+	// First slide the led in one direction
+	for(int i = 0; i < NUM_LEDS; i++) {
+		// Set the i'th led to red 
+		leds[i] = CHSV(hue++, 255, 255);
+		// Show the leds
+		FastLED.show(); 
+		// now that we've shown the leds, reset the i'th led to black
+		// leds[i] = CRGB::Black;
+		fadeall();
+		// Wait a little bit before we loop around and do it again
+		delay(10);
+	}
+
+	// Now go in the other direction.  
+	for(int i = (NUM_LEDS)-1; i >= 0; i--) {
+		// Set the i'th led to red 
+		leds[i] = CHSV(hue++, 255, 255);
+		// Show the leds
+		FastLED.show();
+		// now that we've shown the leds, reset the i'th led to black
+		// leds[i] = CRGB::Black;
+		fadeall();
+		// Wait a little bit before we loop around and do it again
+		delay(10);
+	}
+}
+
+void fadeall() { for(int i = 0; i < NUM_LEDS; i++) { leds[i].nscale8(250); } }
