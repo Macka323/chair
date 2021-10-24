@@ -541,6 +541,7 @@
         "id": "793c0106.f5d84",
         "type": "serial in",
         "z": "772b4e64.18e6e",
+        "d": true,
         "name": "",
         "serial": "e807a58d.090008",
         "x": 90,
@@ -3157,6 +3158,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 420,
         "y": 860,
         "wires": [
@@ -3460,7 +3462,8 @@
         "y": 300,
         "wires": [
             [
-                "51c537b5.af4ef8"
+                "51c537b5.af4ef8",
+                "767df50bd25df128"
             ],
             [
                 "b9a0849.bd1d078"
@@ -3545,7 +3548,6 @@
         "y": 300,
         "wires": [
             [
-                "ef2d960b.d78688",
                 "21ad533d.4ddcfc"
             ]
         ]
@@ -3555,7 +3557,7 @@
         "type": "debug",
         "z": "cc53778b.362758",
         "name": "",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3645,9 +3647,7 @@
         "y": 540,
         "wires": [
             [
-                "850a5a91.8e3158",
-                "d6d4f31662f26b9a",
-                "cb390d7e3b0cd490"
+                "850a5a91.8e3158"
             ]
         ]
     },
@@ -3712,12 +3712,10 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1280,
+        "x": 1160,
         "y": 540,
         "wires": [
-            [
-                "bf694bf2.ff2a68"
-            ]
+            []
         ]
     },
     {
@@ -7796,41 +7794,22 @@
         ]
     },
     {
-        "id": "d6d4f31662f26b9a",
-        "type": "ui_toast",
+        "id": "767df50bd25df128",
+        "type": "function",
         "z": "cc53778b.362758",
-        "position": "dialog",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
+        "name": "SItting status",
+        "func": "var detectionBottom=global.get(\"detectionBottom\");\nvar timeout=global.get(\"timeout\");\n\nvar sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\n\nvar sn_sens_all = global.get(\"sn_sens_all\");\nvar detectionShortPeople = global.get(\"detectionShortPeople\");\n\n\n\n//za koga sedis a timero e izminal\nif(detectionBottom==true && timeout ==1){\n    node.send({payload:5});\n}\n\n\n\n\n//koga ne sedis\nif(detectionBottom==false){\n    node.send({payload:1});\n}\n\n\n\n\n\n//koga sedis pravilno i koga ne sedis pravilno\nvar sensors3_9 = true;\nvar sensors1_2 = false;\n\nif (detectionBottom == true) {\n    if (detectionShortPeople == false) {\n        if (sensor_1 < sn_sens_all ||\n            sensor_2 < sn_sens_all) {\n            sensors1_2=true;\n        }\n    } else {\n        sensors1_2=false;\n    }\n    if (sensor_3 < sn_sens_all ||\n        sensor_4 < sn_sens_all ||\n        sensor_5 < sn_sens_all ||\n        sensor_6 < sn_sens_all ||\n        sensor_7 < sn_sens_all ||\n        sensor_8 < sn_sens_all ||\n        sensor_9 < sn_sens_all) {\n        sensors3_9=true;\n    } else {\n        sensors3_9=false;\n    }\n    if (sensors1_2 || sensors3_9) {\n    node.send({ payload: 3 });\n} else {\n    node.send({ payload: 4 });\n}\n}\n\n",
         "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 1380,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cb390d7e3b0cd490",
-        "type": "debug",
-        "z": "cc53778b.362758",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 1150,
-        "y": 640,
-        "wires": []
+        "y": 260,
+        "wires": [
+            [
+                "ef2d960b.d78688"
+            ]
+        ]
     }
 ]
