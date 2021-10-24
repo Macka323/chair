@@ -83,7 +83,8 @@ void codeForSensRead(void *parameter)
 {
   for (;;)
   {
-     serialout();
+    serialout();
+   
   }
 }
 void serialout()
@@ -129,23 +130,23 @@ void serialin()
 {
   if (Serial.available() > 0)
   {
-    Serial.print("started  ");
+   // Serial.print("values  ");
     serialdata = Serial.parseInt();
-    Serial.println(serialdata);
+    //Serial.println(serialdata);
     if (serialdata >= 0 && serialdata <= 255)
     {
       x[0] = serialdata;
      
     }
-    if (serialdata >= 256 && serialdata <= 512)
+    if (serialdata >= 256 && serialdata <= 511)
     {
       x[1] = serialdata;
       x[1] = x[1] - 256;
     }
-    if (serialdata >= 513 && serialdata <= 767)
+    if (serialdata >= 512 && serialdata <= 767)
     {
       x[2] = serialdata;
-      x[2] = x[2] - 513;
+      x[2] = x[2] - 512;
     }
     // if (serialdata >= 769 && serialdata <= 1024)
     // {
@@ -156,8 +157,9 @@ void serialin()
     {
       Rainbow();
     }
-    if (serialdata == 1053 && serialdata == 1054)
+    if (serialdata == 1053 || serialdata == 1054)
     {
+     // Serial.println("1053-1054 start");
       setAll(0, 0, 0);
       int a = NUM_LEDS / 2;
       int b = NUM_LEDS / 2;
@@ -175,16 +177,18 @@ void serialin()
       {
         Serial.read();
       }
-      // Serial.println("2026");
+      // Serial.println("1053-1054 end");
     }
     if (serialdata == 1055)
     {
+     //  Serial.println("1055 start");
       int EyeSize = 5;
       int SpeedDelay = 70;
       int ReturnDelay = 50;
-      // Serial.println("2025");
-      OutsideToCenter(x[0], x[1], x[2], EyeSize, SpeedDelay, ReturnDelay);
+      
       CenterToOutside(x[0], x[1], x[2], EyeSize, SpeedDelay, ReturnDelay);
+      OutsideToCenter(x[0], x[1], x[2], EyeSize, SpeedDelay, ReturnDelay);
+     //  Serial.println("1055 end");
     }
 
     if (serialdata == 1057)
