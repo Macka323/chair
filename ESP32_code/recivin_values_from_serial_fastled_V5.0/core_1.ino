@@ -6,7 +6,8 @@ void loop() {
 void serialin() {
   if (Serial.available() > 0) {
     serialdata = Serial.parseInt();
-
+    Serial.print(".............................");
+    Serial.println(serialdata);
     if (serialdata >= 1 && serialdata <= 256) {
       x[0] = serialdata;
       x[0] -= 1;
@@ -27,9 +28,12 @@ void serialin() {
       int EyeSize = 5;
       int SpeedDelay = 70;
       int ReturnDelay = 50;
+       Serial.println("2025");
+       digitalWrite(LED_2, HIGH);
+       delay(500);
+       digitalWrite(LED_2, LOW);
       OutsideToCenter(x[1], x[2], x[3], EyeSize, SpeedDelay, ReturnDelay);
       CenterToOutside(x[1], x[2], x[3], EyeSize, SpeedDelay, ReturnDelay);
-      Serial.println("2025");
     }
     if (serialdata == 1026) {
       setAll(0, 0, 0);

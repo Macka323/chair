@@ -4,7 +4,6 @@ void codeForSensRead(void * parameter){
   }
 }
 void serialout() {
-  digitalWrite(LED_2, HIGH);
   Serial.print("a.");
   Serial.println(map(analogRead(sensor_1),0,4095,500,0));
   delay(5); 
@@ -35,5 +34,4 @@ void serialout() {
   Serial.print("j.");
   Serial.println(analogRead(battery));
   delay(5);
-  digitalWrite(LED_2, LOW);
 }
