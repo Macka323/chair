@@ -32,7 +32,7 @@ void Rainbow();
 
 void setup()
 {
-  Serial.begin(38400);
+  Serial.begin(115200);
   Serial.setTimeout(5);
   FastLED.addLeds<WS2812B, PIN, GRB>(leds, NUM_LEDS);
 
