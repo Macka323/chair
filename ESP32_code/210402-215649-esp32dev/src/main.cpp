@@ -4,6 +4,7 @@
 CRGB leds[NUM_LEDS];
 int serialdata;
 int x[4];
+
 const int sensor_1 = 36;
 const int sensor_2 = 39;
 const int sensor_3 = 34;
@@ -56,6 +57,8 @@ void setup()
   pinMode(27, INPUT);
   pinMode(13, INPUT);
   pinMode(2, OUTPUT);
+
+  x[3]=60;
 }
 
 void showStrip()
@@ -148,11 +151,12 @@ void serialin()
       x[2] = serialdata;
       x[2] = x[2] - 512;
     }
-    // if (serialdata >= 769 && serialdata <= 1024)
-    // {
-    //   x[3] = serialdata;
-    //   x[3] = x[3] - 769;
-    // }
+     if (serialdata >= 768 && serialdata <= 1023)
+     {
+       x[3] = serialdata;
+       x[3] = x[3] - 768;
+       FastLED.setBrightness(x[3]);
+     }
     if (serialdata == 1051)
     {
       Rainbow();
