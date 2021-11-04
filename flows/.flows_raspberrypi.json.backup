@@ -304,8 +304,9 @@
         "tab": "bb56339e.2abaa",
         "order": 2,
         "disp": false,
-        "width": "3",
-        "collapse": false
+        "width": "1",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "a61f5046.b796f",
@@ -536,6 +537,16 @@
         "width": "4",
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "e33a617efc1a8cdb",
+        "type": "ui_spacer",
+        "z": "af13bad2.757ad8",
+        "name": "spacer",
+        "group": "7db0b691.b8aa88",
+        "order": 2,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "793c0106.f5d84",
@@ -2965,7 +2976,7 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 700,
+        "x": 1060,
         "y": 700,
         "wires": [
             [],
@@ -2984,7 +2995,7 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 700,
+        "x": 1060,
         "y": 820,
         "wires": [
             [],
@@ -3003,7 +3014,7 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 690,
+        "x": 1050,
         "y": 880,
         "wires": [
             [],
@@ -3022,7 +3033,7 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 700,
+        "x": 1060,
         "y": 760,
         "wires": [
             [],
@@ -5675,7 +5686,7 @@
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "var brightness=global.get(\"brightness\");\n\nif(brightness==undefined){\n   brightness=60;\n}\nbrightness+=768;\nif(msg.payload==1){\n   node.send({payload:brightness+\"1051.\"})\n}\n\nif(msg.payload==3){\n    node.send({payload:\"0.511.512.\"+brightness+\".1053\"})\n}\nif(msg.payload==4){\n    node.send({payload:\"255.480.512.\"+brightness+\".1054\"})\n}\nif(msg.payload==5){\n    brightness=100;\n    node.send({payload:\"255.256.512.\"+brightness+\".1055\"});\n}\nif(msg.payload==7){\n    node.send({payload:\"1057\"});\n}",
+        "func": "var brightness=global.get(\"brightness\");\n\nif(brightness==undefined){\n   brightness=60;\n}\nbrightness+=768;\nif(msg.payload==1){\n   node.send({payload:brightness+\".1051\"})\n}\n\nif(msg.payload==3){\n    node.send({payload:\"0.511.512.\"+brightness+\".1053\"})\n}\nif(msg.payload==4){\n    node.send({payload:\"255.480.512.\"+brightness+\".1054\"})\n}\nif(msg.payload==5){\n    brightness=100;\n    node.send({payload:\"255.256.512.\"+brightness+\".1055\"});\n}\nif(msg.payload==7){\n    node.send({payload:\"1057\"});\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6747,7 +6758,7 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "passthru": false,
+        "passthru": true,
         "label": "Default time for sitting",
         "tooltip": "",
         "color": "",
@@ -6758,7 +6769,7 @@
         "payloadType": "num",
         "topic": "",
         "topicType": "str",
-        "x": 240,
+        "x": 600,
         "y": 600,
         "wires": [
             [
@@ -6786,7 +6797,7 @@
         "payloadType": "num",
         "topic": "",
         "topicType": "str",
-        "x": 250,
+        "x": 610,
         "y": 560,
         "wires": [
             [
@@ -6814,7 +6825,7 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 230,
+        "x": 590,
         "y": 700,
         "wires": [
             [
@@ -6842,7 +6853,7 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 200,
+        "x": 560,
         "y": 820,
         "wires": [
             [
@@ -6870,7 +6881,7 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 200,
+        "x": 560,
         "y": 880,
         "wires": [
             [
@@ -6898,7 +6909,7 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 220,
+        "x": 580,
         "y": 760,
         "wires": [
             [
@@ -6925,7 +6936,7 @@
         "max": "90",
         "step": "2",
         "className": "",
-        "x": 540,
+        "x": 900,
         "y": 580,
         "wires": [
             [
@@ -7020,7 +7031,7 @@
         "order": 4,
         "width": 0,
         "height": 0,
-        "format": "\n<style>\n    #Chair_spacer_cards{\n        background-color:#12345600;\n    }\n    #Chair_spacer{\n        background-color:#12345600;\n        border:none;\n    }\n</style>\n<script>\nfunction updateContainerStyle (el) {\n\tel = el.parentElement\n\tif (el && el.classList.contains('nr-dashboard-template')) {\n\t    // uncomment next line to make the parent container transparent\n\t\tel.style.backgroundColor = \"#12345600\"\n\t}\n}\n\nupdateContainerStyle(document.getElementById(\"div-in-template\"))\n</script>",
+        "format": "\n<style>\n    #Chair_spacer_cards{\n        background-color:#12345600;\n    }\n    #Chair_spacer{\n        background-color:#12345600;\n        border:none;\n    }\n    #Chair_dashboard_cards{\n        text-align:center;\n    }\n    #Chair_dashboard{\n        text-align:center;\n    }\n    #Chair_status_cards{\n        text-align:center;\n    }\n    #Chair_status{\n        text-align:center;\n    }\n</style>\n<script>\nfunction updateContainerStyle (el) {\n\tel = el.parentElement\n\tif (el && el.classList.contains('nr-dashboard-template')) {\n\t    // uncomment next line to make the parent container transparent\n\t\tel.style.backgroundColor = \"#12345600\"\n\t}\n}\n\nupdateContainerStyle(document.getElementById(\"div-in-template\"))\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -7062,7 +7073,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('/chair_white_transparent.png');\n        background-size:65% 95%;\n        background-position-x: 79px;\n        background-position-y: 20px;\n         background-repeat:no-repeat;\n    }\n</style>",
+        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('/images/chair1.2.png');\n        background-size:65% 90%;\n        background-position-x: 79px;\n        background-position-y: 70px;\n         background-repeat:no-repeat;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -7173,7 +7184,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
+        "x": 1150,
         "y": 580,
         "wires": [
             []
@@ -7450,7 +7461,7 @@
         "max": "255",
         "step": 1,
         "className": "",
-        "x": 220,
+        "x": 580,
         "y": 960,
         "wires": [
             [
@@ -7486,7 +7497,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
+        "x": 820,
         "y": 960,
         "wires": [
             []
@@ -7496,8 +7507,8 @@
         "id": "2781892b8a1d50a2",
         "type": "start-up-trigger",
         "z": "af13bad2.757ad8",
-        "x": 100,
-        "y": 1100,
+        "x": 120,
+        "y": 760,
         "wires": [
             [
                 "7652af1349acc003"
@@ -7523,11 +7534,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 230,
-        "y": 1040,
+        "x": 320,
+        "y": 760,
         "wires": [
             [
-                "26345aa62efa6edd"
+                "26345aa62efa6edd",
+                "592243486f8316f0"
             ]
         ]
     },
