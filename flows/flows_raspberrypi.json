@@ -250,7 +250,7 @@
     {
         "id": "666ce8f4.6780c8",
         "type": "ui_tab",
-        "name": "settings",
+        "name": "Settings",
         "icon": "settings",
         "order": 3,
         "disabled": false,
@@ -263,7 +263,7 @@
         "tab": "bb56339e.2abaa",
         "order": 1,
         "disp": true,
-        "width": 4,
+        "width": "4",
         "collapse": false,
         "className": "dashboardBackground"
     },
@@ -4769,18 +4769,17 @@
         "type": "function",
         "z": "dc7f38ca.1f1628",
         "name": "",
-        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar detectionBottom=global.get(\"detectionBottom\");\nvar count = 0;\nif (detectionBottom==true){\n    count=sensor_1+sensor_2+sensor_3+sensor_4+sensor_5+sensor_6+sensor_7+sensor_8+sensor_9;\n    node.send({payload:count, topic:1});\n}else{\n    node.send({payload:0, topic:2});\n}\n",
+        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar detectionBottom=global.get(\"detectionBottom\");\nvar count = 0;\nif (detectionBottom==true){\n    \n    if(global.get(\"detectionShortPeople\")==true){\n        count=sensor_3+sensor_4+sensor_5+sensor_6+sensor_7+sensor_8+sensor_9;\n      count+=10000;\n      node.send({payload:count});\n    }else{\n        count=sensor_1+sensor_2+sensor_3+sensor_4+sensor_5+sensor_6+sensor_7+sensor_8+sensor_9;\n    node.send({payload:count});\n    \n    }\n    \n}else{\n    node.send({payload:0, topic:2});\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is deployed.\nnode.send({payload:1, topic:1});",
         "finalize": "",
         "libs": [],
-        "x": 860,
-        "y": 460,
+        "x": 660,
+        "y": 540,
         "wires": [
             [
-                "e468bf97.d3372",
-                "0fb4519993d33b89"
+                "4f8d6c7c0561d9f3"
             ]
         ]
     },
@@ -4801,8 +4800,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 670,
-        "y": 460,
+        "x": 470,
+        "y": 540,
         "wires": [
             [
                 "284edaeb.e4e2c6"
@@ -4818,11 +4817,11 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1050,
+        "x": 1190,
         "y": 520,
         "wires": []
     },
@@ -5676,7 +5675,7 @@
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "var brightness=global.get(\"brightness\");\n\nif(brightness==undefined){\n   brightness=60;\n}\nbrightness+=768;\nif(msg.payload==1){\n    node.send({payload:\"1051.\"+brightness})\n}\nif(msg.payload==3){\n    node.send({payload:\"0.511.512.\"+brightness+\".1053\"})\n}\nif(msg.payload==4){\n    node.send({payload:\"255.480.512.\"+brightness+\".1054\"})\n}\nif(msg.payload==5){\n    brightness=100;\n    node.send({payload:\"255.256.512.\"+brightness+\".1055\"});\n}\nif(msg.payload==7){\n    node.send({payload:\"1057\"});\n}",
+        "func": "var brightness=global.get(\"brightness\");\n\nif(brightness==undefined){\n   brightness=60;\n}\nbrightness+=768;\nif(msg.payload==1){\n   node.send({payload:brightness+\".1051\"})\n}\n\nif(msg.payload==3){\n    node.send({payload:\"0.511.512.\"+brightness+\".1053\"})\n}\nif(msg.payload==4){\n    node.send({payload:\"255.480.512.\"+brightness+\".1054\"})\n}\nif(msg.payload==5){\n    brightness=100;\n    node.send({payload:\"255.256.512.\"+brightness+\".1055\"});\n}\nif(msg.payload==7){\n    node.send({payload:\"1057\"});\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -6049,7 +6048,7 @@
         "type": "debug",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7047,6 +7046,7 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "global",
+        "className": "",
         "x": 880,
         "y": 140,
         "wires": [
@@ -7062,7 +7062,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('https://raw.githubusercontent.com/Macka323/chair/main/images/chair_white_transparent.png');\n        background-size:65% 95%;\n        background-position-x: 79px;\n        background-position-y: 20px;\n         background-repeat:no-repeat;\n    }\n</style>",
+        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('/chair_white_transparent.png');\n        background-size:65% 95%;\n        background-position-x: 79px;\n        background-position-y: 20px;\n         background-repeat:no-repeat;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -7072,54 +7072,6 @@
         "y": 80,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "23f3beb758e0bd52",
-        "type": "ui_switch",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "label": "light mode",
-        "tooltip": "",
-        "group": "8d305fa8.31707",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "chair_white_transparent.png",
-        "onvalueType": "str",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "chair_dark.png",
-        "offvalueType": "str",
-        "officon": "",
-        "offcolor": "",
-        "animate": true,
-        "className": "",
-        "x": 290,
-        "y": 100,
-        "wires": [
-            [
-                "6038fcadb7634da6"
-            ]
-        ]
-    },
-    {
-        "id": "8249d7f98bebd941",
-        "type": "ui_ui_control",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "events": "connect",
-        "x": 140,
-        "y": 100,
-        "wires": [
-            [
-                "23f3beb758e0bd52"
-            ]
         ]
     },
     {
@@ -7139,18 +7091,18 @@
         "name": "",
         "group": "8a312ad2.ae3c18",
         "order": 4,
-        "width": 0,
-        "height": 0,
+        "width": "9",
+        "height": "8",
         "label": "Sitting Score",
         "chartType": "line",
         "legend": "false",
         "xformat": "auto",
-        "interpolate": "cubic",
+        "interpolate": "bezier",
         "nodata": "",
         "dot": false,
         "ymin": "0",
-        "ymax": "",
-        "removeOlder": "2",
+        "ymax": "10",
+        "removeOlder": "5",
         "removeOlderPoints": "",
         "removeOlderUnit": "60",
         "cutout": 0,
@@ -7170,8 +7122,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1050,
-        "y": 460,
+        "x": 1250,
+        "y": 440,
         "wires": [
             []
         ]
@@ -7475,8 +7427,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 640,
+        "x": 350,
+        "y": 400,
         "wires": []
     },
     {
@@ -7577,6 +7529,106 @@
             [
                 "26345aa62efa6edd"
             ]
+        ]
+    },
+    {
+        "id": "bc8479301fa6b122",
+        "type": "range",
+        "z": "dc7f38ca.1f1628",
+        "minin": "0",
+        "maxin": "4500",
+        "minout": "0",
+        "maxout": "10",
+        "action": "clamp",
+        "round": true,
+        "property": "payload",
+        "name": "0-4500",
+        "x": 1000,
+        "y": 520,
+        "wires": [
+            [
+                "0fb4519993d33b89",
+                "e468bf97.d3372"
+            ]
+        ]
+    },
+    {
+        "id": "eb94ab33c809870c",
+        "type": "range",
+        "z": "dc7f38ca.1f1628",
+        "minin": "10000",
+        "maxin": "13500",
+        "minout": "0",
+        "maxout": "10",
+        "action": "clamp",
+        "round": true,
+        "property": "payload",
+        "name": "10000-13500",
+        "x": 1010,
+        "y": 560,
+        "wires": [
+            [
+                "0fb4519993d33b89",
+                "dd776faea2f20f94"
+            ]
+        ]
+    },
+    {
+        "id": "dd776faea2f20f94",
+        "type": "debug",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "4f8d6c7c0561d9f3",
+        "type": "switch",
+        "z": "dc7f38ca.1f1628",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "0",
+                "vt": "num",
+                "v2": "4500",
+                "v2t": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "10000",
+                "vt": "num",
+                "v2": "13500",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 810,
+        "y": 540,
+        "wires": [
+            [
+                "bc8479301fa6b122"
+            ],
+            [
+                "eb94ab33c809870c"
+            ]
+        ],
+        "outputLabels": [
+            "4500",
+            "3500"
         ]
     }
 ]
