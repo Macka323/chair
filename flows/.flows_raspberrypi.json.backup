@@ -5661,7 +5661,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "str",
-        "x": 190,
+        "x": 210,
         "y": 340,
         "wires": [
             [
@@ -6553,41 +6553,6 @@
         "y": 1080,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "bd4aa230.c7a14",
-        "type": "ui_switch",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "label": "Point of view",
-        "tooltip": "",
-        "group": "8d305fa8.31707",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "control",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "toggle",
-        "onvalueType": "str",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "toggle",
-        "offvalueType": "str",
-        "officon": "",
-        "offcolor": "",
-        "animate": true,
-        "className": "",
-        "x": 410,
-        "y": 340,
-        "wires": [
-            [
-                "c955f148.352cb",
-                "dbf643f6.8ba"
-            ]
         ]
     },
     {
@@ -7674,7 +7639,7 @@
         "type": "function",
         "z": "af13bad2.757ad8",
         "name": "",
-        "func": "var tim30=msg.payload;\nvar tim5= Math.round(msg.payload/3);\nglobal.set(\"timer30settings\",tim30);\nglobal.set(\"timer5settings\",tim5);",
+        "func": "var tim30=msg.payload*60;\nvar tim5= Math.round(msg.payload/3*60);\nglobal.set(\"timer30settings\",tim30);\nglobal.set(\"timer5settings\",tim5);",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7682,6 +7647,101 @@
         "libs": [],
         "x": 1170,
         "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d6c6de3cd3d565e",
+        "type": "link in",
+        "z": "772b4e64.18e6e",
+        "name": "pov out",
+        "links": [
+            "7fc6889e7ec5d618"
+        ],
+        "x": 435,
+        "y": 240,
+        "wires": [
+            [
+                "c955f148.352cb",
+                "dbf643f6.8ba"
+            ]
+        ]
+    },
+    {
+        "id": "c24c66e655a6b0d1",
+        "type": "ui_switch",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "Point of view",
+        "tooltip": "",
+        "group": "8d305fa8.31707",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "toggle",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "toggle",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 570,
+        "y": 1040,
+        "wires": [
+            [
+                "7fc6889e7ec5d618"
+            ]
+        ]
+    },
+    {
+        "id": "7fc6889e7ec5d618",
+        "type": "link out",
+        "z": "af13bad2.757ad8",
+        "name": "pov in",
+        "links": [
+            "0d6c6de3cd3d565e"
+        ],
+        "x": 735,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a28760739d60d186",
+        "type": "ui_switch",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "Sound",
+        "tooltip": "",
+        "group": "8d305fa8.31707",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "toggle",
+        "onvalueType": "str",
+        "onicon": "volume_up",
+        "oncolor": "black",
+        "offvalue": "toggle",
+        "offvalueType": "str",
+        "officon": "volume_mute",
+        "offcolor": "red",
+        "animate": false,
+        "className": "",
+        "x": 530,
+        "y": 1180,
         "wires": [
             []
         ]

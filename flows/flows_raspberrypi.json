@@ -3653,7 +3653,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1510,
+        "x": 1790,
         "y": 440,
         "wires": [
             [
@@ -3674,7 +3674,7 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1330,
+        "x": 1190,
         "y": 480,
         "wires": [
             []
@@ -6000,7 +6000,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1710,
+        "x": 1930,
         "y": 440,
         "wires": [
             [
@@ -6553,41 +6553,6 @@
         "y": 1080,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "bd4aa230.c7a14",
-        "type": "ui_switch",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "label": "Point of view",
-        "tooltip": "",
-        "group": "8d305fa8.31707",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "control",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "toggle",
-        "onvalueType": "str",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "toggle",
-        "offvalueType": "str",
-        "officon": "",
-        "offcolor": "",
-        "animate": true,
-        "className": "",
-        "x": 410,
-        "y": 340,
-        "wires": [
-            [
-                "c955f148.352cb",
-                "dbf643f6.8ba"
-            ]
         ]
     },
     {
@@ -7343,7 +7308,7 @@
             [
                 "ef2d960b.d78688",
                 "21ad533d.4ddcfc",
-                "353238d6780de811"
+                "5147c879dbd0cd23"
             ]
         ]
     },
@@ -7639,8 +7604,8 @@
         "randomUnits": "seconds",
         "drop": true,
         "allowrate": false,
-        "x": 1320,
-        "y": 420,
+        "x": 1620,
+        "y": 440,
         "wires": [
             [
                 "3afcb30e.2b97dc"
@@ -7655,8 +7620,8 @@
         "group": "a4a5657b.ad6998",
         "voice": "Microsoft George - English (United Kingdom)",
         "always": true,
-        "x": 1640,
-        "y": 700,
+        "x": 2050,
+        "y": 560,
         "wires": []
     },
     {
@@ -7685,5 +7650,152 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "0d6c6de3cd3d565e",
+        "type": "link in",
+        "z": "772b4e64.18e6e",
+        "name": "pov out",
+        "links": [
+            "7fc6889e7ec5d618"
+        ],
+        "x": 435,
+        "y": 240,
+        "wires": [
+            [
+                "c955f148.352cb",
+                "dbf643f6.8ba"
+            ]
+        ]
+    },
+    {
+        "id": "c24c66e655a6b0d1",
+        "type": "ui_switch",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "Point of view",
+        "tooltip": "",
+        "group": "8d305fa8.31707",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "toggle",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "toggle",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 570,
+        "y": 1040,
+        "wires": [
+            [
+                "7fc6889e7ec5d618"
+            ]
+        ]
+    },
+    {
+        "id": "7fc6889e7ec5d618",
+        "type": "link out",
+        "z": "af13bad2.757ad8",
+        "name": "pov in",
+        "links": [
+            "0d6c6de3cd3d565e"
+        ],
+        "x": 735,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a28760739d60d186",
+        "type": "ui_switch",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "Sound",
+        "tooltip": "",
+        "group": "8d305fa8.31707",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "toggle",
+        "onvalueType": "str",
+        "onicon": "volume_up",
+        "oncolor": "black",
+        "offvalue": "toggle",
+        "offvalueType": "str",
+        "officon": "volume_mute",
+        "offcolor": "red",
+        "animate": false,
+        "className": "",
+        "x": 550,
+        "y": 1120,
+        "wires": [
+            [
+                "4b55f777bc6bd14c"
+            ]
+        ]
+    },
+    {
+        "id": "5147c879dbd0cd23",
+        "type": "gate",
+        "z": "cc53778b.362758",
+        "name": "",
+        "controlTopic": "control",
+        "defaultState": "open",
+        "openCmd": "open",
+        "closeCmd": "close",
+        "toggleCmd": "toggle",
+        "defaultCmd": "default",
+        "statusCmd": "status",
+        "persist": false,
+        "storeName": "memory",
+        "x": 1410,
+        "y": 400,
+        "wires": [
+            [
+                "353238d6780de811"
+            ]
+        ]
+    },
+    {
+        "id": "30676345654f090f",
+        "type": "link in",
+        "z": "cc53778b.362758",
+        "name": "sound out",
+        "links": [
+            "4b55f777bc6bd14c"
+        ],
+        "x": 1175,
+        "y": 380,
+        "wires": [
+            [
+                "5147c879dbd0cd23"
+            ]
+        ]
+    },
+    {
+        "id": "4b55f777bc6bd14c",
+        "type": "link out",
+        "z": "af13bad2.757ad8",
+        "name": "sound in",
+        "links": [
+            "30676345654f090f"
+        ],
+        "x": 705,
+        "y": 1120,
+        "wires": []
     }
 ]
