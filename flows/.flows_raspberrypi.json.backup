@@ -552,6 +552,7 @@
         "id": "793c0106.f5d84",
         "type": "serial in",
         "z": "772b4e64.18e6e",
+        "d": true,
         "name": "",
         "serial": "e807a58d.090008",
         "x": 90,
@@ -669,7 +670,7 @@
             "sensor 7,g",
             "sensor 8,h",
             "sensor 9,i",
-            null
+            ""
         ]
     },
     {
@@ -3371,7 +3372,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "0",
+        "payload": "2",
         "payloadType": "num",
         "x": 150,
         "y": 500,
@@ -3391,7 +3392,7 @@
                 "t": "set",
                 "p": "timer30",
                 "pt": "global",
-                "to": "0",
+                "to": "2",
                 "tot": "num"
             }
         ],
@@ -3646,17 +3647,17 @@
         "type": "function",
         "z": "cc53778b.362758",
         "name": "audio alert",
-        "func": "var sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\nvar detectionBottom=global.get(\"detectionBottom\");\nvar timeout=global.get(\"timeout\"); \nvar sn_sens_all = global.get(\"sn_sens_all\");\nvar detectionShortPeople = global.get(\"detectionShortPeople\");\n\n\n\n//ako izminal timero a oste sedis\nif(timeout==1 && detectionBottom==true){\n    node.send({payload:\"true\"}); return ;\n}\n\n//za sekoj senzor zako ne sedis ubavo\nif(detectionBottom==true && sensor_1<sn_sens_all){\n    if(detectionShortPeople==true){\n        node.send({payload:\"true\"}); return ;\n    }\n}\nif(detectionBottom==true && sensor_2<sn_sens_all){\n    if(detectionShortPeople==true){\n        node.send({payload:\"true\"}); return ;\n    }\n}\nif(detectionBottom==true && sensor_3<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_4<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_5<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_6<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_7<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_8<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}\nif(detectionBottom==true && sensor_9<sn_sens_all){\n    node.send({payload:\"true\"}); return ;\n}",
+        "func": "if(msg.payload==4){\n    node.send({filename:\"/home/pi/.node-red/projects/chair/set up/nepravilnoSedenje.wav\"});\n}\nif(msg.payload==5){\n    node.send({filename:\"/home/pi/.node-red/projects/chair/set up/zabranetoSedenje.wav\"});\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 540,
+        "x": 1510,
+        "y": 440,
         "wires": [
             [
-                "850a5a91.8e3158"
+                "bf694bf2.ff2a68"
             ]
         ]
     },
@@ -3694,14 +3695,11 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
         "payloadType": "str",
         "x": 700,
         "y": 540,
         "wires": [
-            [
-                "3afcb30e.2b97dc"
-            ]
+            []
         ]
     },
     {
@@ -5686,7 +5684,7 @@
         "type": "function",
         "z": "6f0a3208.8a822c",
         "name": "",
-        "func": "var brightness=global.get(\"brightness\");\n\nif(brightness==undefined){\n   brightness=60;\n}\nbrightness+=768;\nif(msg.payload==1){\n   node.send({payload:brightness+\".1051\"})\n}\n\nif(msg.payload==3){\n    node.send({payload:\"0.511.512.\"+brightness+\".1053\"})\n}\nif(msg.payload==4){\n    node.send({payload:\"255.480.512.\"+brightness+\".1054\"})\n}\nif(msg.payload==5){\n    brightness=100;\n    node.send({payload:\"255.256.512.\"+brightness+\".1055\"});\n}\nif(msg.payload==7){\n    node.send({payload:\"1057\"});\n}",
+        "func": "var brightness=global.get(\"brightness\");\n\nif(brightness==undefined){\n   brightness=60;\n}\nbrightness+=768;\nif(msg.payload==1){\n   node.send({payload:brightness+\".1051\"})\n}\n\nif(msg.payload==3){\n    node.send({payload:\"0.511.512.\"+brightness+\".1053\"})\n}\nif(msg.payload==4){\n    node.send({payload:\"255.480.512.\"+brightness+\".1054\"})\n}\nif(msg.payload==5){\n    brightness=255;\n    node.send({payload:\"255.256.512.\"+brightness+\".1055\"});\n}\nif(msg.payload==7){\n    node.send({payload:\"1057\"});\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5996,16 +5994,19 @@
         "type": "file in",
         "z": "cc53778b.362758",
         "name": "",
-        "filename": "what-302.mp3",
+        "filename": "",
         "format": "",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 1480,
-        "y": 540,
+        "x": 1710,
+        "y": 440,
         "wires": [
-            []
+            [
+                "5a94042d9121aa95",
+                "2ea960f8bcc074ab"
+            ]
         ]
     },
     {
@@ -6214,24 +6215,6 @@
         ]
     },
     {
-        "id": "46d3275.7ab72d8",
-        "type": "calculator",
-        "z": "772b4e64.18e6e",
-        "d": true,
-        "name": "",
-        "inputMsgField": "payload",
-        "outputMsgField": "payload",
-        "operation": "avg",
-        "constant": "9",
-        "round": false,
-        "decimals": 0,
-        "x": 940,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c955f148.352cb",
         "type": "gate",
         "z": "772b4e64.18e6e",
@@ -6288,32 +6271,13 @@
         "defaultCmd": "default",
         "statusCmd": "status",
         "persist": false,
-        "x": 270,
+        "x": 290,
         "y": 460,
         "wires": [
             [
                 "c955f148.352cb",
                 "dbf643f6.8ba"
             ]
-        ]
-    },
-    {
-        "id": "deb4a2c2.1f5a4",
-        "type": "gate",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "controlTopic": "control",
-        "defaultState": "open",
-        "openCmd": "open",
-        "closeCmd": "close",
-        "toggleCmd": "toggle",
-        "defaultCmd": "default",
-        "statusCmd": "status",
-        "persist": false,
-        "x": 530,
-        "y": 200,
-        "wires": [
-            []
         ]
     },
     {
@@ -6596,7 +6560,7 @@
         "type": "ui_switch",
         "z": "772b4e64.18e6e",
         "name": "",
-        "label": "pogled",
+        "label": "Point of view",
         "tooltip": "",
         "group": "8d305fa8.31707",
         "order": 2,
@@ -6617,7 +6581,7 @@
         "offcolor": "",
         "animate": true,
         "className": "",
-        "x": 390,
+        "x": 410,
         "y": 340,
         "wires": [
             [
@@ -6681,6 +6645,7 @@
         "id": "6245677a.3f5938",
         "type": "ui_gauge",
         "z": "772b4e64.18e6e",
+        "d": true,
         "name": "",
         "group": "49deb1f5.12e01",
         "order": 5,
@@ -6703,51 +6668,6 @@
         "x": 2150,
         "y": 1180,
         "wires": []
-    },
-    {
-        "id": "3664af40.09d38",
-        "type": "ui_chart",
-        "z": "772b4e64.18e6e",
-        "d": true,
-        "name": "",
-        "group": "8a312ad2.ae3c18",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "label": "all sensors",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "auto",
-        "interpolate": "cubic",
-        "nodata": "",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "1204",
-        "removeOlder": "2",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1190,
-        "y": 140,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "592243486f8316f0",
@@ -6940,7 +6860,8 @@
         "y": 580,
         "wires": [
             [
-                "b96e569c64a138fc"
+                "b96e569c64a138fc",
+                "76f3171e8b6dd4b2"
             ]
         ]
     },
@@ -7185,7 +7106,7 @@
         "to": "",
         "reg": false,
         "x": 1150,
-        "y": 580,
+        "y": 600,
         "wires": [
             []
         ]
@@ -7410,7 +7331,7 @@
         "type": "function",
         "z": "cc53778b.362758",
         "name": "SItting status",
-        "func": "var detectionBottom=global.get(\"detectionBottom\");\nvar timeout=global.get(\"timeout\");\n\nvar sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\n\nvar sn_sens_all = global.get(\"sn_sens_all\");\nvar detectionShortPeople = global.get(\"detectionShortPeople\");\n\n\n\n//za koga sedis a timero e izminal\nif(detectionBottom==true && timeout ==1){\n    node.send({payload:5});\n}\n\n\n\n\n//koga ne sedis\nif(detectionBottom==false){\n    node.send({payload:1});\n}\n\n\n\n\n\n//koga sedis pravilno i koga ne sedis pravilno\nvar sensors3_9 = true;\nvar sensors1_2 = false;\n\nif (detectionBottom == true) {\n    if (detectionShortPeople == false) {\n        if (sensor_1 < sn_sens_all ||\n            sensor_2 < sn_sens_all) {\n            sensors1_2=true;\n        }\n    } else {\n        sensors1_2=false;\n    }\n    if (sensor_3 < sn_sens_all ||\n        sensor_4 < sn_sens_all ||\n        sensor_5 < sn_sens_all ||\n        sensor_6 < sn_sens_all ||\n        sensor_7 < sn_sens_all ||\n        sensor_8 < sn_sens_all ||\n        sensor_9 < sn_sens_all) {\n        sensors3_9=true;\n    } else {\n        sensors3_9=false;\n    }\n    if (sensors1_2 || sensors3_9) {\n    node.send({ payload: 4 });\n} else {\n    node.send({ payload: 3 });\n}\n}\n\n",
+        "func": "var detectionBottom=global.get(\"detectionBottom\");\nvar timeout=global.get(\"timeout\");\n\nvar sensor_1 = global.get(\"sensor_1\");\nvar sensor_2 = global.get(\"sensor_2\");\nvar sensor_3 = global.get(\"sensor_3\");\nvar sensor_4 = global.get(\"sensor_4\");\nvar sensor_5 = global.get(\"sensor_5\");\nvar sensor_6 = global.get(\"sensor_6\");\nvar sensor_7 = global.get(\"sensor_7\");\nvar sensor_8 = global.get(\"sensor_8\");\nvar sensor_9 = global.get(\"sensor_9\");\n\nvar sn_sens_all = global.get(\"sn_sens_all\");\nvar detectionShortPeople = global.get(\"detectionShortPeople\");\n\n\n\n//za koga sedis a timero e izminal\nif(detectionBottom==true && timeout ==1){\n    node.send({payload:5});\n}\n\n\n\n\n//koga ne sedis\nif(detectionBottom==false){\n    node.send({payload:1});\n}\n\n\n\n\n\n//koga sedis pravilno i koga ne sedis pravilno\nvar sensors3_9 = true;\nvar sensors1_2 = false;\n\nif (detectionBottom == true&&timeout ==0) {\n    if (detectionShortPeople == false) {\n        if (sensor_1 < sn_sens_all ||\n            sensor_2 < sn_sens_all) {\n            sensors1_2=true;\n        }\n    } else {\n        sensors1_2=false;\n    }\n    if (sensor_3 < sn_sens_all ||\n        sensor_4 < sn_sens_all ||\n        sensor_5 < sn_sens_all ||\n        sensor_6 < sn_sens_all ||\n        sensor_7 < sn_sens_all ||\n        sensor_8 < sn_sens_all ||\n        sensor_9 < sn_sens_all) {\n        sensors3_9=true;\n    } else {\n        sensors3_9=false;\n    }\n    if (sensors1_2 || sensors3_9) {\n    node.send({ payload: 4 });\n} else {\n    node.send({ payload: 3 });\n}\n}\n\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7421,7 +7342,8 @@
         "wires": [
             [
                 "ef2d960b.d78688",
-                "21ad533d.4ddcfc"
+                "21ad533d.4ddcfc",
+                "353238d6780de811"
             ]
         ]
     },
@@ -7458,14 +7380,14 @@
         "topic": "topic",
         "topicType": "msg",
         "min": 0,
-        "max": "255",
+        "max": "100",
         "step": 1,
         "className": "",
         "x": 580,
         "y": 960,
         "wires": [
             [
-                "715329c016f666e6"
+                "becc42027873824d"
             ]
         ]
     },
@@ -7497,7 +7419,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
+        "x": 1020,
         "y": 960,
         "wires": [
             []
@@ -7511,7 +7433,8 @@
         "y": 760,
         "wires": [
             [
-                "7652af1349acc003"
+                "7652af1349acc003",
+                "592243486f8316f0"
             ]
         ]
     },
@@ -7525,7 +7448,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "60",
+                "to": "30",
                 "tot": "num"
             }
         ],
@@ -7535,11 +7458,10 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 760,
+        "y": 900,
         "wires": [
             [
-                "26345aa62efa6edd",
-                "592243486f8316f0"
+                "26345aa62efa6edd"
             ]
         ]
     },
@@ -7641,6 +7563,127 @@
         "outputLabels": [
             "4500",
             "3500"
+        ]
+    },
+    {
+        "id": "0bbe4a9de9827305",
+        "type": "ui_template",
+        "z": "772b4e64.18e6e",
+        "group": "49deb1f5.12e01",
+        "name": "",
+        "order": 33,
+        "width": "3",
+        "height": "4",
+        "format": "<img src=\"/images/logo.png\">",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 2130,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "becc42027873824d",
+        "type": "range",
+        "z": "af13bad2.757ad8",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "255",
+        "action": "clamp",
+        "round": true,
+        "property": "payload",
+        "name": "",
+        "x": 800,
+        "y": 960,
+        "wires": [
+            [
+                "715329c016f666e6"
+            ]
+        ]
+    },
+    {
+        "id": "5a94042d9121aa95",
+        "type": "debug",
+        "z": "cc53778b.362758",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1590,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "353238d6780de811",
+        "type": "delay",
+        "z": "cc53778b.362758",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "x": 1320,
+        "y": 420,
+        "wires": [
+            [
+                "3afcb30e.2b97dc"
+            ]
+        ]
+    },
+    {
+        "id": "2ea960f8bcc074ab",
+        "type": "ui_audio",
+        "z": "cc53778b.362758",
+        "name": "audio",
+        "group": "a4a5657b.ad6998",
+        "voice": "Microsoft George - English (United Kingdom)",
+        "always": true,
+        "x": 1640,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "06daddfca83aa31f",
+        "type": "play audio",
+        "z": "cc53778b.362758",
+        "name": "",
+        "voice": "0",
+        "x": 2020,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "76f3171e8b6dd4b2",
+        "type": "function",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "func": "var tim30=msg.payload;\nvar tim5= Math.round(msg.payload/3);\nglobal.set(\"timer30settings\",tim30);\nglobal.set(\"timer5settings\",tim5);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 560,
+        "wires": [
+            []
         ]
     }
 ]
