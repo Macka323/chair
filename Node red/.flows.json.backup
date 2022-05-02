@@ -3669,6 +3669,16 @@
         ]
     },
     {
+        "id": "937f80c3f7d5871b",
+        "type": "comment",
+        "z": "772b4e64.18e6e",
+        "name": "info",
+        "info": "node-red verion 2.2.2\nesp32 verion v1\nnode-red code v1",
+        "x": 90,
+        "y": 60,
+        "wires": []
+    },
+    {
         "id": "b66416e4.9e3488",
         "type": "switch",
         "z": "dc7f38ca.1f1628",
@@ -5529,70 +5539,6 @@
         ]
     },
     {
-        "id": "75cb605.b4257a",
-        "type": "http request",
-        "z": "cc53778b.362758",
-        "name": "",
-        "method": "GET",
-        "ret": "bin",
-        "paytoqs": "ignore",
-        "url": "http://192.168.27.128:1880/what-302.mp3",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 1190,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "10352e58.6d01f2",
-        "type": "inject",
-        "z": "cc53778b.362758",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "str",
-        "x": 700,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "850a5a91.8e3158",
-        "type": "trigger",
-        "z": "cc53778b.362758",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "500",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 1160,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "bf694bf2.ff2a68",
         "type": "file in",
         "z": "cc53778b.362758",
@@ -5683,18 +5629,8 @@
         "group": "a4a5657b.ad6998",
         "voice": "Microsoft George - English (United Kingdom)",
         "always": true,
-        "x": 2050,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "06daddfca83aa31f",
-        "type": "play audio",
-        "z": "cc53778b.362758",
-        "name": "",
-        "voice": "0",
-        "x": 2020,
-        "y": 660,
+        "x": 2270,
+        "y": 420,
         "wires": []
     },
     {

@@ -4868,8 +4868,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 900,
+        "x": 380,
+        "y": 960,
         "wires": [
             [
                 "26345aa62efa6edd"
@@ -4955,7 +4955,7 @@
         "links": [
             "0d6c6de3cd3d565e"
         ],
-        "x": 735,
+        "x": 705,
         "y": 1040,
         "wires": []
     },
@@ -4986,7 +4986,7 @@
         "animate": true,
         "className": "",
         "x": 550,
-        "y": 1120,
+        "y": 1100,
         "wires": [
             [
                 "4b55f777bc6bd14c"
@@ -5003,7 +5003,7 @@
             "30676345654f090f"
         ],
         "x": 705,
-        "y": 1120,
+        "y": 1100,
         "wires": []
     },
     {
@@ -5025,8 +5025,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
-        "y": 700,
+        "x": 380,
+        "y": 600,
         "wires": [
             [
                 "592243486f8316f0"
@@ -5539,70 +5539,6 @@
         ]
     },
     {
-        "id": "75cb605.b4257a",
-        "type": "http request",
-        "z": "cc53778b.362758",
-        "name": "",
-        "method": "GET",
-        "ret": "bin",
-        "paytoqs": "ignore",
-        "url": "http://192.168.27.128:1880/what-302.mp3",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 1190,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "10352e58.6d01f2",
-        "type": "inject",
-        "z": "cc53778b.362758",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "str",
-        "x": 700,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "850a5a91.8e3158",
-        "type": "trigger",
-        "z": "cc53778b.362758",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "500",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 1160,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "bf694bf2.ff2a68",
         "type": "file in",
         "z": "cc53778b.362758",
@@ -5693,18 +5629,8 @@
         "group": "a4a5657b.ad6998",
         "voice": "Microsoft George - English (United Kingdom)",
         "always": true,
-        "x": 2050,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "06daddfca83aa31f",
-        "type": "play audio",
-        "z": "cc53778b.362758",
-        "name": "",
-        "voice": "0",
-        "x": 2020,
-        "y": 660,
+        "x": 2270,
+        "y": 420,
         "wires": []
     },
     {
