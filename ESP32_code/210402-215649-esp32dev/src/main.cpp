@@ -1,5 +1,16 @@
+// this code is for the sensors and LED strip
+// v1
+// recive values from rgb + brightness
+// |r|g|b|brightness|
+// |0-255|256-511|512-767|768-|1023|
+// commands for led effect
+// 1051 - rainbow
+// 1053 || 1054 - center to outside
+// 1055 - snake outside to center and vice viera
+// 1057 - clear
+
 #include <FastLED.h>
-#define NUM_LEDS 63
+#define NUM_LEDS 59
 #define PIN 14
 CRGB leds[NUM_LEDS];
 int serialdata;
@@ -14,8 +25,6 @@ const int sensor_6 = 33;
 const int sensor_7 = 25;
 const int sensor_8 = 26;
 const int sensor_9 = 27;
-const int battery = 13;
-const int LED_2 = 2;
 TaskHandle_t SensRead;
 
 // fast led cyclon e za rainbow
@@ -118,9 +127,6 @@ void serialout()
   delay(5);
   Serial.print("i.");
   Serial.println(map(analogRead(sensor_9), 0, 4095, 500, 0));
-  delay(5);
-  Serial.print("j.");
-  Serial.println(analogRead(battery));
   delay(5);
 }
 
