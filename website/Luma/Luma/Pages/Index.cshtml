@@ -3,7 +3,33 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<dialog id="izrabotka">
+    <h1 style="text-align:center">Вебсајтот е сеуште во изработка</h1>
+    <h3 style="text-align:center">и ке претрпува измени</h3>
+    <br />
+    <button type="button" class="btn btn-secondary w-100" @*style="float:right"*@ onclick="izrabotkaClose()">Затвори</button>
+</dialog>
+<script>
+    var x = document.getElementById("izrabotka");
+    x.showModal();
+    function izrabotkaClose(){
+        x.close();
+    }
+</script>
+<style>
+    #izrabotka {
+        border-radius: 10px;
+        border: 2px black solid;
+    }
 
+        #izrabotka::backdrop {
+            background-color: gray;
+            opacity: 0.5;
+        }
+</style>
+<br />
+<br />
+<br />
 <div class="text-center">
 
     <div class="container">
@@ -28,9 +54,10 @@
         <hr />
         <div class="row">
             <div class="col">
-                <video autoplay controls class="img-fluid">
+                <div class="sketchfab-embed-wrapper"> <iframe title="LUMA V29" frameborder="0" width="100%" height="500px" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/3492497b42e6451892d1014a2ae88758/embed?autospin=1&autostart=1&preload=1"> </iframe> </div>
+                @* <video autoplay controls class="img-fluid">
                     <source src="video/chair_fusion_timelapse.mp4" type="video/mp4">
-                </video>
+                    </video>*@
             </div>
         </div>
         <hr />
@@ -54,51 +81,56 @@
         </div>
         <hr />
         <div class="row">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <h4>Наменет за канцеларија, гејминг, секојденвна употреба и многу повеќе...</h4>
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://img.freepik.com/free-vector/office-background-video-conferencing_23-2148641674.jpg?w=1480&t=st=1652221817~exp=1652222417~hmac=e78a37eaa488cd126e2492476c618d2be648f47b87f9ac36d73b7e1d16ddb6a6" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.freepik.com/free-vector/gamer-room-illustration_23-2148928890.jpg?t=st=1652221906~exp=1652222506~hmac=8df4184600dfb0a3f3fdcd7e96b237c76692650c7bf1fe64248edc63b7fae31c&w=1380" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://img.freepik.com/free-vector/room-interior-workplace-with-computer-desk-seat-shelves_107791-3163.jpg?t=st=1652222071~exp=1652222671~hmac=43835d2dbcc8a186df294afc0248b8395f18882dc0d2c668634ba104b5b63a77&w=1480" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+            <h2>Наменет за...</h2>
+            <div class="col-2"></div>
+            <div class="accordion w-50 col" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Канцеларија
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                            Овој стол е наменет за вработени кои седат премногу време на компјутер или на биро за време на нивното работно време. Столот е наменет да ги реши проблемите со прекувременото неправилно седење.
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Гејминг
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                            Столот е наменет и за гејмерите бидејќи тие исто така помнуваат многу време на компјутер и со тоа има и многу здравствени проблеми поради прекувременото неправилно седење.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Дома
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                            Овој стол исто така можете и да го имате дома не само на работа бидејќи колку повеќе го користите столот толку повеќе се грижите и го одржувате вашето здравје.
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-2"></div>
+        </div>
+        <hr />
+        <div class="text-muted " style="text-align:end">
+            <br />
+            <br />
+            <br />
+            <a href="/How does it work">Како работи столот и која технологија ја користи за да ја добие посакуваната цел  -- ></a>
+            <br />
+            <br />
         </div>
     </div>
 
