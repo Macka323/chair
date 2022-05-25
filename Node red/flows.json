@@ -5086,6 +5086,152 @@
         ]
     },
     {
+        "id": "9c937c19401e0704",
+        "type": "fs-list",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "path": "payload",
+        "pathType": "msg",
+        "pattern": "*",
+        "patternType": "str",
+        "filter": "all",
+        "recursive": false,
+        "follow": true,
+        "property": "list",
+        "propertyType": "msg",
+        "x": 480,
+        "y": 1420,
+        "wires": [
+            [
+                "1e1f214de306e750",
+                "8599fb65c4aa0a4a"
+            ]
+        ]
+    },
+    {
+        "id": "1e1f214de306e750",
+        "type": "debug",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "def721a725f28aae",
+        "type": "inject",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "/home/pi/.node-red/projects/chair/set up",
+        "payloadType": "str",
+        "x": 290,
+        "y": 1420,
+        "wires": [
+            [
+                "9c937c19401e0704"
+            ]
+        ]
+    },
+    {
+        "id": "11e77e5752baacbd",
+        "type": "ui_dropdown",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "a61f5046.b796f",
+        "order": 34,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 660,
+        "y": 1560,
+        "wires": [
+            [
+                "82467edf99c5e29b"
+            ]
+        ]
+    },
+    {
+        "id": "8599fb65c4aa0a4a",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "list",
+                "pt": "msg",
+                "to": "options",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 1540,
+        "wires": [
+            [
+                "11e77e5752baacbd"
+            ]
+        ]
+    },
+    {
+        "id": "82467edf99c5e29b",
+        "type": "debug",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 1460,
+        "wires": []
+    },
+    {
         "id": "43c04df2.bb05b4",
         "type": "inject",
         "z": "cc53778b.362758",
