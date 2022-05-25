@@ -309,7 +309,7 @@
         "tab": "666ce8f4.6780c8",
         "order": 2,
         "disp": true,
-        "width": "3",
+        "width": 3,
         "collapse": false,
         "className": ""
     },
@@ -320,7 +320,7 @@
         "tab": "666ce8f4.6780c8",
         "order": 3,
         "disp": true,
-        "width": "3",
+        "width": 6,
         "collapse": false,
         "className": ""
     },
@@ -4758,9 +4758,9 @@
         "label": "LEDs brightness",
         "tooltip": "",
         "group": "8d305fa8.31707",
-        "order": 33,
-        "width": "0",
-        "height": "0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
         "passthru": true,
         "outs": "end",
         "topic": "topic",
@@ -4925,9 +4925,9 @@
         "label": "Sound",
         "tooltip": "",
         "group": "8d305fa8.31707",
-        "order": 2,
-        "width": "0",
-        "height": "0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
         "passthru": true,
         "decouple": "false",
         "topic": "control",
@@ -5019,9 +5019,9 @@
         "group": "bbbc3c43.e1dff",
         "title": "Upload your custom sound effects",
         "name": "",
-        "order": 0,
+        "order": 1,
         "width": 0,
-        "height": 5,
+        "height": 0,
         "chunk": 256,
         "transfer": "binary",
         "x": 310,
@@ -5111,35 +5111,6 @@
         ]
     },
     {
-        "id": "def721a725f28aae",
-        "type": "inject",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "/home/pi/.node-red/projects/chair/set up",
-        "payloadType": "str",
-        "x": 290,
-        "y": 1420,
-        "wires": [
-            [
-                "9c937c19401e0704"
-            ]
-        ]
-    },
-    {
         "id": "11e77e5752baacbd",
         "type": "ui_dropdown",
         "z": "af13bad2.757ad8",
@@ -5148,7 +5119,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "bbbc3c43.e1dff",
-        "order": 34,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -5164,11 +5135,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 900,
+        "x": 1220,
         "y": 1380,
         "wires": [
             [
-                "b7c5d15d0a23ed35"
+                "1c3bcd8a6042717b"
             ]
         ]
     },
@@ -5195,8 +5166,8 @@
         "y": 1420,
         "wires": [
             [
-                "11e77e5752baacbd",
-                "aa509ce33b86a32c"
+                "ef4830a87c765de6",
+                "ecf21c9aaf155283"
             ]
         ]
     },
@@ -5209,7 +5180,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "bbbc3c43.e1dff",
-        "order": 34,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -5225,11 +5196,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 900,
+        "x": 1220,
         "y": 1460,
         "wires": [
             [
-                "c002db7e2970ba1c"
+                "63866dcb4e59c344"
             ]
         ]
     },
@@ -5252,7 +5223,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1250,
+        "x": 1710,
         "y": 1380,
         "wires": [
             []
@@ -5277,10 +5248,159 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1250,
+        "x": 1710,
         "y": 1460,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "1c3bcd8a6042717b",
+        "type": "function",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "func": "if(msg.payload!=null||msg.payload!=\"\"){\n    \nreturn msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 1380,
+        "wires": [
+            [
+                "b7c5d15d0a23ed35"
+            ]
+        ]
+    },
+    {
+        "id": "63866dcb4e59c344",
+        "type": "function",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "func": "if(msg.payload!=null||msg.payload!=\"\"){\n    \nreturn msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 1460,
+        "wires": [
+            [
+                "c002db7e2970ba1c"
+            ]
+        ]
+    },
+    {
+        "id": "3f6355d3a1a341d0",
+        "type": "ui_button",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "group": "bbbc3c43.e1dff",
+        "order": 34,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "refresh",
+        "payload": "/home/pi/.node-red/projects/chair/set up",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 1400,
+        "wires": [
+            [
+                "9c937c19401e0704"
+            ]
+        ]
+    },
+    {
+        "id": "def721a725f28aae",
+        "type": "inject",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "",
+        "payload": "/home/pi/.node-red/projects/chair/set up",
+        "payloadType": "str",
+        "x": 250,
+        "y": 1440,
+        "wires": [
+            [
+                "9c937c19401e0704"
+            ]
+        ]
+    },
+    {
+        "id": "ef4830a87c765de6",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "incorectSittingSoundEffect",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1380,
+        "wires": [
+            [
+                "11e77e5752baacbd"
+            ]
+        ]
+    },
+    {
+        "id": "ecf21c9aaf155283",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "forbidenSittingSoundEffect",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1460,
+        "wires": [
+            [
+                "aa509ce33b86a32c"
+            ]
         ]
     },
     {
