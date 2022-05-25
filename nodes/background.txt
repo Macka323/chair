@@ -1,8 +1,0 @@
-<style>
-    body {
-        background-image: url("/chair_rendered.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-    }
-</style>
