@@ -170,7 +170,7 @@
             "name": "Chair Dashboard",
             "hideToolbar": "false",
             "allowSwipe": "false",
-            "lockMenu": "true",
+            "lockMenu": "icon",
             "allowTempTheme": "true",
             "dateFormat": "DD/MM/YYYY",
             "sizes": {
@@ -540,6 +540,24 @@
         "order": 2,
         "width": 1,
         "height": 1
+    },
+    {
+        "id": "d8ea40a9.7243d8",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "909f2fda.b7e17",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "909f2fda.b7e17",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "793c0106.f5d84",
@@ -2292,31 +2310,6 @@
         ]
     },
     {
-        "id": "228c321b.f8df8e",
-        "type": "inject",
-        "z": "772b4e64.18e6e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "( ͡☉ ͜ʖ ͡☉)",
-        "payloadType": "str",
-        "x": 250,
-        "y": 980,
-        "wires": [
-            [
-                "cfeaea56.b26418"
-            ]
-        ]
-    },
-    {
         "id": "3c94f839.ab6428",
         "type": "function",
         "z": "772b4e64.18e6e",
@@ -3422,23 +3415,6 @@
         "wires": []
     },
     {
-        "id": "cfeaea56.b26418",
-        "type": "ui_text",
-        "z": "772b4e64.18e6e",
-        "group": "49deb1f5.12e01",
-        "order": 4,
-        "width": 3,
-        "height": 2,
-        "name": "",
-        "label": "",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 450,
-        "y": 980,
-        "wires": []
-    },
-    {
         "id": "7acde8dbf3f071cd",
         "type": "comment",
         "z": "772b4e64.18e6e",
@@ -3629,27 +3605,6 @@
         "x": 350,
         "y": 400,
         "wires": []
-    },
-    {
-        "id": "0bbe4a9de9827305",
-        "type": "ui_template",
-        "z": "772b4e64.18e6e",
-        "group": "49deb1f5.12e01",
-        "name": "Logo",
-        "order": 33,
-        "width": "3",
-        "height": "4",
-        "format": "<img src=\"/images/logo.png\">",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 810,
-        "y": 1100,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "0d6c6de3cd3d565e",
@@ -4755,7 +4710,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('https://github.com/Macka323/chair/blob/655dcf1e48d6505a31d7fa6e04fbc41825bd0cc4/images/chair1.2.png');\n        background-size:65% 90%;\n        background-position-x: 79px;\n        background-position-y: 70px;\n         background-repeat:no-repeat;\n    }\n</style>",
+        "format": "<style>\n    #Chair_dashboard{\n        background-image:url('https://i.postimg.cc/cJwj97P1/chair1-2.png');\n        background-size:65% 90%;\n        background-position-x: 79px;\n        background-position-y: 70px;\n         background-repeat:no-repeat;\n    }\n</style>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -5030,6 +4985,103 @@
         "wires": [
             [
                 "592243486f8316f0"
+            ]
+        ]
+    },
+    {
+        "id": "37d814d810e53f1f",
+        "type": "ui_template",
+        "z": "af13bad2.757ad8",
+        "group": "49deb1f5.12e01",
+        "name": "Logo",
+        "order": 33,
+        "width": "3",
+        "height": "4",
+        "format": "<img src=\"https://i.postimg.cc/4dX8WDzw/logo.png\">",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 810,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "369592db.ff3c3e",
+        "type": "ui_upload",
+        "z": "af13bad2.757ad8",
+        "group": "a61f5046.b796f",
+        "title": "Upload your custom sound effects",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 5,
+        "chunk": 256,
+        "transfer": "binary",
+        "x": 310,
+        "y": 1260,
+        "wires": [
+            [
+                "8131c214.ad0408"
+            ]
+        ]
+    },
+    {
+        "id": "3f03e074.34b688",
+        "type": "file",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "filename": "",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 610,
+        "y": 1260,
+        "wires": [
+            [
+                "57939435.f397c4"
+            ]
+        ]
+    },
+    {
+        "id": "57939435.f397c4",
+        "type": "function",
+        "z": "af13bad2.757ad8",
+        "name": "Ready for next lines",
+        "func": "return { tick: true };",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1260,
+        "wires": [
+            [
+                "369592db.ff3c3e"
+            ]
+        ]
+    },
+    {
+        "id": "8131c214.ad0408",
+        "type": "function",
+        "z": "af13bad2.757ad8",
+        "name": "Filename",
+        "func": "let filename = msg.file.name || 'tmp.txt';\nfilename = filename.replace(/[/\\\\]]/g, '_');\nmsg.filename = '/home/pi/.node-red/projects/chair/set up/' + msg.file.name;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1260,
+        "wires": [
+            [
+                "3f03e074.34b688"
             ]
         ]
     },
