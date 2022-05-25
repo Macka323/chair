@@ -273,12 +273,13 @@
     {
         "id": "8d305fa8.31707",
         "type": "ui_group",
-        "name": "Visual-settings",
+        "name": "Visual",
         "tab": "666ce8f4.6780c8",
         "order": 1,
         "disp": true,
-        "width": 3,
-        "collapse": false
+        "width": "3",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "49deb1f5.12e01",
@@ -304,22 +305,24 @@
     {
         "id": "a61f5046.b796f",
         "type": "ui_group",
-        "name": "General settings",
+        "name": "General",
         "tab": "666ce8f4.6780c8",
         "order": 2,
         "disp": true,
-        "width": 3,
-        "collapse": false
+        "width": "3",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "bbbc3c43.e1dff",
         "type": "ui_group",
-        "name": "Dev",
+        "name": "Audio",
         "tab": "666ce8f4.6780c8",
         "order": 3,
         "disp": true,
-        "width": 3,
-        "collapse": false
+        "width": "3",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "7534c655.1c8b38",
@@ -5013,7 +5016,7 @@
         "id": "369592db.ff3c3e",
         "type": "ui_upload",
         "z": "af13bad2.757ad8",
-        "group": "a61f5046.b796f",
+        "group": "bbbc3c43.e1dff",
         "title": "Upload your custom sound effects",
         "name": "",
         "order": 0,
@@ -5099,31 +5102,13 @@
         "follow": true,
         "property": "list",
         "propertyType": "msg",
-        "x": 480,
+        "x": 420,
         "y": 1420,
         "wires": [
             [
-                "1e1f214de306e750",
                 "8599fb65c4aa0a4a"
             ]
         ]
-    },
-    {
-        "id": "1e1f214de306e750",
-        "type": "debug",
-        "z": "af13bad2.757ad8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 770,
-        "y": 1420,
-        "wires": []
     },
     {
         "id": "def721a725f28aae",
@@ -5141,7 +5126,7 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "/home/pi/.node-red/projects/chair/set up",
@@ -5159,10 +5144,10 @@
         "type": "ui_dropdown",
         "z": "af13bad2.757ad8",
         "name": "",
-        "label": "",
+        "label": "Chose incorrect sitting sound effect",
         "tooltip": "",
         "place": "Select option",
-        "group": "a61f5046.b796f",
+        "group": "bbbc3c43.e1dff",
         "order": 34,
         "width": 0,
         "height": 0,
@@ -5179,11 +5164,11 @@
         "topic": "topic",
         "topicType": "msg",
         "className": "",
-        "x": 660,
-        "y": 1560,
+        "x": 900,
+        "y": 1380,
         "wires": [
             [
-                "82467edf99c5e29b"
+                "b7c5d15d0a23ed35"
             ]
         ]
     },
@@ -5206,30 +5191,97 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
-        "y": 1540,
+        "x": 600,
+        "y": 1420,
         "wires": [
             [
-                "11e77e5752baacbd"
+                "11e77e5752baacbd",
+                "aa509ce33b86a32c"
             ]
         ]
     },
     {
-        "id": "82467edf99c5e29b",
-        "type": "debug",
+        "id": "aa509ce33b86a32c",
+        "type": "ui_dropdown",
         "z": "af13bad2.757ad8",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 950,
+        "label": "Chose forbiden sitting sound effect",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "bbbc3c43.e1dff",
+        "order": 34,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 900,
         "y": 1460,
-        "wires": []
+        "wires": [
+            [
+                "c002db7e2970ba1c"
+            ]
+        ]
+    },
+    {
+        "id": "b7c5d15d0a23ed35",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "incorectSittingSoundEffect",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1250,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c002db7e2970ba1c",
+        "type": "change",
+        "z": "af13bad2.757ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "forbidenSittingSoundEffect",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1250,
+        "y": 1460,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "43c04df2.bb05b4",
@@ -5722,7 +5774,7 @@
         "type": "function",
         "z": "cc53778b.362758",
         "name": "audio alert",
-        "func": "if(msg.payload==4){\n    node.send({filename:\"/home/pi/.node-red/projects/chair/set up/nepravilnoSedenje.wav\"});\n}\nif(msg.payload==5){\n    node.send({filename:\"/home/pi/.node-red/projects/chair/set up/zabranetoSedenje.wav\"});\n}\n",
+        "func": "var incorectSittingSoundEffect =\"/home/pi/.node-red/projects/chair/set up/\"+global.get(\"incorectSittingSoundEffect\");\nvar forbidenSittingSoundEffect =\"/home/pi/.node-red/projects/chair/set up/\"+ global.get(\"forbidenSittingSoundEffect\");\n\nif(msg.payload==4){\n    node.send({filename:incorectSittingSoundEffect});\n}\nif(msg.payload==5){\n    node.send({filename:forbidenSittingSoundEffect});\n}\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
