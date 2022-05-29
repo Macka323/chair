@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+
 }
 
 @media (min-width: 768px) {
@@ -17,5 +18,24 @@ body {
   margin-bottom: 60px;
 }
 * {
-   // font-family: 'M PLUS Rounded 1c', sans-serif;
+    // font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #464646;
+}
+a:link {
+    text-decoration: none;
+}
+
+
+a:visited {
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+a:active {
+    text-decoration: none;
 }
