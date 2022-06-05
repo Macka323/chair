@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pMhih6KdB/sXpc6Ky/XNMiBbYzGL6LGQ1dGvLkpBPeFX8VQchimQqnq7ZSMwbsM5qsdIFjcRLg7Dp9pzLWzkZw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marti\\Desktop\\chair\\website\\Luma\\Luma\\Luma.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.4\\microsoft.netcore.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.4\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.4\\microsoft.aspnetcore.app.runtime.win-x86.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

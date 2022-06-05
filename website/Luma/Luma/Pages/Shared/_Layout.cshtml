@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
 <body>
+
     <header>
+        <div style="position:absolute;top:0%;left:0%;height:55px;width:100%;"></div>
         <div class="container">
 
             <div class="row">
@@ -24,26 +26,26 @@
                 </div>
 
 
-                <div class="col">
-                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-3">
+                <div class="col ">
+                    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  mb-3">
                         <div class="container">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                                     aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                                <ul class="navbar-nav flex-grow-1">
+                                <ul class="nav nav-tabs">
                                     <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Почетна</a>
+                                        <a class="nav-link text-dark @ViewData["index"] " asp-area="" asp-page="/Index">Почетна</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="" asp-page="/How does it work">Како работи</a>
+                                        <a class="nav-link text-dark @ViewData["how it works"] " asp-area="" asp-page="/How does it work">Како работи</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="" asp-page="/Website">Веб страна</a>
+                                        <a class="nav-link text-dark @ViewData["website"] " asp-area="" asp-page="/Website">Документација</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link text-dark" asp-area="" asp-page="/Contact">Контакт</a>
+                                    <li class="nav-item"> 
+                                        <a class="nav-link text-dark @ViewData["contact"] " asp-area="" asp-page="/Contact">Контакт</a>
                                     </li>
                                 </ul>
                             </div>
