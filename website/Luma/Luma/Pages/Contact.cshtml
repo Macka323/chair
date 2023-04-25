@@ -1,6 +1,7 @@
 ﻿@page
 @model Luma.Pages.ContactModel
 @{
+    ViewData["Title"] = "Контакт";
     ViewData["contact"] = "active";
 }
 <br />
@@ -15,40 +16,43 @@
             </h1>
             <address>
 
-                <a href="tel:070123456" style="font-size:1.5em"> <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp; 070123456</a><br />
+                <a href="tel:079224990" style="font-size:1.5em"> <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp; 079224990</a><br />
+                <a href="tel:078748266" style="font-size:1.5em"> <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp; 078748266</a><br />
 
-                <a href="https://facebook.com"><i class="bi bi-facebook " style="font-size:3em"></i></a>
-                <a href="https://github.com/Macka323/chair"><i class="bi bi-github" style="font-size:3em"></i></a>
+                <a style="font-size:1.5em" href="mailto:martin.milchevski2@gmail.com"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp; martin.milchevski2@gmail.com</a><br />
+                <a style="font-size:1.5em" href="mailto:lukas.damjanov@gmail.com"><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp; lukas.damjanov@gmail.com</a>
+                <br />
+                <a style="font-size:1.5em" href="https://github.com/Macka323/chair"><i class="bi bi-github" ></i>&nbsp;&nbsp; Github repo</a>
 
                 <br />
 
-                 <form class="mb-5" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <label for="name" class="col-form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name">
+                <form class="mb-5" method="post" id="contactForm" name="contactForm" novalidate="novalidate">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" name="name" id="name">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <label for="email" class="col-form-label">Email</label>
-                        <input type="text" class="form-control" name="email" id="email">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="email" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" name="email" id="email">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <label for="message" class="col-form-label">Message</label>
-                        <textarea class="form-control" name="message" id="message" cols="30" rows="7"></textarea>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="message" class="col-form-label">Message</label>
+                            <textarea class="form-control" name="message" id="message" cols="30" rows="7"></textarea>
+                        </div>
                     </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-12">
-                        <input type="submit" value="Send Message" class="btn btn-primary ">
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" value="Send Message" class="btn btn-primary ">
 
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
                 <br />
                 <br />
                 Изработил: Мартин Милчевски III-4 <br />

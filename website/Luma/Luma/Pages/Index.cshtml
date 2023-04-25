@@ -1,7 +1,7 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Почетна";
     ViewData["index"] = "active";
 }
 <dialog id="izrabotka">
@@ -49,23 +49,19 @@
         border-radius: 10px;
         border: 2px black solid;
     }
-
         #izrabotka::backdrop {
             background-color: gray;
             opacity: 0.5;
         }
 </style>
 <br />
-<br />
-<br />
+
 <div class="text-center">
 
     <div class="container">
         <div class="row">
-            <div class="col-5"><img class="img-fluid" src="images/chair.png" /></div>
-            <div class="col " style="text-align:left">
-                <br />
-                <br /><br />
+            <div class="col-sm-5"><img class="img-fluid" src="images/chair.png" /></div>
+            <div class="col-sm " style="text-align:left;margin:auto;">
                 <h1>Лума ергономски стол</h1><br />
                 <h5>Лума ергономскиот стол е столица која ви овозможува да седите превилно секогаш и да одржувате здрави навики</h5>
                 <br />
@@ -90,28 +86,23 @@
         </div>
         <hr />
         <div class="row">
-            <div class="col">
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+            <div class="col-sm-6" style="margin:auto">
+                
                 <h4>Прилагодлив дизајн</h4>
                 <h6>
                     Наслонот е поделен на 3 исти делови кои секоој од нив може посебно да се прилагодува според структурата на човекот што го користи.
                     Наслонот може да со ротира надолу-нагоре и напред-назад.
                 </h6>
             </div>
-            <div class="col">
+            <div class="col-sm-6">
                 <img class="img-fluid" src="https://i.postimg.cc/MHRqCCbP/screenshot-2.png" />
             </div>
         </div>
         <hr />
         <div class="row">
             <h2>Наменет за...</h2>
-            <div class="col-2"></div>
-            <div class="accordion w-50 col" id="accordionExample">
+            <div class="col"></div>
+            <div class="accordion w-50 col-8" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -149,7 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-2"></div>
+            <div class="col"></div>
         </div>
         <hr />
         <div class="text-muted " style="text-align:end">
