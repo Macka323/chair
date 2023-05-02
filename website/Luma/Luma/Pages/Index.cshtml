@@ -4,46 +4,7 @@
     ViewData["Title"] = "Почетна";
     ViewData["index"] = "active";
 }
-<dialog id="izrabotka">
-    <h1 style="text-align:center">Вебсајтот е сеуште во изработка</h1>
-    <h3 style="text-align:center">и ке претрпува измени</h3>
-    <br />
-    <button type="button" class="btn btn-secondary w-100" @*style="float:right"*@ onclick="izrabotkaClose()">Затвори</button>
-</dialog>
-<script>
-    if(getCookie("izrabotka")!="true"){
-        var x = document.getElementById("izrabotka");
-            x.showModal();
-    }
-            
-            function izrabotkaClose(){
-                x.close();
-                setCookie("izrabotka","true",2);
-            }
 
-            function setCookie(cname, cvalue, exdays) {
-          const d = new Date();
-          d.setTime(d.getTime() + (exdays*24*60*60*1000));
-          let expires = "expires="+ d.toUTCString();
-          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-
-     function getCookie(cname) {
-      let name = cname + "=";
-      let decodedCookie = decodeURIComponent(document.cookie);
-      let ca = decodedCookie.split(';');
-      for(let i = 0; i <ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-</script>
 <style>
     #izrabotka {
         border-radius: 10px;
