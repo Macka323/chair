@@ -1,0 +1,118 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Почетна";
+    ViewData["index"] = "active";
+}
+
+<style>
+    #izrabotka {
+        border-radius: 10px;
+        border: 2px black solid;
+    }
+        #izrabotka::backdrop {
+            background-color: gray;
+            opacity: 0.5;
+        }
+</style>
+<br />
+
+<div class="text-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5"><img class="img-fluid" src="images/chair.png" /></div>
+            <div class="col-sm " style="text-align:left;margin:auto;">
+                <h1>Лума ергономски стол</h1><br />
+                <h5>Лума ергономскиот стол е столица која ви овозможува да седите превилно секогаш и да одржувате здрави навики</h5>
+                <br />
+                <ul>
+                    <li>Ергономски дизајн со мек сунгер на наслонот и седалката за да овозможи најголем комфорт</li>
+                    <br>
+                    <li>Прилагодливи наслони за за комфорт и правилно седење на секој корисник</li>
+                    <br>
+                    <li>Вештачка кожа која изгледа извонредно</li>
+                    <br />
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col">
+                <div class="sketchfab-embed-wrapper"> <iframe title="LUMA V29" frameborder="0" width="100%" height="500px" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/3492497b42e6451892d1014a2ae88758/embed?autospin=1&autostart=1&preload=1"> </iframe> </div>
+                @* <video autoplay controls class="img-fluid">
+                    <source src="video/chair_fusion_timelapse.mp4" type="video/mp4">
+                    </video>*@
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-6" style="margin:auto">
+                
+                <h4>Прилагодлив дизајн</h4>
+                <h6>
+                    Наслонот е поделен на 3 исти делови кои секоој од нив може посебно да се прилагодува според структурата на човекот што го користи.
+                    Наслонот може да со ротира надолу-нагоре и напред-назад.
+                </h6>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="https://i.postimg.cc/MHRqCCbP/screenshot-2.png" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <h2>Наменет за...</h2>
+            <div class="col"></div>
+            <div class="accordion w-50 col-8" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Канцеларија
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                            Овој стол е наменет за вработени кои седат премногу време на компјутер или на биро за време на нивното работно време. Столот е наменет да ги реши проблемите со прекувременото неправилно седење.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Гејминг
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                            Столот е наменет и за гејмерите бидејќи тие исто така помнуваат многу време на компјутер и со тоа има и многу здравствени проблеми поради прекувременото неправилно седење.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Дома
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                            Овој стол исто така можете и да го имате дома не само на работа бидејќи колку повеќе го користите столот толку повеќе се грижите и го одржувате вашето здравје.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        <hr />
+        <div class="text-muted " style="text-align:end">
+            <br />
+            <br />
+            <br />
+            <a href="/How does it work">Како работи столот и која технологија ја користи за да ја добие посакуваната цел  -- ></a>
+            <br />
+            <br />
+        </div>
+    </div>
+
+
+</div>

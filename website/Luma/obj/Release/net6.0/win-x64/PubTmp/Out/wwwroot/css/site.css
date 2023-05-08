@@ -1,0 +1,55 @@
+html {
+    font-size: 14px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+* {
+    // font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #464646;
+}
+a:link {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .how-it-works-content {
+        box-sizing:unset;
+        width:100%;
+    }
+    .how-it-works-image{
+        width:100%;
+        text-align:center
+    }
+    #accordionExample{
+        width: 100%!important;
+    }
+}
+
+
+a:visited {
+    text-decoration: none;
+}a
+
+
+a:hover {
+    text-decoration: none;
+}
+
+
+a:active {
+    text-decoration: none;
+}

@@ -1,5 +1,0 @@
-C:\Users\marti\Source\Repos\chair\website\Luma\Luma\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.Development.json
-C:\Users\marti\Source\Repos\chair\website\Luma\Luma\obj\Release\net6.0\win-x64\PubTmp\Out\appsettings.json
-C:\Users\marti\Source\Repos\chair\website\Luma\Luma\obj\Release\net6.0\win-x64\PubTmp\Out\Luma.pdb
-C:\Users\marti\Source\Repos\chair\website\Luma\Luma\obj\Release\net6.0\win-x64\PubTmp\Out\aspnetcorev2_inprocess.dll
-C:\Users\marti\Source\Repos\chair\website\Luma\Luma\obj\Release\net6.0\win-x64\PubTmp\Out\Luma.exe
