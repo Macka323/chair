@@ -1,3 +1,2 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+./website/Luma/bin
+/website/Luma/bin
